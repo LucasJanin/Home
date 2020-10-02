@@ -15,6 +15,5 @@ The main system are a Synology NAS DS918+ with many Docker container:
 
 ## Some of my configurations and automations ##
 
-- Node Red
-- Pi-Hole
-- Watchtower
+- [Node Red](NodeRed) : Some of my automations
+- [Watchtower](Watchtower) : My configuration
