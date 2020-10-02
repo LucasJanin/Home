@@ -25,6 +25,8 @@ My office light a control by a motion sensor (Aqara) and Home Assistant (HA) Mac
 - [x] Motion sensor Off and HA Mac App activity sensor Off -> Wait 20 seconds -> Turn off the lights
 - [ ] Control an On-Air light outside of the office base mic usage on the computer
 
+![ Office Light Graph](officeLight.png)
+
 ## Garden Winter & Spring Prep ##
 
 I'm living in Quebec/Canada so Winter are very cold. 
