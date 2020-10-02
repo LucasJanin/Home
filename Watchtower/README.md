@@ -10,7 +10,6 @@ I decided to do the process only every 6 hours (argument --interval 21600).
 ```
 docker run -d \
 	--name watchtower \
-	--debug \
 	--cleanup \
 	--interval 21600 \
 	-e TZ="America/Montreal" \
