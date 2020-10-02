@@ -10,14 +10,14 @@
         "service_domain": "light",
         "service": "turn_on",
         "entityId": "light.rainbow",
-        "data": "{\"entity_id\":\"light.rainbow\",\"brightness_pct\":\"{{brightness}}\"}",
+        "data": "{\"entity_id\":\"light.rainbow\",\"brightness_pct\":\"{{brightness}}\",\"effect\":\"{{effect}}\"}",
         "dataType": "json",
         "mergecontext": "",
         "output_location": "payload",
         "output_location_type": "msg",
         "mustacheAltTags": false,
-        "x": 1470,
-        "y": 1140,
+        "x": 1570,
+        "y": 1120,
         "wires": [
             []
         ]
@@ -43,39 +43,12 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 1010,
-        "y": 920,
+        "x": 890,
+        "y": 1440,
         "wires": [
             [
-                "6656c99.8847eb8",
-                "84e9bfb4.4395a8"
-            ]
-        ]
-    },
-    {
-        "id": "6656c99.8847eb8",
-        "type": "change",
-        "z": "89f58b06.2d98f",
-        "name": "Set Full",
-        "rules": [
-            {
-                "t": "set",
-                "p": "brightness",
-                "pt": "msg",
-                "to": "100",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1180,
-        "y": 1140,
-        "wires": [
-            [
-                "9ec4d83a.2a29e8"
+                "84e9bfb4.4395a8",
+                "a0bb7b10.d89d58"
             ]
         ]
     },
@@ -91,8 +64,8 @@
         "topic": "",
         "payload": "off",
         "payloadType": "str",
-        "x": 1010,
-        "y": 1540,
+        "x": 890,
+        "y": 1820,
         "wires": [
             [
                 "a6cc5350.49c758",
@@ -117,8 +90,8 @@
         "output_location": "payload",
         "output_location_type": "msg",
         "mustacheAltTags": false,
-        "x": 1470,
-        "y": 1280,
+        "x": 1570,
+        "y": 1680,
         "wires": [
             []
         ]
@@ -150,35 +123,16 @@
         "halt_if_compare": "is",
         "outputs": 2,
         "output_only_on_state_change": true,
-        "x": 160,
-        "y": 1160,
+        "x": 200,
+        "y": 1400,
         "wires": [
             [
-                "c947606d.5db51",
                 "310f4148.9f8e46"
             ],
             [
-                "c947606d.5db51",
                 "beadae51.cbc7d"
             ]
         ]
-    },
-    {
-        "id": "c947606d.5db51",
-        "type": "debug",
-        "z": "89f58b06.2d98f",
-        "name": "Guest Room Occupency",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 490,
-        "y": 1440,
-        "wires": []
     },
     {
         "id": "84e9bfb4.4395a8",
@@ -197,8 +151,8 @@
         "output_location": "payload",
         "output_location_type": "msg",
         "mustacheAltTags": false,
-        "x": 1460,
-        "y": 1020,
+        "x": 1560,
+        "y": 1380,
         "wires": [
             []
         ]
@@ -219,8 +173,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 1190,
-        "y": 1340,
+        "x": 1230,
+        "y": 1620,
         "wires": [
             [
                 "a6cc5350.49c758",
@@ -255,16 +209,14 @@
         "halt_if_compare": "is",
         "outputs": 2,
         "output_only_on_state_change": true,
-        "x": 160,
-        "y": 1000,
+        "x": 200,
+        "y": 1280,
         "wires": [
             [
-                "310f4148.9f8e46",
-                "38f779d0.fd87be"
+                "310f4148.9f8e46"
             ],
             [
-                "c12ae8d0.d27ea",
-                "38f779d0.fd87be"
+                "c12ae8d0.d27ea"
             ]
         ]
     },
@@ -276,8 +228,8 @@
         "operation": "AND",
         "inputCount": 2,
         "topic": "result",
-        "x": 1000,
-        "y": 1340,
+        "x": 1040,
+        "y": 1620,
         "wires": [
             [
                 "2d68d57f.c8b462"
@@ -294,8 +246,8 @@
         "start": "",
         "inout": "out",
         "property": "payload",
-        "x": 790,
-        "y": 1300,
+        "x": 830,
+        "y": 1580,
         "wires": [
             [
                 "1143fc04.03adf4"
@@ -312,8 +264,8 @@
         "start": "",
         "inout": "out",
         "property": "payload",
-        "x": 790,
-        "y": 1380,
+        "x": 830,
+        "y": 1660,
         "wires": [
             [
                 "1143fc04.03adf4"
@@ -337,8 +289,8 @@
         "output_location": "payload",
         "output_location_type": "msg",
         "mustacheAltTags": false,
-        "x": 1460,
-        "y": 1400,
+        "x": 1560,
+        "y": 1560,
         "wires": [
             []
         ]
@@ -349,31 +301,149 @@
         "z": "89f58b06.2d98f",
         "name": "",
         "timeout": "",
-        "x": 790,
-        "y": 1080,
+        "x": 830,
+        "y": 1360,
         "wires": [
             [
                 "84e9bfb4.4395a8",
-                "6656c99.8847eb8"
+                "a0bb7b10.d89d58"
             ]
         ]
     },
     {
-        "id": "38f779d0.fd87be",
-        "type": "debug",
+        "id": "7c5196c2.5c254",
+        "type": "server-state-changed",
         "z": "89f58b06.2d98f",
-        "name": "Darkroom Active",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 490,
-        "y": 880,
-        "wires": []
+        "name": "Facetime Active",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "binary_sensor.darkroom_facetime_hd_camera_built_in",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "x": 200,
+        "y": 1140,
+        "wires": [
+            [
+                "5515871c.640cd"
+            ],
+            [
+                "a0bb7b10.d89d58"
+            ]
+        ]
+    },
+    {
+        "id": "5515871c.640cd",
+        "type": "change",
+        "z": "89f58b06.2d98f",
+        "name": "Northern Lights Soft",
+        "rules": [
+            {
+                "t": "set",
+                "p": "effect",
+                "pt": "msg",
+                "to": "Northern Lights Soft",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "brightness",
+                "pt": "msg",
+                "to": "100",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1200,
+        "y": 1080,
+        "wires": [
+            [
+                "9ec4d83a.2a29e8"
+            ]
+        ]
+    },
+    {
+        "id": "a0bb7b10.d89d58",
+        "type": "change",
+        "z": "89f58b06.2d98f",
+        "name": "Northern Lights Slow",
+        "rules": [
+            {
+                "t": "set",
+                "p": "effect",
+                "pt": "msg",
+                "to": "Northern Lights Slow",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "brightness",
+                "pt": "msg",
+                "to": "100",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1200,
+        "y": 1180,
+        "wires": [
+            [
+                "9ec4d83a.2a29e8"
+            ]
+        ]
+    },
+    {
+        "id": "bc71aab6.83d378",
+        "type": "inject",
+        "z": "89f58b06.2d98f",
+        "name": "Facetime On",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 890,
+        "y": 960,
+        "wires": [
+            [
+                "5515871c.640cd"
+            ]
+        ]
     },
     {
         "id": "31f480d3.0e3b28",
