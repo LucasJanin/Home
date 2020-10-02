@@ -1,7 +1,7 @@
 # Home
 My home network and automation system
 
-The main system is a Synology NAS DS918+ with many Docker container:
+The main system is a Synology NAS DS918+ with many Docker containers:
 
 - [Home Assistant](https://registry.hub.docker.com/r/homeassistant/home-assistant) : Home automation connected to devices (HomeKit, Ecobee, Nanoleaf lights,..)
 - [Node Red](https://registry.hub.docker.com/r/nodered/node-red/) : Advanced automation with node graph (like Houdini for vfx people :-)
@@ -27,7 +27,8 @@ The main system is a Synology NAS DS918+ with many Docker container:
 - UniFi USG
 - UniFi USW-PRO-24
 - ⁠UniFi UAP AC LR
-- Zigbee USB Dongle with USB extension cable for extended range 
+- Zigbee USB Dongle with USB extension cable for extended range
+- Remote Synology DS219j for offsite backup over VPN (Thanks Max)
 
 ### IoT ### 
 - 4 Aqara door and window sensor sensors
