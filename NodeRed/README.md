@@ -3,6 +3,8 @@
 All my simples automation are done in Home Assistant. But when it needs to be more complex, I'm using Node-Red. 
 This application permits to build a graph very visual, close to Houdini, the VFX program I'm using for my work.
 
+I decided to share my code to give some ideas or for maybe help some users
+
 - [Office Light](#office-light)
 - [Closet Light](#closet-light)
 - [Garden Winter & Spring Prep](#garden-winter--spring-prep)
@@ -36,7 +38,7 @@ The code: ![Closet Light Json](closetLight.json)
 ![Closet Light Graph](closetLight.png)
 
 
-## Garden Winter & Spring Prep ##
+## Garden Winter & Spring Prep (Winter is Coming! :-)##
 
 I'm living in Quebec/Canada so winters are very cold. 
 The garden needs to be prepared for winter and spring too.
