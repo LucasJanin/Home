@@ -9,20 +9,21 @@ My simple automation are done in Home Assistant. But when it need to be more com
 ## Closet Light ##
 
 On of my first automation was to control the light of my closet with the door sensor (Aqara).
-- Door is open -> light go on
+- [x] Door is open -> light go on
 	(The intensity and color temperature are control base time of the day and sunrise/sunset)
-- Door is close -> light go off 
-- Door is open mode than 3 minutes -> light go off 
+- [x]  Door is close -> light go off 
+- [x]  Door is open mode than 3 minutes -> light go off 
+- [ ] Control light intensity form a luminosity sensor in the bedroom
 
 ![Closet Light Graph](closetLight.png)
 
 
 ## Office Light ##
 My office light a control by a motion sensor (Aqara) and Home Assistant (HA) Mac App activity sensor
-- Motion sensor On -> Turn on the lights
-- HA Mac App activity sensor On -> Turn on the lights
-- Motion sensor Off and HA Mac App activity sensor Off -> Turn off the lights
-
+- [x] Motion sensor On -> Turn on the lights
+- [x] HA Mac App activity sensor On -> Turn on the lights
+- [x] Motion sensor Off and HA Mac App activity sensor Off -> Wait 20 seconds -> Turn off the lights
+- [ ] Control an On-Air light outside of the office base mic usage on the computer
 
 ## Garden Winter & Spring Prep ##
 
