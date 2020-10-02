@@ -1,0 +1,387 @@
+[
+    {
+        "id": "42d1060c.6c0878",
+        "type": "server-state-changed",
+        "z": "89f58b06.2d98f",
+        "name": "Master Bedroom Closet Contact",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "binary_sensor.master_bedroom_closet_contact",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "x": 250,
+        "y": 660,
+        "wires": [
+            [
+                "5ea3dbb4.e58a7c",
+                "1f9f39b1.f65e16",
+                "a54047c3.357098",
+                "aef40f8b.c0d8f8",
+                "6b94bd56.122e24"
+            ],
+            [
+                "6f94b7df.948158"
+            ]
+        ]
+    },
+    {
+        "id": "6f94b7df.948158",
+        "type": "api-call-service",
+        "z": "89f58b06.2d98f",
+        "name": "Closet Lights Off",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "light",
+        "service": "turn_off",
+        "entityId": "light.closet_light",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 1250,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b156de8a.7e3a78",
+        "type": "inject",
+        "z": "89f58b06.2d98f",
+        "name": "",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "off",
+        "payloadType": "str",
+        "x": 670,
+        "y": 740,
+        "wires": [
+            [
+                "6f94b7df.948158"
+            ]
+        ]
+    },
+    {
+        "id": "286ce277.7d143e",
+        "type": "inject",
+        "z": "89f58b06.2d98f",
+        "name": "Med",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 670,
+        "y": 100,
+        "wires": [
+            [
+                "5dc0e7cb.7dc278"
+            ]
+        ]
+    },
+    {
+        "id": "5ea3dbb4.e58a7c",
+        "type": "time-range-switch",
+        "z": "89f58b06.2d98f",
+        "name": "Day?",
+        "lat": "45.46727",
+        "lon": "-73.62562",
+        "startTime": "8:00",
+        "endTime": "sunset",
+        "startOffset": "0",
+        "endOffset": "-60",
+        "x": 650,
+        "y": 260,
+        "wires": [
+            [
+                "fc0ad4df.32a428"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "2dfb571d.49aa2",
+        "type": "inject",
+        "z": "89f58b06.2d98f",
+        "name": "Full",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 670,
+        "y": 40,
+        "wires": [
+            [
+                "fc0ad4df.32a428"
+            ]
+        ]
+    },
+    {
+        "id": "1f9f39b1.f65e16",
+        "type": "trigger",
+        "z": "89f58b06.2d98f",
+        "name": "",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "str",
+        "op2type": "str",
+        "duration": "3",
+        "extend": true,
+        "units": "min",
+        "reset": "",
+        "bytopic": "all",
+        "outputs": 1,
+        "x": 670,
+        "y": 600,
+        "wires": [
+            [
+                "6f94b7df.948158"
+            ]
+        ]
+    },
+    {
+        "id": "9a1e0eb5.ded188",
+        "type": "api-call-service",
+        "z": "89f58b06.2d98f",
+        "name": "Closet Lights On",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "debugenabled": true,
+        "service_domain": "light",
+        "service": "turn_on",
+        "entityId": "light.closet_light",
+        "data": "{\"entity_id\":\"light.closet_light\",\"kelvin\":\"{{kelvin}}\",\"brightness_pct\":\"{{brightness}}\"}",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 1250,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fc0ad4df.32a428",
+        "type": "change",
+        "z": "89f58b06.2d98f",
+        "name": "Set Full",
+        "rules": [
+            {
+                "t": "set",
+                "p": "brightness",
+                "pt": "msg",
+                "to": "100",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "kelvin",
+                "pt": "msg",
+                "to": "4000",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 920,
+        "y": 260,
+        "wires": [
+            [
+                "9a1e0eb5.ded188"
+            ]
+        ]
+    },
+    {
+        "id": "5dc0e7cb.7dc278",
+        "type": "change",
+        "z": "89f58b06.2d98f",
+        "name": "Set Med",
+        "rules": [
+            {
+                "t": "set",
+                "p": "brightness",
+                "pt": "msg",
+                "to": "40",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "kelvin",
+                "pt": "msg",
+                "to": "3500",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 920,
+        "y": 380,
+        "wires": [
+            [
+                "9a1e0eb5.ded188"
+            ]
+        ]
+    },
+    {
+        "id": "6cc1f93d.ec2cf",
+        "type": "inject",
+        "z": "89f58b06.2d98f",
+        "name": "Low",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 670,
+        "y": 160,
+        "wires": [
+            [
+                "b6684b4f.a66a5"
+            ]
+        ]
+    },
+    {
+        "id": "b6684b4f.a66a5",
+        "type": "change",
+        "z": "89f58b06.2d98f",
+        "name": "Set Low",
+        "rules": [
+            {
+                "t": "set",
+                "p": "brightness",
+                "pt": "msg",
+                "to": "5",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "kelvin",
+                "pt": "msg",
+                "to": "2000",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 920,
+        "y": 500,
+        "wires": [
+            [
+                "9a1e0eb5.ded188"
+            ]
+        ]
+    },
+    {
+        "id": "a54047c3.357098",
+        "type": "time-range-switch",
+        "z": "89f58b06.2d98f",
+        "name": "Evening?",
+        "lat": "45.46727",
+        "lon": "-73.62562",
+        "startTime": "sunset",
+        "endTime": "23:00",
+        "startOffset": "-60",
+        "endOffset": "0",
+        "x": 660,
+        "y": 340,
+        "wires": [
+            [
+                "5dc0e7cb.7dc278"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "aef40f8b.c0d8f8",
+        "type": "time-range-switch",
+        "z": "89f58b06.2d98f",
+        "name": "Night?",
+        "lat": "45.46727",
+        "lon": "-73.62562",
+        "startTime": "23:00",
+        "endTime": "6:15",
+        "startOffset": "0",
+        "endOffset": "0",
+        "x": 650,
+        "y": 500,
+        "wires": [
+            [
+                "b6684b4f.a66a5"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "6b94bd56.122e24",
+        "type": "time-range-switch",
+        "z": "89f58b06.2d98f",
+        "name": "Morning?",
+        "lat": "45.46727",
+        "lon": "-73.62562",
+        "startTime": "6:15",
+        "endTime": "8:00",
+        "startOffset": "0",
+        "endOffset": "0",
+        "x": 660,
+        "y": 420,
+        "wires": [
+            [
+                "5dc0e7cb.7dc278"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "31f480d3.0e3b28",
+        "type": "server",
+        "z": "",
+        "name": "Home Assistant",
+        "legacy": false,
+        "hassio": false,
+        "rejectUnauthorizedCerts": false,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true
+    }
+]
