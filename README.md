@@ -34,7 +34,7 @@ The main system is a Synology NAS DS918+ with many Docker container:
 - 4 Aqara temperature and humidity sensors
 - 4 Aqara water Leak sensors
 - 4 Aqara vibration sensors (not all used yet)
-- 1 Aqara motion sensor - for testing thanks [Rigaan](https://github.com/rigann/))
+- 1 Aqara motion sensor - for testing thanks [Rigaan](https://github.com/rigann/)
 - 1 Ikea TRADFRI control outlet
 - 1 Ikea TRADFRI LED bulb E27
 - 1 Ikea TRADFRI ON/OFF switch
