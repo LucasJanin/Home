@@ -1,9 +1,9 @@
 # Watchtower #
 
 This docker permit to automatically update all my docker containers.
-By default is done very 5 minutes, I found more than 10000 DNS requests on my PiHole due Watchtower trying to find update on all my containers via domains (registry-1.docker.io and auth.docker.io).
+By default is done every 5 minutes. This created more than 10000 DNS requests per day. Thanks, Pi-Hole to flag me the requests (domains used registry-1.docker.io and auth.docker.io).
 
-5 minutes was definitely ovr kill ofr my usage. I decided to reduce the process every 6 hours (argument --interval 21600).
+The 5 minutes was definitely overkilling for my usage. I decided to do the process only every 6 hours (argument --interval 21600).
 
 ```
 docker run -d \
