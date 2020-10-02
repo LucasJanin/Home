@@ -1,5 +1,5 @@
-# HomeAutomation
-My home automation system
+# Home
+My home network and automation system
 
 The main system are a Synology NAS DS918+ with many Docker container:
 
