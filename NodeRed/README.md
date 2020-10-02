@@ -14,7 +14,7 @@ On of my first automation was to control the light of my closet with the door se
 - Door is close -> light go off 
 - Door is open mode than 3 minutes -> light go off 
 
-### Graph ###![Closet Light Graph](closetLight.png)
+![Closet Light Graph](closetLight.png)
 
 
 ## Office Light ##
