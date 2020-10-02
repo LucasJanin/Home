@@ -2,9 +2,19 @@
 
 My simple automation are done in Home Assistant. But when it need to be more complex, I'm using Node Red. This application permet to build a graph very visual, cose to Houdini, the VFX program I'm using for my work.
 
-- [Closet Light](#closet-light)
 - [Office Light](#office-light)
+- [Closet Light](#closet-light)
 - [Garden Winter & Spring Prep](#garden-winter--spring-prep)
+
+## Office Light ##
+My office light a control by a motion sensor (Aqara) and Home Assistant (HA) Mac App activity sensor
+- [x] Motion sensor On -> Turn on the lights
+- [x] HA Mac App activity sensor On -> Turn on the lights
+- [x] Motion sensor Off and HA Mac App activity sensor Off -> Wait 20 seconds -> Turn off the lights
+- [ ] Control an On-Air light outside of the office base mic usage on the computer
+
+![ Office Light Graph](officeLight.png)
+
 
 ## Closet Light ##
 
@@ -17,15 +27,6 @@ On of my first automation was to control the light of my closet with the door se
 
 ![Closet Light Graph](closetLight.png)
 
-
-## Office Light ##
-My office light a control by a motion sensor (Aqara) and Home Assistant (HA) Mac App activity sensor
-- [x] Motion sensor On -> Turn on the lights
-- [x] HA Mac App activity sensor On -> Turn on the lights
-- [x] Motion sensor Off and HA Mac App activity sensor Off -> Wait 20 seconds -> Turn off the lights
-- [ ] Control an On-Air light outside of the office base mic usage on the computer
-
-![ Office Light Graph](officeLight.png)
 
 ## Garden Winter & Spring Prep ##
 
