@@ -1,0 +1,617 @@
+[
+    {
+        "id": "2acfde26.ce8f82",
+        "type": "api-call-service",
+        "z": "5bdbd6ab.7e392",
+        "name": "Winter is coming!",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "notify",
+        "service": "mobile_app_travelroom",
+        "entityId": "",
+        "data": "{\"title\":\"Winter is coming!\",\"message\":\"The garden need to be prepared for winter\",\"data\":{\"push\":{\"sound\":\"popcorn.wav\"}}}",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1990,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a8513ee4.8af8c8",
+        "type": "debug",
+        "z": "5bdbd6ab.7e392",
+        "name": "Winter is Coming?",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 1850,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "635ef727.f1d568",
+        "type": "BooleanLogic",
+        "z": "5bdbd6ab.7e392",
+        "name": "",
+        "operation": "AND",
+        "inputCount": 2,
+        "topic": "result",
+        "x": 1640,
+        "y": 360,
+        "wires": [
+            [
+                "a8513ee4.8af8c8",
+                "45b62219.849334"
+            ]
+        ]
+    },
+    {
+        "id": "f1c8a932.6925c8",
+        "type": "rbe",
+        "z": "5bdbd6ab.7e392",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "property": "payload",
+        "x": 1470,
+        "y": 320,
+        "wires": [
+            [
+                "635ef727.f1d568"
+            ]
+        ]
+    },
+    {
+        "id": "45b62219.849334",
+        "type": "switch",
+        "z": "5bdbd6ab.7e392",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1810,
+        "y": 400,
+        "wires": [
+            [
+                "2acfde26.ce8f82"
+            ]
+        ]
+    },
+    {
+        "id": "152523d3.dde954",
+        "type": "rbe",
+        "z": "5bdbd6ab.7e392",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "property": "payload",
+        "x": 1470,
+        "y": 400,
+        "wires": [
+            [
+                "635ef727.f1d568"
+            ]
+        ]
+    },
+    {
+        "id": "c71532df.3507e8",
+        "type": "inject",
+        "z": "5bdbd6ab.7e392",
+        "name": "Run every day at 12:00",
+        "repeat": "",
+        "crontab": "00 12 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 620,
+        "wires": [
+            [
+                "c3514d59.b218c",
+                "5306f5c0.4c49ec",
+                "e5d54307.1faa18",
+                "a5975bb6.6d23c8",
+                "9a112a57.f7c858",
+                "c7758b6.d6d8978"
+            ]
+        ]
+    },
+    {
+        "id": "61cbe55a.3eb084",
+        "type": "api-call-service",
+        "z": "5bdbd6ab.7e392",
+        "name": "Spring is coming!",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "notify",
+        "service": "mobile_app_travelroom",
+        "entityId": "",
+        "data": "{\"title\":\"Spring is coming!\",\"message\":\"No freezing temperature the last 21 days. The garden need to be prepare for spring\",\"data\":{\"push\":{\"sound\":\"popcorn.wav\"}}}",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1990,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "52cb7137.a120a8",
+        "type": "join",
+        "z": "5bdbd6ab.7e392",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "5",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 990,
+        "y": 260,
+        "wires": [
+            [
+                "24b3fbd6.87d2b4"
+            ]
+        ]
+    },
+    {
+        "id": "a109b7b8.4f7b1",
+        "type": "change",
+        "z": "5bdbd6ab.7e392",
+        "name": "Merge topic",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "freezing",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 830,
+        "y": 260,
+        "wires": [
+            [
+                "52cb7137.a120a8"
+            ]
+        ]
+    },
+    {
+        "id": "24b3fbd6.87d2b4",
+        "type": "calculator",
+        "z": "5bdbd6ab.7e392",
+        "name": "Minimun",
+        "inputMsgField": "payload",
+        "outputMsgField": "payload",
+        "operation": "min",
+        "constant": "",
+        "x": 1140,
+        "y": 260,
+        "wires": [
+            [
+                "3b972800.11c47",
+                "a8513ee4.8af8c8"
+            ]
+        ]
+    },
+    {
+        "id": "d754f551.18c528",
+        "type": "server-state-changed",
+        "z": "5bdbd6ab.7e392",
+        "name": "Summer",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "entityidfilter": "input_boolean.summer",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": false,
+        "x": 1140,
+        "y": 400,
+        "wires": [
+            [
+                "65b8ea5.0b8ec94",
+                "152523d3.dde954"
+            ]
+        ]
+    },
+    {
+        "id": "319d81b4.2f1c76",
+        "type": "rbe",
+        "z": "5bdbd6ab.7e392",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "property": "payload",
+        "x": 1470,
+        "y": 480,
+        "wires": [
+            [
+                "3ba1bf89.b73c38"
+            ]
+        ]
+    },
+    {
+        "id": "65b8ea5.0b8ec94",
+        "type": "Invert",
+        "z": "5bdbd6ab.7e392",
+        "name": "Invert",
+        "x": 1330,
+        "y": 480,
+        "wires": [
+            [
+                "319d81b4.2f1c76"
+            ]
+        ]
+    },
+    {
+        "id": "43e21895.55d058",
+        "type": "debug",
+        "z": "5bdbd6ab.7e392",
+        "name": "Spring is Coming?",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 1870,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "3ba1bf89.b73c38",
+        "type": "BooleanLogic",
+        "z": "5bdbd6ab.7e392",
+        "name": "",
+        "operation": "AND",
+        "inputCount": 2,
+        "topic": "result",
+        "x": 1640,
+        "y": 520,
+        "wires": [
+            [
+                "43e21895.55d058",
+                "4421328b.a228b4"
+            ]
+        ]
+    },
+    {
+        "id": "4421328b.a228b4",
+        "type": "switch",
+        "z": "5bdbd6ab.7e392",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1810,
+        "y": 480,
+        "wires": [
+            [
+                "61cbe55a.3eb084"
+            ]
+        ]
+    },
+    {
+        "id": "e94dcc5c.1069f8",
+        "type": "rbe",
+        "z": "5bdbd6ab.7e392",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "property": "payload",
+        "x": 1470,
+        "y": 560,
+        "wires": [
+            [
+                "3ba1bf89.b73c38"
+            ]
+        ]
+    },
+    {
+        "id": "f21e161d.6f177",
+        "type": "function",
+        "z": "5bdbd6ab.7e392",
+        "name": "positive",
+        "func": "temp = msg.payload;\nif (temp > 0){\n    msg.payload = true;\n}\nelse {\n    msg.payload = false;\n}\nreturn msg;    ",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1320,
+        "y": 560,
+        "wires": [
+            [
+                "e94dcc5c.1069f8"
+            ]
+        ]
+    },
+    {
+        "id": "3b972800.11c47",
+        "type": "function",
+        "z": "5bdbd6ab.7e392",
+        "name": "Negative",
+        "func": "temp = msg.payload;\nif (temp < 0){\n    msg.payload = true;\n}\nelse {\n    msg.payload = false;\n}\nreturn msg;    ",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1320,
+        "y": 320,
+        "wires": [
+            [
+                "f1c8a932.6925c8"
+            ]
+        ]
+    },
+    {
+        "id": "c3514d59.b218c",
+        "type": "influxdb in",
+        "z": "5bdbd6ab.7e392",
+        "influxdb": "1dab2b84.ed7824",
+        "name": "Minimun temperature the last 21 days",
+        "query": "SELECT MIN(value) FROM \"°C\" WHERE (\"entity_id\" = 'dark_sky_temperature') AND time > now() - 21d",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "x": 1050,
+        "y": 620,
+        "wires": [
+            [
+                "f21e161d.6f177",
+                "c34e58b9.4eb798"
+            ]
+        ]
+    },
+    {
+        "id": "c34e58b9.4eb798",
+        "type": "change",
+        "z": "5bdbd6ab.7e392",
+        "name": "Get min",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload[0].min",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1320,
+        "y": 620,
+        "wires": [
+            [
+                "43e21895.55d058"
+            ]
+        ]
+    },
+    {
+        "id": "9a112a57.f7c858",
+        "type": "api-current-state",
+        "z": "5bdbd6ab.7e392",
+        "name": "Overnight low temperature next 1 day",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "num",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "sensor.dark_sky_overnight_low_temperature_1d",
+        "state_type": "num",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 550,
+        "y": 140,
+        "wires": [
+            [
+                "a109b7b8.4f7b1"
+            ]
+        ]
+    },
+    {
+        "id": "5306f5c0.4c49ec",
+        "type": "api-current-state",
+        "z": "5bdbd6ab.7e392",
+        "name": "Overnight low temperature next 2 day",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "num",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "sensor.dark_sky_overnight_low_temperature_2d",
+        "state_type": "num",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 550,
+        "y": 200,
+        "wires": [
+            [
+                "a109b7b8.4f7b1"
+            ]
+        ]
+    },
+    {
+        "id": "a5975bb6.6d23c8",
+        "type": "api-current-state",
+        "z": "5bdbd6ab.7e392",
+        "name": "Overnight low temperature next 3 day",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "num",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "sensor.dark_sky_overnight_low_temperature_3d",
+        "state_type": "num",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 550,
+        "y": 260,
+        "wires": [
+            [
+                "a109b7b8.4f7b1"
+            ]
+        ]
+    },
+    {
+        "id": "e5d54307.1faa18",
+        "type": "api-current-state",
+        "z": "5bdbd6ab.7e392",
+        "name": "Overnight low temperature next 4 day",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "num",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "sensor.dark_sky_overnight_low_temperature_4d",
+        "state_type": "num",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 550,
+        "y": 320,
+        "wires": [
+            [
+                "a109b7b8.4f7b1"
+            ]
+        ]
+    },
+    {
+        "id": "c7758b6.d6d8978",
+        "type": "api-current-state",
+        "z": "5bdbd6ab.7e392",
+        "name": "Overnight low temperature next 5 day",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "num",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "sensor.dark_sky_overnight_low_temperature_5d",
+        "state_type": "num",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 550,
+        "y": 380,
+        "wires": [
+            [
+                "a109b7b8.4f7b1"
+            ]
+        ]
+    },
+    {
+        "id": "31f480d3.0e3b28",
+        "type": "server",
+        "z": "",
+        "name": "Home Assistant",
+        "legacy": false,
+        "hassio": false,
+        "rejectUnauthorizedCerts": false,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true
+    },
+    {
+        "id": "1dab2b84.ed7824",
+        "type": "influxdb",
+        "z": "",
+        "hostname": "192.168.1.200",
+        "port": "8086",
+        "protocol": "http",
+        "database": "home_assistant",
+        "name": "",
+        "usetls": false,
+        "tls": "e350e4.b7cb2f2"
+    },
+    {
+        "id": "e350e4.b7cb2f2",
+        "type": "tls-config",
+        "z": "",
+        "name": "",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "",
+        "keyname": "",
+        "caname": "",
+        "servername": "",
+        "verifyservercert": false
+    }
+]
