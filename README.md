@@ -17,3 +17,25 @@ The main system are a Synology NAS DS918+ with many Docker container:
 
 - [Node Red](NodeRed) : Some of my automations
 - [Watchtower](Watchtower) : My configuration
+
+## Hardware ##
+ - ⁠Rack 15U
+ - Internet via cable Videotron 400Mb / 50Mb
+ - DS918+ with 4 x 8 Tb Seagate Ironwolf with 2x1Gb Ethernet with ⁠⁠Link Aggregation
+ - UPS CyberPower 1500va AVR
+ - UniFi USG
+ - UniFi USW-PRO-24
+ - ⁠UniFi UAP AC LR
+ - Zigbee USB Dongle
+ 
+ - 4 Aqara door and window sensor sensors
+ - 4 Aqara temperature and humidity sensors
+ - 4 Aqara vibration sensors
+ - 1 Aqara motion sensors - for testing thanks [Rigaan](https://github.com/rigann/))
+ - 1 Ikea TRADFRI control outlet
+ - 1 Ikea TRADFRI LED bulb E27
+ - 1 Ikea TRADFRI ON/OFF switch
+ - 1 Ecobee 4
+ - 5 Nanoleaf Aurora
+  
+  
