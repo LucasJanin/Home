@@ -27,7 +27,7 @@ The main system is a Synology NAS DS918+ with many Docker container:
 - UniFi USG
 - UniFi USW-PRO-24
 - ⁠UniFi UAP AC LR
-- Zigbee USB Dongle
+- Zigbee USB Dongle with USB extension cable for extended range 
 
 ### IoT ### 
 - 4 Aqara door and window sensor sensors
