@@ -17,9 +17,9 @@ My next plan is to have an "On-Air" red light outside of my office when my compu
 - [x] Motion sensor Off and HA Mac App activity sensor Off -> Wait 20 seconds -> Turn off the lights
 - [ ] Control an On-Air light outside of the office base mic usage on the computer
 
-![Office Light Graph](officeLight.png)
+- ![Office Light Json](officeLight.json)
 
-![Office Light Json](officeLight.json)
+![Office Light Graph](officeLight.png)
 
 
 ## Closet Light ##
@@ -31,9 +31,10 @@ One of my first automation was to control the light of my closet with the door s
 - [x]  Door is open mode than 3 minutes -> light go off 
 - [ ] Control light intensity form a luminosity sensor in the bedroom
 
+- ![Closet Light Json](closetLight.json)
+
 ![Closet Light Graph](closetLight.png)
 
-![Closet Light Json](closetLight.json)
 
 ## Garden Winter & Spring Prep ##
 
@@ -52,6 +53,6 @@ Sprint is triggered when the temperature didn't go negative the last 20 days (us
 - Some plates go outside
 - Stair-rubbers are removed
 
-![Closet Light Graph](gardenWinterSpringPrep.png)
+- ![Closet Light Json](gardenWinterSpringPrep.json)
 
-![Closet Light Json](gardenWinterSpringPrep.json)
+![Closet Light Graph](gardenWinterSpringPrep.png)
