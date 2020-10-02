@@ -1,7 +1,7 @@
 # Home
 My home network and automation system
 
-The main system are a Synology NAS DS918+ with many Docker container:
+The main system is a Synology NAS DS918+ with many Docker container:
 
 - [Home Assistant](https://registry.hub.docker.com/r/homeassistant/home-assistant) : Home automation connected to devices (HomeKit, Ecobee, Nanoleaf lights,..)
 - [Node Red](https://registry.hub.docker.com/r/nodered/node-red/) : Advanced automation with node graph (like Houdini for vfx people :-)
@@ -19,6 +19,7 @@ The main system are a Synology NAS DS918+ with many Docker container:
 - [Watchtower](Watchtower) : My configuration
 
 ## Hardware ##
+### Homelab ###
 - ⁠Rack 15U
 - Internet via cable Videotron 400Mb / 50Mb
 - DS918+ with 4 x 8 Tb Seagate Ironwolf with 2x1Gb Ethernet with ⁠⁠Link Aggregation
@@ -27,15 +28,23 @@ The main system are a Synology NAS DS918+ with many Docker container:
 - UniFi USW-PRO-24
 - ⁠UniFi UAP AC LR
 - Zigbee USB Dongle
- 
+
+### IoT ### 
 - 4 Aqara door and window sensor sensors
 - 4 Aqara temperature and humidity sensors
-- 4 Aqara vibration sensors
-- 1 Aqara motion sensors - for testing thanks [Rigaan](https://github.com/rigann/))
+- 4 Aqara water Leak sensors
+- 4 Aqara vibration sensors (not all used yet)
+- 1 Aqara motion sensor - for testing thanks [Rigaan](https://github.com/rigann/))
 - 1 Ikea TRADFRI control outlet
 - 1 Ikea TRADFRI LED bulb E27
 - 1 Ikea TRADFRI ON/OFF switch
 - 1 Ecobee 4
 - 5 Nanoleaf Aurora
-  
+- 3 Vocolink Smart Plug (not yet full integrated in HA)
+
+### Medias ###
+- 1 AppleTV 4k
+- 1 Homepod
+- 1 Sonos play:5
+- 3 Sonos SL  
   
