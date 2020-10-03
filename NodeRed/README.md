@@ -12,11 +12,9 @@ I decided to share my code to give some ideas or for maybe help some users
 ## Office Light ##
 My office lights are control by a motion sensor (Aqara) and Home Assistant (HA) Mac App activity sensor. 
 In the case of usage of my webcam (Zoom, Skype,..), my Aurora light is less saturated color. When the webcam finishes being used, the Aurora light is back to saturated.
-
-My next plan is to have an "On-Air" red light outside of my office when my computer's micro is on.  
 - [x] Motion sensor On -> Turn on the lights
 - [x] HA Mac App activity sensor On -> Turn on the lights
-- [x] Motion sensor Off and HA Mac App activity sensor Off -> Wait 20 seconds -> Turn off the lights
+- [x] Motion sensor Off and HA Mac App activity sensor Off for 20 seconds -> Turn off the lights
 - [ ] Control an On-Air light outside of the office base mic usage on the computer
 
 The code: ![Office Light Json](officeLight.json)
