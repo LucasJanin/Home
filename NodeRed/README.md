@@ -19,7 +19,7 @@ In the case of usage of my webcam (Zoom, Skype,..), my Aurora light is less satu
 - [ ] Control an On-Air light outside of the office base mic usage on the computer
 
 Inserte in the configuration.yaml
-```cwl
+```yml
 input_boolean:
    office_automation:
       name: Office Automation
