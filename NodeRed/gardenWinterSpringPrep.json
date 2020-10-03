@@ -1,9 +1,16 @@
 [
     {
+        "id": "5bdbd6ab.7e392",
+        "type": "tab",
+        "label": "Garden Prep",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "2acfde26.ce8f82",
         "type": "api-call-service",
         "z": "5bdbd6ab.7e392",
-        "name": "Winter is coming!",
+        "name": "Notification: Winter is coming!",
         "server": "31f480d3.0e3b28",
         "version": 1,
         "debugenabled": false,
@@ -16,7 +23,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1990,
+        "x": 2070,
         "y": 400,
         "wires": [
             []
@@ -91,7 +98,8 @@
         "y": 400,
         "wires": [
             [
-                "2acfde26.ce8f82"
+                "2acfde26.ce8f82",
+                "e5141f8c.229b38"
             ]
         ]
     },
@@ -142,7 +150,7 @@
         "id": "61cbe55a.3eb084",
         "type": "api-call-service",
         "z": "5bdbd6ab.7e392",
-        "name": "Spring is coming!",
+        "name": "Notification: Spring is coming!",
         "server": "31f480d3.0e3b28",
         "version": 1,
         "debugenabled": false,
@@ -155,7 +163,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1990,
+        "x": 2070,
         "y": 480,
         "wires": [
             []
@@ -241,6 +249,17 @@
         "name": "Summer",
         "server": "31f480d3.0e3b28",
         "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
         "entityidfilter": "input_boolean.summer",
         "entityidfiltertype": "exact",
         "outputinitially": true,
@@ -341,7 +360,8 @@
         "y": 480,
         "wires": [
             [
-                "61cbe55a.3eb084"
+                "61cbe55a.3eb084",
+                "1a08fc6d.9190d4"
             ]
         ]
     },
@@ -574,6 +594,52 @@
             [
                 "a109b7b8.4f7b1"
             ]
+        ]
+    },
+    {
+        "id": "e5141f8c.229b38",
+        "type": "api-call-service",
+        "z": "5bdbd6ab.7e392",
+        "name": "Summer Off",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "debugenabled": true,
+        "service_domain": "input_boolean",
+        "service": "turn_off",
+        "entityId": "input_boolean.summer",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 2010,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1a08fc6d.9190d4",
+        "type": "api-call-service",
+        "z": "5bdbd6ab.7e392",
+        "name": "Summer On",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "debugenabled": true,
+        "service_domain": "input_boolean",
+        "service": "turn_on",
+        "entityId": "input_boolean.summer",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 2010,
+        "y": 540,
+        "wires": [
+            []
         ]
     },
     {
