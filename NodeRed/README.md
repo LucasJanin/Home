@@ -40,17 +40,18 @@ The code: ![Closet Light Json](closetLight.json)
 
 ## Garden Winter & Spring Prep ##
 
+Yes  Winter is coming! :-). 
 I'm living in Quebec/Canada so winters are very cold. 
-Yes  Winter is coming! :-). The garden needs to be prepared for winter and spring too.
+The garden needs to be prepared for winter and spring too.
 
 ### Winter ###
-Winter si trigger is the Celsius temperature go negative the next  5 days (using dark sky integration)
+Winter is trigger if the Celsius temperature go negative the next  5 days (using dark sky integration)
 - Watering hose needs to be removed (empty and store inside)
 - Some plates go inside the house to survive
 - Stair-rubbers are installed
 
 ### Spring ###
-Sprint is triggered when the temperature didn't go negative the last 20 days (using long storage data in InfluxDB)
+Sprint is triggered if the temperature didn't go negative the last 20 days (using long storage data in InfluxDB)
 - Watering hose need to be install
 - Some plates go outside
 - Stair-rubbers are removed
