@@ -74,6 +74,7 @@ Sprint is triggered if the temperature didn't go negative the last 20 days (usin
 - Some plates go outside
 - Stair-rubbers are removed
 
+Insert in the configuration.yaml
 ```yml
 input_boolean:
    summer:
