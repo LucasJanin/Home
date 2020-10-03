@@ -74,6 +74,13 @@ Sprint is triggered if the temperature didn't go negative the last 20 days (usin
 - Some plates go outside
 - Stair-rubbers are removed
 
+```yml
+input_boolean:
+   summer:
+      name: Summer
+      icon: mdi:white-balance-sunny
+```
+
 The code: ![Closet Light Json](gardenWinterSpringPrep.json)
 
 ![Closet Light Graph](gardenWinterSpringPrep.png)
