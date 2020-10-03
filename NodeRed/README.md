@@ -82,6 +82,6 @@ input_boolean:
       icon: mdi:white-balance-sunny
 ```
 
-The code: ![Closet Light Json](gardenWinterSpringPrep.json)
+The code: ![Garden Winter & Spring Prep Json](gardenWinterSpringPrep.json)
 
-![Closet Light Graph](gardenWinterSpringPrep.png)
+![Garden Winter & Spring Prep Graph](gardenWinterSpringPrep.png)
