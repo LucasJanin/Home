@@ -38,10 +38,10 @@ The code: ![Closet Light Json](closetLight.json)
 ![Closet Light Graph](closetLight.png)
 
 
-## Garden Winter & Spring Prep ## Winter is coming! :-)
+## Garden Winter & Spring Prep ##
 
 I'm living in Quebec/Canada so winters are very cold. 
-The garden needs to be prepared for winter and spring too.
+Yes  Winter is coming! :-). The garden needs to be prepared for winter and spring too.
 
 ### Winter ###
 Winter si trigger is the Celsius temperature go negative the next  5 days (using dark sky integration)
