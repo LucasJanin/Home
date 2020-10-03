@@ -38,7 +38,7 @@ The code: ![Closet Light Json](closetLight.json)
 ![Closet Light Graph](closetLight.png)
 
 
-## Garden Winter & Spring Prep - Winter is  ! :-)##
+## Garden Winter & Spring Prep ## Winter is coming! :-)
 
 I'm living in Quebec/Canada so winters are very cold. 
 The garden needs to be prepared for winter and spring too.
