@@ -26,18 +26,14 @@
         "halt_if_compare": "is",
         "outputs": 2,
         "output_only_on_state_change": true,
-        "x": 250,
-        "y": 660,
+        "x": 190,
+        "y": 620,
         "wires": [
             [
-                "5ea3dbb4.e58a7c",
-                "1f9f39b1.f65e16",
-                "a54047c3.357098",
-                "aef40f8b.c0d8f8",
-                "6b94bd56.122e24"
+                "a6bf9aba.567a6"
             ],
             [
-                "6f94b7df.948158"
+                "5cabafd1.8fcff8"
             ]
         ]
     },
@@ -58,8 +54,8 @@
         "output_location": "payload",
         "output_location_type": "msg",
         "mustacheAltTags": false,
-        "x": 1250,
-        "y": 680,
+        "x": 1470,
+        "y": 760,
         "wires": [
             []
         ]
@@ -76,8 +72,8 @@
         "topic": "",
         "payload": "off",
         "payloadType": "str",
-        "x": 670,
-        "y": 740,
+        "x": 890,
+        "y": 820,
         "wires": [
             [
                 "6f94b7df.948158"
@@ -96,8 +92,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 670,
-        "y": 100,
+        "x": 890,
+        "y": 180,
         "wires": [
             [
                 "5dc0e7cb.7dc278"
@@ -115,8 +111,8 @@
         "endTime": "sunset",
         "startOffset": "0",
         "endOffset": "-60",
-        "x": 650,
-        "y": 260,
+        "x": 870,
+        "y": 340,
         "wires": [
             [
                 "fc0ad4df.32a428"
@@ -136,8 +132,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 670,
-        "y": 40,
+        "x": 890,
+        "y": 120,
         "wires": [
             [
                 "fc0ad4df.32a428"
@@ -159,8 +155,8 @@
         "reset": "",
         "bytopic": "all",
         "outputs": 1,
-        "x": 670,
-        "y": 600,
+        "x": 890,
+        "y": 680,
         "wires": [
             [
                 "6f94b7df.948158"
@@ -184,8 +180,8 @@
         "output_location": "payload",
         "output_location_type": "msg",
         "mustacheAltTags": false,
-        "x": 1250,
-        "y": 380,
+        "x": 1470,
+        "y": 460,
         "wires": [
             []
         ]
@@ -216,8 +212,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 920,
-        "y": 260,
+        "x": 1140,
+        "y": 340,
         "wires": [
             [
                 "9a1e0eb5.ded188"
@@ -250,8 +246,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 920,
-        "y": 380,
+        "x": 1140,
+        "y": 460,
         "wires": [
             [
                 "9a1e0eb5.ded188"
@@ -270,8 +266,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 670,
-        "y": 160,
+        "x": 890,
+        "y": 240,
         "wires": [
             [
                 "b6684b4f.a66a5"
@@ -304,8 +300,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 920,
-        "y": 500,
+        "x": 1140,
+        "y": 580,
         "wires": [
             [
                 "9a1e0eb5.ded188"
@@ -323,8 +319,8 @@
         "endTime": "23:00",
         "startOffset": "-60",
         "endOffset": "0",
-        "x": 660,
-        "y": 340,
+        "x": 880,
+        "y": 420,
         "wires": [
             [
                 "5dc0e7cb.7dc278"
@@ -343,8 +339,8 @@
         "endTime": "6:15",
         "startOffset": "0",
         "endOffset": "0",
-        "x": 650,
-        "y": 500,
+        "x": 870,
+        "y": 580,
         "wires": [
             [
                 "b6684b4f.a66a5"
@@ -363,11 +359,71 @@
         "endTime": "8:00",
         "startOffset": "0",
         "endOffset": "0",
-        "x": 660,
-        "y": 420,
+        "x": 880,
+        "y": 500,
         "wires": [
             [
                 "5dc0e7cb.7dc278"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "5cabafd1.8fcff8",
+        "type": "api-current-state",
+        "z": "89f58b06.2d98f",
+        "name": "Closet Automation On",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "input_boolean.closet_automation",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 560,
+        "y": 760,
+        "wires": [
+            [
+                "6f94b7df.948158"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "a6bf9aba.567a6",
+        "type": "api-current-state",
+        "z": "89f58b06.2d98f",
+        "name": "Closet Automation On",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "input_boolean.closet_automation",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 560,
+        "y": 500,
+        "wires": [
+            [
+                "5ea3dbb4.e58a7c",
+                "a54047c3.357098",
+                "6b94bd56.122e24",
+                "aef40f8b.c0d8f8",
+                "1f9f39b1.f65e16"
             ],
             []
         ]
