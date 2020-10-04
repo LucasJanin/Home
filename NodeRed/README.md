@@ -14,9 +14,9 @@ I decided to share my code to give some ideas or for maybe help some users
 This automation checks every day the level of the sensor battery. If the percentage is below 20%, Node-Red will send a notification. 
 These 6 nodes permit to avoid creating one automation for each sensor.
 
-The code: ![[Low Batteries Sensors Notification Json](LowBatteriesSensorsNotification.json)
+The code: ![Low Batteries Sensors Notification Json](lowBatteriesSensorsNotification.json)
 
-![[Low Batteries Sensors Notification Graph](LowBatteriesSensorsNotification.png)
+![Low Batteries Sensors Notification Graph](lowBatteriesSensorsNotification.png)
 
 ## Office Light ##
 My office lights are control by a motion sensor (Aqara) and Home Assistant (HA) Mac App activity sensor. 
