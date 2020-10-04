@@ -25,6 +25,7 @@ In the case of usage of my webcam (Zoom, Skype,..), my Aurora light is less satu
 - [x] HA Mac App activity sensor On -> Turn on the lights
 - [x] Motion sensor Off and HA Mac App activity sensor Off for 20 seconds -> Turn off the lights
 - [x] Add an input boolean for turn off automation from HA, Homekit and Siri
+- [x] Add illumination to the automation. If illumination is over 50 lux, the light isn't turn on
 - [ ] Control an On-Air light outside of the office base mic usage on the computer
 
 Insert in the configuration.yaml
