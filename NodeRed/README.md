@@ -5,9 +5,18 @@ This application permits to build a graph very visual, close to Houdini, the VFX
 
 I decided to share my code to give some ideas or for maybe help some users
 
+- [Low Batteries Sensors Notification](#low-batteries-sensors-notification)
 - [Office Light](#office-light)
 - [Closet Light](#closet-light)
 - [Garden Winter & Spring Prep](#garden-winter--spring-prep)
+
+## Low Batteries Sensors Notification ##
+This automation checks every day the level of the sensor battery. If the percentage is below 20%, Node-Red will send a notification. 
+These 6 nodes permit to avoid creating one automation for each sensor.
+
+The code: ![[Low Batteries Sensors Notification Json](LowBatteriesSensorsNotification.json)
+
+![[Low Batteries Sensors Notification Graph](LowBatteriesSensorsNotification.png)
 
 ## Office Light ##
 My office lights are control by a motion sensor (Aqara) and Home Assistant (HA) Mac App activity sensor. 
