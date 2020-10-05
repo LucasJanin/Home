@@ -12,7 +12,7 @@ Thanks
 - [Closet Light](#closet-light)
 - [Garden Winter & Spring Prep](#garden-winter--spring-prep)
 
----
+
 ## Low Batteries Sensors Notification ##
 This automation checks every day the level of the sensor battery. If the percentage is below 20%, Node-Red will send a notification.
 These 6 nodes permit to avoid creating one automation for each sensor.
@@ -21,7 +21,6 @@ The code: ![Low Batteries Sensors Notification Json](lowBatteriesSensorsNotifica
 
 ![Low Batteries Sensors Notification Graph](lowBatteriesSensorsNotification.png)
 
----
 ## Office Light ##
 My office lights are control by a motion sensor (Aqara) and Home Assistant (HA) Mac App activity sensor.
 In the case of usage of my webcam (Zoom, Skype,..), my Aurora light is less saturated colour. When the webcam finishes being used, the Aurora light is back to saturated.
@@ -69,7 +68,6 @@ The code: ![Closet Light Json](closetLight.json)
 
 ![Closet Light Graph](closetLight.png)
 
----
 ## Garden Winter & Spring Prep ##
 
 Yes  Winter is coming! :-).
