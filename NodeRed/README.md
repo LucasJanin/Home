@@ -34,6 +34,7 @@ In the case of usage of my webcam (Zoom, Skype,..), my Aurora light is less satu
 - [x] Add an input boolean for turn off automation from HA, HomeKit and Siri
 - [x] Add illumination to the automation. If illumination is over 50 lux, the light isn't turn on
 - [ ] Control an On-Air light outside of the office base mic usage on the computer
+- [ ] Add variable for set illumination trigger value
 
 Insert in the configuration.yaml
 ```yml
