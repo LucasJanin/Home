@@ -1,0 +1,220 @@
+[
+    {
+        "id": "f410806d.44667",
+        "type": "api-call-service",
+        "z": "a9c3b74b.7a3168",
+        "name": "Notification: Internet Connexion Issue",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "notify",
+        "service": "mobile_app_iphone",
+        "entityId": "",
+        "data": "{}",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 1310,
+        "y": 760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ee2340db.83e7e",
+        "type": "function",
+        "z": "a9c3b74b.7a3168",
+        "name": "Prep Notification",
+        "func": "msg.payload = \n{\n  \"data\": \n  {\n    \"title\": \"Internet Connexion Issue\",  \n    \"message\": msg.notification,\n    \"data\": {\n        \"apns_headers\": {\n            \"apns-collapse-id\": \"internet-connexion-issue\"\n        }\n    }\n  }\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1030,
+        "y": 760,
+        "wires": [
+            [
+                "f410806d.44667"
+            ]
+        ]
+    },
+    {
+        "id": "a5ce42fc.668888",
+        "type": "server-state-changed",
+        "z": "a9c3b74b.7a3168",
+        "name": "Speedtest",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "sensor.speedtest_(ping|download|upload)",
+        "entityidfiltertype": "regex",
+        "outputinitially": true,
+        "state_type": "num",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 240,
+        "y": 800,
+        "wires": [
+            [
+                "48a5a49f.a6f83c"
+            ]
+        ]
+    },
+    {
+        "id": "41997f63.01684",
+        "type": "debug",
+        "z": "a9c3b74b.7a3168",
+        "name": "debug",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 990,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "48a5a49f.a6f83c",
+        "type": "join",
+        "z": "a9c3b74b.7a3168",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 410,
+        "y": 800,
+        "wires": [
+            [
+                "2131e390.3f6134"
+            ]
+        ]
+    },
+    {
+        "id": "2131e390.3f6134",
+        "type": "function",
+        "z": "a9c3b74b.7a3168",
+        "name": "",
+        "func": "// Set value base of your internet speed\nslowDownload = 50;\nslowUpload = 10;\nbadPing = 1000;\n\n// Set variable\ndownload = msg.payload[\"sensor.speedtest_download\"];\nupload = msg.payload[\"sensor.speedtest_upload\"];\nping = msg.payload[\"sensor.speedtest_ping\"];\n\n// Set notification\nif (download < slowDownload){\n    msg.notification = \"Download Speed is \" + download + \" Mbit/s\\n\";\n}\nelse {\n    msg.notification = \"\";\n}\nif (upload < slowUpload){\n    msg.notification += \"Upload Speed is \" + upload + \" Mbit/s\\n\";\n}\nelse {\n    msg.notification += \"\";\n}\nif (ping > badPing){\n    msg.notification += \"Ping is \" + ping/1000 + \" s\";\n}\nelse {\n    msg.notification += \"\";\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 620,
+        "y": 800,
+        "wires": [
+            [
+                "a9685b5d.520148"
+            ]
+        ]
+    },
+    {
+        "id": "5be01d18.0b331c",
+        "type": "inject",
+        "z": "a9c3b74b.7a3168",
+        "name": "debug",
+        "props": [
+            {
+                "p": "payload[\"sensor.speedtest_ping\"]",
+                "v": "10000",
+                "vt": "num"
+            },
+            {
+                "p": "payload[\"sensor.speedtest_download\"]",
+                "v": "30",
+                "vt": "num"
+            },
+            {
+                "p": "payload[\"sensor.speedtest_upload\"]",
+                "v": "5",
+                "vt": "num"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 410,
+        "y": 720,
+        "wires": [
+            [
+                "2131e390.3f6134"
+            ]
+        ]
+    },
+    {
+        "id": "a9685b5d.520148",
+        "type": "switch",
+        "z": "a9c3b74b.7a3168",
+        "name": "",
+        "property": "notification",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nempty"
+            },
+            {
+                "t": "empty"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 790,
+        "y": 800,
+        "wires": [
+            [
+                "ee2340db.83e7e",
+                "41997f63.01684"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "31f480d3.0e3b28",
+        "type": "server",
+        "z": "",
+        "name": "Home Assistant",
+        "legacy": false,
+        "hassio": false,
+        "rejectUnauthorizedCerts": false,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true
+    }
+]

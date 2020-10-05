@@ -8,6 +8,7 @@ Thanks
 
 ### There is the list of my current flows ###
 - [Low Batteries Sensors Notification](#low-batteries-sensors-notification)
+- [Internet Connexion Issue Notification]("internet-connexion-issue-notification")
 - [Office Light](#office-light)
 - [Closet Light](#closet-light)
 - [Garden Winter & Spring Prep](#garden-winter--spring-prep)
@@ -24,6 +25,20 @@ These 8 nodes permit to avoid creating one automation for each sensor.
 The code: ![Low Batteries Sensors Notification Json](lowBatteriesSensorsNotification.json)
 
 ![Low Batteries Sensors Notification Graph](lowBatteriesSensorsNotification.png)
+
+## Internet Connexion Issue Notification ##
+This automation checks after every SpeedTest done by Home Assistant SpeedTest integration.
+- [x] If the download speed is below a value
+- [x] If the upload speed is below a value
+- [x] If the ping is over a value
+- [x] In case of issue a iOS notification is send
+- [x] With 'apns-collapse-id' the new notification will be replace the old one
+
+![Internet Connexion Issue  Notification iOS](internetConnexionIssueNotification_ios.png)
+
+The code: ![Internet Connexion Issue Notification Json](internetConnexionIssueNotification.json)
+
+![Internet Connexion Issue Notification Graph](internetConnexionIssueNotification.png)
 
 ## Office Light ##
 My office lights are control by a motion sensor (Aqara) and Home Assistant (HA) Mac App activity sensor.
