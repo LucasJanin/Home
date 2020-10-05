@@ -44,7 +44,6 @@ The code: ![Office Light Json](officeLight.json)
 
 ![Office Light Graph](officeLight.png)
 
----
 ## Closet Light ##
 
 One of my first automation was to control the light of my closet with the door sensor (Aqara).
