@@ -1,6 +1,6 @@
 [
     {
-        "id": "41e90322.53f6a4",
+        "id": "8ca4e8d2.84ae3",
         "type": "inject",
         "z": "a9c3b74b.7a3168",
         "name": "",
@@ -20,37 +20,118 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 150,
-        "y": 3240,
+        "x": 210,
+        "y": 160,
         "wires": [
             [
-                "749943.74b64ebc"
+                "51bb149.aa40a6c"
             ]
         ]
     },
     {
-        "id": "323b255f.4305b2",
+        "id": "57dcc0ab.32cfd8",
+        "type": "api-call-service",
+        "z": "a9c3b74b.7a3168",
+        "name": "Notification: Low battery Warning",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "notify",
+        "service": "mobile_app_travelroom",
+        "entityId": "",
+        "data": "{}",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 1740,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e42f9b8e.45e3a",
+        "type": "function",
+        "z": "a9c3b74b.7a3168",
+        "name": "Prep Notification",
+        "func": "msg.payload = \n{\n  \"data\": \n  {\n    \"title\": \"Low battery Warning\",  \n    \"message\": msg.payload\n  }\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1470,
+        "y": 100,
+        "wires": [
+            [
+                "57dcc0ab.32cfd8"
+            ]
+        ]
+    },
+    {
+        "id": "5eb6b271.52402c",
         "type": "debug",
         "z": "a9c3b74b.7a3168",
         "name": "Low battery Warning",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
+        "complete": "true",
+        "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1020,
-        "y": 3280,
+        "x": 1480,
+        "y": 220,
         "wires": []
     },
     {
-        "id": "749943.74b64ebc",
+        "id": "f667d0b2.2f4b18",
+        "type": "sort",
+        "z": "a9c3b74b.7a3168",
+        "name": "Sort by battery level",
+        "order": "ascending",
+        "as_num": false,
+        "target": "",
+        "targetType": "seq",
+        "msgKey": "",
+        "msgKeyType": "elem",
+        "seqKey": "payload.state",
+        "seqKeyType": "msg",
+        "x": 860,
+        "y": 160,
+        "wires": [
+            [
+                "ce46c9e.8e8ac38"
+            ]
+        ]
+    },
+    {
+        "id": "a57739fe.7143a",
+        "type": "split",
+        "z": "a9c3b74b.7a3168",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 670,
+        "y": 160,
+        "wires": [
+            [
+                "f667d0b2.2f4b18"
+            ]
+        ]
+    },
+    {
+        "id": "51bb149.aa40a6c",
         "type": "ha-get-entities",
         "z": "a9c3b74b.7a3168",
         "server": "31f480d3.0e3b28",
-        "name": "",
+        "name": "Sensors battery lower than 20%",
         "rules": [
             {
                 "property": "attributes.device_class",
@@ -59,9 +140,9 @@
                 "valueType": "str"
             },
             {
-                "property": "state",
+                "property": "attributes.battery",
                 "logic": "lte",
-                "value": "99",
+                "value": "20",
                 "valueType": "num"
             },
             {
@@ -71,43 +152,24 @@
                 "valueType": "re"
             }
         ],
-        "output_type": "split",
+        "output_type": "array",
         "output_empty_results": false,
         "output_location_type": "msg",
         "output_location": "payload",
         "output_results_count": 1,
-        "x": 330,
-        "y": 3240,
+        "x": 450,
+        "y": 160,
         "wires": [
             [
-                "bdda15e1.35568"
+                "a57739fe.7143a"
             ]
         ]
     },
     {
-        "id": "bdda15e1.35568",
-        "type": "template",
-        "z": "a9c3b74b.7a3168",
-        "name": "Battery msg",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "{{payload.attributes.friendly_name}} at {{payload.attributes.battery}}%",
-        "output": "str",
-        "x": 530,
-        "y": 3240,
-        "wires": [
-            [
-                "c1bae13f.c00048"
-            ]
-        ]
-    },
-    {
-        "id": "c1bae13f.c00048",
+        "id": "f6ba2a6b.4dfa3",
         "type": "join",
         "z": "a9c3b74b.7a3168",
-        "name": "combine msgs",
+        "name": "",
         "mode": "custom",
         "build": "string",
         "property": "payload",
@@ -123,53 +185,30 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 740,
-        "y": 3240,
+        "x": 1250,
+        "y": 160,
         "wires": [
             [
-                "323b255f.4305b2",
-                "3dddc336.a7f93c"
+                "5eb6b271.52402c",
+                "e42f9b8e.45e3a"
             ]
         ]
     },
     {
-        "id": "6a14caa0.58352c",
-        "type": "api-call-service",
-        "z": "a9c3b74b.7a3168",
-        "name": "Notification: Low battery Warning",
-        "server": "31f480d3.0e3b28",
-        "version": 1,
-        "debugenabled": false,
-        "service_domain": "notify",
-        "service": "mobile_app_phone",
-        "entityId": "",
-        "data": "{}",
-        "dataType": "json",
-        "mergecontext": "",
-        "output_location": "payload",
-        "output_location_type": "msg",
-        "mustacheAltTags": false,
-        "x": 1280,
-        "y": 3200,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "3dddc336.a7f93c",
+        "id": "ce46c9e.8e8ac38",
         "type": "function",
         "z": "a9c3b74b.7a3168",
-        "name": "Prep Notification",
-        "func": "msg.payload = \n{\n  \"data\": \n  {\n    \"title\": \"Low battery Warning\",  \n    \"message\": msg.payload\n  }\n}\nreturn msg;",
+        "name": "Prep message",
+        "func": "var sensor = msg.payload.attributes.friendly_name.replace(\" Battery\",\"\");\nmsg.payload = msg.payload.state + \"% for \" + sensor;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 1010,
-        "y": 3200,
+        "x": 1080,
+        "y": 160,
         "wires": [
             [
-                "6a14caa0.58352c"
+                "f6ba2a6b.4dfa3"
             ]
         ]
     },
