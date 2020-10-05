@@ -20,7 +20,7 @@ These 8 nodes permit to avoid creating one automation for each sensor.
 - [x] Add sorting message by ascending battery level
 - [x] Reformat message "battery" for "sensor"
 
-![Low Batteries Sensors Notification iOS](lowBatteriesSensorsNotification_ios.png)
+![Low Batteries Sensors Notification iOS](lowBatteriesSensorsNotification_ios.jpg)
 
 The code: ![Low Batteries Sensors Notification Json](lowBatteriesSensorsNotification.json)
 
@@ -34,7 +34,7 @@ This automation checks after every SpeedTest done by Home Assistant SpeedTest in
 - [x] In case of issue a iOS notification is send
 - [x] With 'apns-collapse-id' the new notification will be replace the old one
 
-![Internet Connexion Issue  Notification iOS](internetConnexionIssueNotification_ios.png)
+![Internet Connexion Issue  Notification iOS](internetConnexionIssueNotification_ios.jpg)
 
 The code: ![Internet Connexion Issue Notification Json](internetConnexionIssueNotification.json)
 
