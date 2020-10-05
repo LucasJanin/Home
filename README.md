@@ -7,9 +7,9 @@ The main system is a Synology NAS DS918+ with many Docker containers:
 - [Node Red](https://registry.hub.docker.com/r/nodered/node-red/) : Advanced automation with node graph (like Houdini for vfx people :-)
 - [Mosquito](https://registry.hub.docker.com/_/eclipse-mosquitto/) : Mqtt server for connect Home Assistant to Zigbee2mqtt
 - [Zigbee2mqtt](https://registry.hub.docker.com/r/koenkk/zigbee2mqtt/) : Control my Zigbee devices (Aqara and Ikea for now)
-- [Unifi](https://registry.hub.docker.com/r/jacobalberty/unifi/) : Controller to my Unifi network gears (router, switch and Access point) use for presence detection
+- [Unifi](https://registry.hub.docker.com/r/jacobalberty/unifi/) : Controller to my Unifi network gears (router, switch and Access point) use for presence detection in HA
 - [InfluxDB](https://registry.hub.docker.com/_/influxdb/) : Long term storage of my Home Assistant data
-- [Pi-Hole](https://registry.hub.docker.com/r/pihole/pihole/) : DNS filters advertising and trackers
+- [Pi-Hole](https://registry.hub.docker.com/r/pihole/pihole/) : DNS filters for blocking advertisings and trackers
 - [Grafana](https://registry.hub.docker.com/r/grafana/grafana/) : Graphic of my Home Assistant data
 - [Watchtower](https://registry.hub.docker.com/r/containrrr/watchtower/) : Automatic update all my docker containers
 

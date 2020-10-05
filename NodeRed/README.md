@@ -1,15 +1,18 @@
 # Node-Red Automations #
 
-All my simples automation are done in Home Assistant. But when it needs to be more complex, I'm using Node-Red.
-This application permits to build a graph very visual, close to Houdini, the VFX program I'm using for my work.
+All my simples automation are done in Home Assistant. But when it needs to be more complex, I'm using Node-Red. This application permits to build a graph very visual, close to Houdini, the VFX program I'm using for my work.
 
-I decided to share my code to give some ideas or for maybe help some users
+I decided to share my code to give some ideas or for maybe help some users. I don't have years of Node-Red experience, so I'm sure it possible to get better graph. Feel free to share your tips.
 
+Thanks
+
+### There is the list of my current flows ###
 - [Low Batteries Sensors Notification](#low-batteries-sensors-notification)
 - [Office Light](#office-light)
 - [Closet Light](#closet-light)
 - [Garden Winter & Spring Prep](#garden-winter--spring-prep)
 
+---
 ## Low Batteries Sensors Notification ##
 This automation checks every day the level of the sensor battery. If the percentage is below 20%, Node-Red will send a notification.
 These 6 nodes permit to avoid creating one automation for each sensor.
@@ -18,6 +21,7 @@ The code: ![Low Batteries Sensors Notification Json](lowBatteriesSensorsNotifica
 
 ![Low Batteries Sensors Notification Graph](lowBatteriesSensorsNotification.png)
 
+---
 ## Office Light ##
 My office lights are control by a motion sensor (Aqara) and Home Assistant (HA) Mac App activity sensor.
 In the case of usage of my webcam (Zoom, Skype,..), my Aurora light is less saturated colour. When the webcam finishes being used, the Aurora light is back to saturated.
@@ -41,7 +45,7 @@ The code: ![Office Light Json](officeLight.json)
 
 ![Office Light Graph](officeLight.png)
 
-
+---
 ## Closet Light ##
 
 One of my first automation was to control the light of my closet with the door sensor (Aqara).
@@ -65,24 +69,14 @@ The code: ![Closet Light Json](closetLight.json)
 
 ![Closet Light Graph](closetLight.png)
 
-
+---
 ## Garden Winter & Spring Prep ##
 
 Yes  Winter is coming! :-).
 I'm living in Quebec/Canada so winters are very cold.
-The garden needs to be prepared for winter and spring too.
--[x] Winter is trigger if the Celsius temperature go negative the next  5 days (using dark sky integration)
--[x] Sprint is triggered if the temperature didn't go negative the last 20 days (using long storage data in InfluxDB)
-
-### Winter ###
-- Watering hose needs to be removed (empty and store inside)
-- Some plates go inside the house to survive
-- Stair-rubbers are installed
-
-### Spring ###
-- Watering hose need to be install
-- Some plates go outside
-- Stair-rubbers are removed
+The garden needs to be prepared for winter (watering hose, stair-rubbers,...) and spring too.
+- [x] Winter is trigger if the Celsius temperature go negative the next  5 days (using dark sky integration)
+- [x] Sprint is triggered if the temperature didn't go negative the last 20 days (using long storage data in InfluxDB)
 
 Insert in the configuration.yaml
 ```yml
