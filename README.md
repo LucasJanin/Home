@@ -9,7 +9,7 @@ The main system is a Synology NAS DS918+ with many Docker containers:
 - [Zigbee2mqtt](https://registry.hub.docker.com/r/koenkk/zigbee2mqtt/) : Control my Zigbee devices (Aqara and Ikea for now)
 - [Unifi](https://registry.hub.docker.com/r/jacobalberty/unifi/) : Controller to my Unifi network gears (router, switch and Access point) use for presence detection
 - [InfluxDB](https://registry.hub.docker.com/_/influxdb/) : Long term storage of my Home Assistant data
-- [Pi-Hole](https://registry.hub.docker.com/r/pihole/pihole/) : DNS filter ad and tracker
+- [Pi-Hole](https://registry.hub.docker.com/r/pihole/pihole/) : DNS filters advertising and trackers
 - [Grafana](https://registry.hub.docker.com/r/grafana/grafana/) : Graphic of my Home Assistant data
 - [Watchtower](https://registry.hub.docker.com/r/containrrr/watchtower/) : Automatic update all my docker containers
 
@@ -30,7 +30,7 @@ The main system is a Synology NAS DS918+ with many Docker containers:
 - Zigbee USB Dongle with USB extension cable for extended range
 - Remote Synology DS219j for offsite backup over VPN (Thanks Max)
 
-### IoT ### 
+### IoT ###
 - 4 Aqara door and window sensor sensors
 - 4 Aqara temperature and humidity sensors
 - 4 Aqara water Leak sensors
@@ -48,4 +48,3 @@ The main system is a Synology NAS DS918+ with many Docker containers:
 - 1 Homepod
 - 1 Sonos play:5
 - 3 Sonos SL  
-  
