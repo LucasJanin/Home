@@ -1,4 +1,4 @@
-# Node-Red Automations #
+# Node-Red #
 
 All my simples automation are done in Home Assistant. But when it needs to be more complex, I'm using Node-Red. This application permits to build a graph very visual, close to Houdini, the VFX program I'm using for my work.
 
@@ -8,10 +8,10 @@ Thanks
 
 
 ## Automations ##
-- [Office Light](Automations/officeLight.md)
-- [Closet Light](Automations/closetLight.md)
-- [Garden Winter & Spring Prep](Automations/gardenWinterSpringPrep.md)
+- [Office Light](Automations/officeLight)
+- [Closet Light](Automations/closetLight)
+- [Garden Winter & Spring Prep](Automations/gardenWinterSpringPrep)
 
 ## Notifications ##
-- [Low Batteries Sensors Notification](Notifications/lowBatteriesSensorsNotification.md)
-- [Internet Connexion Issue Notification](Notifications/internet-connexion-issue-notification.md)
+- [Low Batteries Sensors Notification](Notifications/lowBatteriesSensorsNotification)
+- [Internet Connexion Issue Notification](Notifications/internet-connexion-issue-notification)
