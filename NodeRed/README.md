@@ -13,7 +13,7 @@ Thanks
 - [Garden Winter & Spring Prep](Automations/gardenWinterSpringPrep)
 
 ## Notifications ##
-openDoorNotification
+
 - [Open Door Notification](Notifications/openDoorNotification)
 - [Low Batteries Sensors Notification](Notifications/lowBatteriesSensorsNotification)
 - [Internet Connexion Issue Notification](Notifications/internet-connexion-issue-notification)
