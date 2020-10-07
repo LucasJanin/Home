@@ -8,12 +8,15 @@ Thanks
 
 
 ## Automations ##
+
 - [Office Light](Automations/officeLight)
 - [Closet Light](Automations/closetLight)
 - [Garden Winter & Spring Prep](Automations/gardenWinterSpringPrep)
+
 
 ## Notifications ##
 
 - [Open Door Notification](Notifications/openDoorNotification)
 - [Low Batteries Sensors Notification](Notifications/lowBatteriesSensorsNotification)
-- [Internet Connexion Issue Notification](Notifications/internet-connexion-issue-notification)
+- [Internet Connexion Issue Notification](Notifications/internetConnexionIssueNotification)
+- [Zigbee2mqtt Device Update Available Notification](Notifications/zigbee2mqttDeviceUpdateAvailableNotification)

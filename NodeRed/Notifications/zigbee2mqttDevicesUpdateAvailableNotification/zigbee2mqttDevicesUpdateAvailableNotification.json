@@ -1,0 +1,200 @@
+[
+    {
+        "id": "8c47b097.f401a8",
+        "type": "inject",
+        "z": "a9c3b74b.7a3168",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "86400",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 400,
+        "wires": [
+            [
+                "cbb67896.cce7e8"
+            ]
+        ]
+    },
+    {
+        "id": "cbb67896.cce7e8",
+        "type": "ha-get-entities",
+        "z": "a9c3b74b.7a3168",
+        "server": "31f480d3.0e3b28",
+        "name": "zigbee2mqtt update available",
+        "rules": [
+            {
+                "property": "entity_id",
+                "logic": "is",
+                "value": "binary_sensor\\.[a-zA-Z_]+_update_available",
+                "valueType": "re"
+            },
+            {
+                "property": "state",
+                "logic": "is",
+                "value": "on",
+                "valueType": "str"
+            }
+        ],
+        "output_type": "array",
+        "output_empty_results": false,
+        "output_location_type": "msg",
+        "output_location": "payload",
+        "output_results_count": 1,
+        "x": 430,
+        "y": 400,
+        "wires": [
+            [
+                "e22fa7ca.a16ed"
+            ]
+        ]
+    },
+    {
+        "id": "52dbf285.b1377c",
+        "type": "debug",
+        "z": "a9c3b74b.7a3168",
+        "name": "zigbee2mqtt update available",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1510,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "e22fa7ca.a16ed",
+        "type": "split",
+        "z": "a9c3b74b.7a3168",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 670,
+        "y": 400,
+        "wires": [
+            [
+                "5bcbf43c.cfb44c"
+            ]
+        ]
+    },
+    {
+        "id": "674e10e6.389fd",
+        "type": "join",
+        "z": "a9c3b74b.7a3168",
+        "name": "",
+        "mode": "custom",
+        "build": "string",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1250,
+        "y": 400,
+        "wires": [
+            [
+                "52dbf285.b1377c",
+                "2d2ad14e.9b957e"
+            ]
+        ]
+    },
+    {
+        "id": "5bcbf43c.cfb44c",
+        "type": "function",
+        "z": "a9c3b74b.7a3168",
+        "name": "Prep message",
+        "func": "var sensor = msg.payload.attributes.friendly_name.replace(\" Update Available\",\"\");\nmsg.payload = sensor;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1080,
+        "y": 400,
+        "wires": [
+            [
+                "674e10e6.389fd"
+            ]
+        ]
+    },
+    {
+        "id": "3188470d.b66858",
+        "type": "api-call-service",
+        "z": "a9c3b74b.7a3168",
+        "name": "Notification: Zigbee2mqtt Update Available",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "notify",
+        "service": "mobile_app_travelroom",
+        "entityId": "",
+        "data": "{}",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 1770,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2d2ad14e.9b957e",
+        "type": "function",
+        "z": "a9c3b74b.7a3168",
+        "name": "Prep Notification",
+        "func": "msg.payload = \n{\n  \"data\": \n  {\n    \"title\": \"Zigbee2mqtt Update Available\",  \n    \"message\": msg.payload\n  }\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1470,
+        "y": 340,
+        "wires": [
+            [
+                "3188470d.b66858"
+            ]
+        ]
+    },
+    {
+        "id": "31f480d3.0e3b28",
+        "type": "server",
+        "z": "",
+        "name": "Home Assistant",
+        "legacy": false,
+        "hassio": false,
+        "rejectUnauthorizedCerts": false,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true
+    }
+]
