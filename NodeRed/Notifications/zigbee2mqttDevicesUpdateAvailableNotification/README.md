@@ -1,4 +1,4 @@
-# Zigbee2mqtt Device Update Available Notification #
+# Zigbee2mqtt Devices Update Available Notification #
 
 This very simple automation checks every day if Zigbee2mqtt devices have an update available and send an notification grouped in case is needed.
 

@@ -19,4 +19,4 @@ Thanks
 - [Open Door Notification](Notifications/openDoorNotification)
 - [Low Batteries Sensors Notification](Notifications/lowBatteriesSensorsNotification)
 - [Internet Connexion Issue Notification](Notifications/internetConnexionIssueNotification)
-- [Zigbee2mqtt Device Update Available Notification](Notifications/zigbee2mqttDeviceUpdateAvailableNotification)
+- [Zigbee2mqtt Device Update Available Notification](Notifications/zigbee2mqttDevicesUpdateAvailableNotification)
