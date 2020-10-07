@@ -1,6 +1,6 @@
 # Internet Connexion Issue Notification #
 
-This automation checks after every SpeedTest done by Home Assistant SpeedTest integration.
+This automation checks the internet connexion potential issue after every SpeedTest (using Home Assistant SpeedTest integration).
 - [x] If the download speed is below a value
 - [x] If the upload speed is below a value
 - [x] If the ping is over a value

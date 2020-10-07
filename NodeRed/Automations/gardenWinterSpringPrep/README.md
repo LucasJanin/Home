@@ -1,6 +1,6 @@
 # Garden Winter & Spring Prep #
 
-Yes  Winter is coming! :-).
+Winter is coming! :-).
 I'm living in Quebec/Canada so winters are very cold.
 The garden needs to be prepared for winter (watering hose, stair-rubbers,...) and spring too.
 - [x] Winter is trigger if the Celsius temperature go negative the next  5 days (using dark sky integration)
