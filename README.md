@@ -1,5 +1,5 @@
 # Home
-After months working deferents components of my homelab (software and hardware), I decide to share my system.
+After months working on different components of my homelab (software and hardware), I decide to share my system.
 
 The brain of the system is a Synology NAS DS918+ with many Docker containers:
 
