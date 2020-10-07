@@ -1,5 +1,5 @@
 # Home
-After months working on different components of my homelab (software and hardware), I decide to share my system.
+After months of working on different components of my homelab (software and hardware), I decided to share my system.
 
 The brain of the system is a Synology NAS DS918+ with many Docker containers:
 
@@ -42,7 +42,7 @@ The brain of the system is a Synology NAS DS918+ with many Docker containers:
 - 1 Ikea TRADFRI ON/OFF switch
 - 1 Ecobee 4
 - 5 Nanoleaf Aurora
-- 3 Vocolink Smart Plug (not yet full integrated in HA)
+- 3 Vocolink Smart Plug (not yet fully integrated into HA)
 - 1 HP ENVY 4520 Printer
 
 ### Medias ###
