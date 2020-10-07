@@ -1,7 +1,7 @@
 # Home
 After months of working on different components of my homelab (software and hardware), I decided to share my system.
 
-The brain of the system is a Synology NAS DS918+ with many Docker containers:
+The brain of the system is a Synology NAS DS918+ with many different Docker containers:
 
 - [Home Assistant](https://registry.hub.docker.com/r/homeassistant/home-assistant) : Home automation connected to my devices
 - [Node Red](https://registry.hub.docker.com/r/nodered/node-red/) : Advanced automation with node graph (like Houdini for vfx people :-)
