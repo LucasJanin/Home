@@ -27,6 +27,7 @@ sensor.ymal
 ```
 
 The result in my dashboard
+
 ![Rounded Sensors Dashboard](roundedSensors.png)
 
 
