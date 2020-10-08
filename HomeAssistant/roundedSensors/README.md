@@ -1,4 +1,4 @@
-# Rounded sensors
+# Rounded Sensors
 
 Aqara sensors are delivery temperature and humidity data with too many decimals. For better readability in the Home Assistant's badges, I prefer to use rounded values. By default, HA doesn't permit us to do it via the interface.
 
