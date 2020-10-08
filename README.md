@@ -17,7 +17,9 @@ The brain of the system is a Synology NAS DS918+ with many different Docker cont
 ## Some of my configurations and automations ##
 
 - [Node Red](NodeRed) : Some of my automations
+- [Home Assistant](HomeAssistant) : Some tips
 - [Watchtower](Watchtower) : My configuration
+
 
 ## Hardware ##
 ### Homelab ###
