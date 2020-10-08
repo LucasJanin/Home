@@ -11,4 +11,4 @@ After months of working on different components of my home lab (software and har
 ## The components ##
 
 - [Software](software.md)
-- [Hardware](Hardware.md)
+- [Hardware](hardware.md)
