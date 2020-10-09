@@ -4,7 +4,7 @@ Aqara sensors are delivery temperature and humidity data with too many decimals.
 
 I used the platform template for creating new sensors.
 
-sensor.ymal
+sensor.yaml
 ```yml
 # rounded temperature sensors
 - platform: template
@@ -30,8 +30,20 @@ The result in my dashboard
 
 ![Rounded Sensors Dashboard](roundedSensors.png)
 
+I used the same methodology to cleanup, my Speedtest and Synology sensors.
 
-If you are using InfluxDB for long term data storage, don't forget to exclude this new rounded sensors.
+This rounded sensors aren't need to be recorded, so add this line in your "configuration.yaml".
+
+configuration.yaml
+```yml
+recorder:
+  exclude:
+    entity_globs:
+     - sensor.*_round
+```
+
+
+Same exclusion if you are using InfluxDB for long term data storage.
 
 configuration.yaml
 ```yml
