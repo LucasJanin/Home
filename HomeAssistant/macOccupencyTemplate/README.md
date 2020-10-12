@@ -1,19 +1,19 @@
 # Mac Occupancy Template#
 
-I'm using the [Home Assistant Mac App](https://www.home-assistant.io/blog/2020/09/18/mac-companion/). I love to use the active, facetime camera and mic sensor for my automation. Unfortunately for now the current sensors don't permit to know if the Mac connected over ethernet cable.
+I'm using the [Home Assistant Mac App](https://www.home-assistant.io/blog/2020/09/18/mac-companion/). I love to use the active, facetime camera, and mic sensor for my automation. Unfortunately for now, the current sensors don't permit to know if the Mac connected over ethernet cable.
 
 This information can permit HA to know if the laptop is used in the office or not.
 For example, turn on the light office if mac is active and connected on ethernet.
 
-So I deciced to play with the template and the unifi sensor fr mac mac for achive this target.
+So I decided to play with the template and the unifi sensor of the mac to achieve this target.
 
-The template sensor have 4 states:
+The template sensor has 4 states:
 - Office: Mac active and connected over ethernet
-- Home: Mac active and connected of home wifi
-- Offsite: Mac active and connected outside of home
+- Home: Mac active and connected to home wifi
+- Offsite: Mac active and connected outside of the home
 - Off: Mac not active
 
-It's not perfect due to a daly of the unifi sensor to find the Mac isn't connected by ethernet. Ideally, the Mac app companion will have a [ethernet sensor](https://github.com/home-assistant/iOS/issues/1184).
+It's not perfect due to a delay of the unifi sensor to find the Mac isn't connected by ethernet. Ideally, the Mac app companion will have a [ethernet sensor](https://github.com/home-assistant/iOS/issues/1184).
 
 
 ![Mac Occupancy TemplateLovelace](macOccupancyTemplateLovelace.png)
