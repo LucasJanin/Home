@@ -1,4 +1,4 @@
-# Mac Occupancy Template#
+# Mac Occupancy Template #
 
 I'm using the [Home Assistant Mac App](https://www.home-assistant.io/blog/2020/09/18/mac-companion/). I love to use the active, facetime camera, and mic sensor for my automation. Unfortunately for now, the current sensors don't permit to know if the Mac connected over ethernet cable.
 
