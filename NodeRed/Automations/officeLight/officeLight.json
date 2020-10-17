@@ -16,61 +16,10 @@
         "output_location": "payload",
         "output_location_type": "msg",
         "mustacheAltTags": false,
-        "x": 1910,
+        "x": 2290,
         "y": 1260,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "7bdc2a95.d41344",
-        "type": "inject",
-        "z": "89f58b06.2d98f",
-        "name": "On",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 1290,
-        "y": 1500,
-        "wires": [
-            [
-                "84e9bfb4.4395a8",
-                "a0bb7b10.d89d58"
-            ]
-        ]
-    },
-    {
-        "id": "6a3978e9.614b28",
-        "type": "inject",
-        "z": "89f58b06.2d98f",
-        "name": "",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "off",
-        "payloadType": "str",
-        "x": 1530,
-        "y": 2080,
-        "wires": [
-            [
-                "a6cc5350.49c758",
-                "8d243391.eec0e8"
-            ]
         ]
     },
     {
@@ -90,8 +39,8 @@
         "output_location": "payload",
         "output_location_type": "msg",
         "mustacheAltTags": false,
-        "x": 1910,
-        "y": 1860,
+        "x": 2310,
+        "y": 1980,
         "wires": [
             []
         ]
@@ -123,7 +72,7 @@
         "halt_if_compare": "is",
         "outputs": 2,
         "output_only_on_state_change": true,
-        "x": 200,
+        "x": 220,
         "y": 1760,
         "wires": [
             [
@@ -151,7 +100,7 @@
         "output_location": "payload",
         "output_location_type": "msg",
         "mustacheAltTags": false,
-        "x": 1900,
+        "x": 2280,
         "y": 1460,
         "wires": [
             []
@@ -184,7 +133,7 @@
         "halt_if_compare": "is",
         "outputs": 2,
         "output_only_on_state_change": true,
-        "x": 200,
+        "x": 220,
         "y": 1500,
         "wires": [
             [
@@ -212,8 +161,8 @@
         "output_location": "payload",
         "output_location_type": "msg",
         "mustacheAltTags": false,
-        "x": 1900,
-        "y": 1740,
+        "x": 2300,
+        "y": 1820,
         "wires": [
             []
         ]
@@ -245,7 +194,7 @@
         "halt_if_compare": "is",
         "outputs": 2,
         "output_only_on_state_change": true,
-        "x": 200,
+        "x": 220,
         "y": 1260,
         "wires": [
             [
@@ -282,7 +231,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1560,
+        "x": 1940,
         "y": 1200,
         "wires": [
             [
@@ -316,40 +265,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1560,
+        "x": 1940,
         "y": 1320,
         "wires": [
             [
                 "9ec4d83a.2a29e8"
-            ]
-        ]
-    },
-    {
-        "id": "bc71aab6.83d378",
-        "type": "inject",
-        "z": "89f58b06.2d98f",
-        "name": "Facetime",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 1120,
-        "y": 1100,
-        "wires": [
-            [
-                "5515871c.640cd"
             ]
         ]
     },
@@ -369,7 +289,7 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 1430,
+        "x": 1810,
         "y": 1600,
         "wires": [
             [
@@ -397,7 +317,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 1140,
+        "x": 1520,
         "y": 1600,
         "wires": [
             [
@@ -425,7 +345,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 1120,
+        "x": 1520,
         "y": 1820,
         "wires": [
             [
@@ -433,21 +353,6 @@
                 "8d243391.eec0e8"
             ],
             []
-        ]
-    },
-    {
-        "id": "2ef8d663.15370a",
-        "type": "merge",
-        "z": "89f58b06.2d98f",
-        "name": "",
-        "timeout": "",
-        "x": 1290,
-        "y": 1440,
-        "wires": [
-            [
-                "a0bb7b10.d89d58",
-                "84e9bfb4.4395a8"
-            ]
         ]
     },
     {
@@ -469,13 +374,11 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 500,
+        "x": 540,
         "y": 1200,
         "wires": [
             [
-                "5515871c.640cd",
-                "84e9bfb4.4395a8",
-                "fcd69076.bccbb8"
+                "83d858ee.38e1b8"
             ],
             []
         ]
@@ -499,11 +402,11 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 500,
+        "x": 540,
         "y": 1320,
         "wires": [
             [
-                "145be3ba.e65044"
+                "2ed7ef44.5137d"
             ],
             []
         ]
@@ -527,11 +430,11 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 500,
+        "x": 540,
         "y": 1440,
         "wires": [
             [
-                "bc818696.bc0708"
+                "cde267e4.aa1078"
             ],
             []
         ]
@@ -555,7 +458,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 500,
+        "x": 540,
         "y": 1820,
         "wires": [
             [
@@ -583,7 +486,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 500,
+        "x": 540,
         "y": 1720,
         "wires": [
             [
@@ -611,11 +514,11 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 500,
+        "x": 540,
         "y": 1560,
         "wires": [
             [
-                "fe95d31a.f72358"
+                "e237741a.901e7"
             ],
             []
         ]
@@ -639,12 +542,12 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 800,
+        "x": 1220,
         "y": 1440,
         "wires": [
             [
-                "2ef8d663.15370a",
-                "22a6b5b9.9db502"
+                "22a6b5b9.9db502",
+                "2ef8d663.15370a"
             ],
             []
         ]
@@ -668,7 +571,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 800,
+        "x": 1220,
         "y": 1320,
         "wires": [
             [
@@ -698,12 +601,12 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 800,
+        "x": 1220,
         "y": 1720,
         "wires": [
             [
-                "2ef8d663.15370a",
-                "22a6b5b9.9db502"
+                "22a6b5b9.9db502",
+                "2ef8d663.15370a"
             ],
             []
         ]
@@ -727,7 +630,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1140,
+        "x": 1540,
         "y": 1720,
         "wires": [
             [
@@ -762,7 +665,15 @@
         "halt_if_compare": "is",
         "outputs": 2,
         "output_only_on_state_change": true,
-        "x": 180,
+        "for": "",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "x": 200,
         "y": 1980,
         "wires": [
             [
@@ -790,7 +701,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 500,
+        "x": 540,
         "y": 1980,
         "wires": [
             [
@@ -807,7 +718,7 @@
         "links": [
             "fcd69076.bccbb8"
         ],
-        "x": 855,
+        "x": 1195,
         "y": 1640,
         "wires": [
             [
@@ -823,7 +734,7 @@
         "links": [
             "4738ba27.beca04"
         ],
-        "x": 735,
+        "x": 1155,
         "y": 1640,
         "wires": []
     },
@@ -846,7 +757,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 1150,
+        "x": 1550,
         "y": 1980,
         "wires": [
             [
@@ -857,12 +768,163 @@
         ]
     },
     {
+        "id": "83d858ee.38e1b8",
+        "type": "api-current-state",
+        "z": "89f58b06.2d98f",
+        "name": "darkroom ethernet",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "Ethernet",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "sensor.darkroom_occupancy",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 970,
+        "y": 1200,
+        "wires": [
+            [
+                "5515871c.640cd",
+                "84e9bfb4.4395a8",
+                "fcd69076.bccbb8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e237741a.901e7",
+        "type": "api-current-state",
+        "z": "89f58b06.2d98f",
+        "name": "darkroom ethernet",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "Ethernet",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "sensor.darkroom_occupancy",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 970,
+        "y": 1560,
+        "wires": [
+            [
+                "fe95d31a.f72358"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "479b63a.f3ea99c",
+        "type": "api-current-state",
+        "z": "89f58b06.2d98f",
+        "name": "darkroom ethernet",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "Ethernet",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "sensor.darkroom_occupancy",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 970,
+        "y": 1440,
+        "wires": [
+            [
+                "bc818696.bc0708"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "2ed7ef44.5137d",
+        "type": "api-current-state",
+        "z": "89f58b06.2d98f",
+        "name": "darkroom ethernet",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "Ethernet",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "sensor.darkroom_occupancy",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 970,
+        "y": 1320,
+        "wires": [
+            [
+                "145be3ba.e65044"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "2ef8d663.15370a",
+        "type": "merge",
+        "z": "89f58b06.2d98f",
+        "name": "",
+        "timeout": "",
+        "x": 1670,
+        "y": 1440,
+        "wires": [
+            [
+                "a0bb7b10.d89d58",
+                "84e9bfb4.4395a8"
+            ]
+        ]
+    },
+    {
+        "id": "cde267e4.aa1078",
+        "type": "delay",
+        "z": "89f58b06.2d98f",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 760,
+        "y": 1440,
+        "wires": [
+            [
+                "479b63a.f3ea99c"
+            ]
+        ]
+    },
+    {
         "id": "31f480d3.0e3b28",
         "type": "server",
         "z": "",
         "name": "Home Assistant",
         "legacy": false,
-        "hassio": false,
         "rejectUnauthorizedCerts": false,
         "ha_boolean": "y|yes|true|on|home|open",
         "connectionDelay": true,
