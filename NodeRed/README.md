@@ -18,6 +18,7 @@ Thanks
 
 ## Notifications ##
 
+- [Smart Notification Subflow](Notifications/smartNotificationSubflow)
 - [Open Door Notification](Notifications/openDoorNotification)
 - [Low Batteries Sensors Notification](Notifications/lowBatteriesSensorsNotification)
 - [Internet Connexion Issue Notification](Notifications/internetConnexionIssueNotification)
