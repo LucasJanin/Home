@@ -8,6 +8,14 @@ After months of working on different components of my home lab (software and har
 - [Home Assistant](HomeAssistant) : Some tips
 - [Watchtower](Watchtower) : My configuration
 
+## Future Projects ##
+
+- [Bed Occupancy Sensor](https://everythingsmarthome.co.uk/howto/building-a-bed-occupancy-sensor-for-home-assistant/) : Great tutorial by Everything Smart Home
+- Bed LED : Using WS2812B and Wemos D1 mini
+- Bathroom's fan : Control by humidity
+- Security Alarm : Using all the sensors available
+- Presence detection : Using HomeKit for better accuracy
+
 ## The components ##
 
 - [Software](software.md)
