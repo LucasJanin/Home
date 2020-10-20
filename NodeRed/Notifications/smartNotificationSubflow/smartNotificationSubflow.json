@@ -1,0 +1,1853 @@
+[
+    {
+        "id": "46cd6ec.68b501",
+        "type": "subflow",
+        "name": "Smart Notification Users",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 180,
+                "y": 400,
+                "wires": [
+                    {
+                        "id": "caecb729.ae1d98"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1380,
+                "y": 400,
+                "wires": [
+                    {
+                        "id": "31e5b8b1.bb579",
+                        "port": 0
+                    },
+                    {
+                        "id": "795686ac.981208",
+                        "port": 0
+                    },
+                    {
+                        "id": "ba0a4cc3.1bb26",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "SNU_USER1",
+                "type": "bool",
+                "value": "false",
+                "ui": {
+                    "icon": "font-awesome/fa-user",
+                    "label": {
+                        "en-US": "User1"
+                    },
+                    "type": "checkbox"
+                }
+            },
+            {
+                "name": "SNU_USER2",
+                "type": "bool",
+                "value": "false",
+                "ui": {
+                    "icon": "font-awesome/fa-user",
+                    "label": {
+                        "en-US": "user2"
+                    },
+                    "type": "checkbox"
+                }
+            },
+            {
+                "name": "SNU_USER3",
+                "type": "bool",
+                "value": "false",
+                "ui": {
+                    "icon": "font-awesome/fa-user",
+                    "label": {
+                        "en-US": "user3"
+                    },
+                    "type": "checkbox"
+                }
+            },
+            {
+                "name": "SNU_PRESENCE",
+                "type": "bool",
+                "value": "false",
+                "ui": {
+                    "label": {
+                        "en-US": "Presence"
+                    },
+                    "type": "checkbox"
+                }
+            },
+            {
+                "name": "SNU_TITLE",
+                "type": "str",
+                "value": "Title",
+                "ui": {
+                    "icon": "font-awesome/fa-text-height",
+                    "label": {
+                        "en-US": "Title"
+                    }
+                }
+            },
+            {
+                "name": "SNU_SUBTITLE",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "icon": "font-awesome/fa-text-width",
+                    "label": {
+                        "en-US": "Subtitle"
+                    }
+                }
+            },
+            {
+                "name": "SNU_MESSAGE",
+                "type": "str",
+                "value": "Message",
+                "ui": {
+                    "icon": "font-awesome/fa-align-left",
+                    "label": {
+                        "en-US": "Message"
+                    }
+                }
+            },
+            {
+                "name": "SNU_SOUND",
+                "type": "bool",
+                "value": "true",
+                "ui": {
+                    "label": {
+                        "en-US": "Sound"
+                    },
+                    "type": "checkbox"
+                }
+            },
+            {
+                "name": "SNU_CUSTOMSOUND",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "label": {
+                        "en-US": "Custom"
+                    }
+                }
+            },
+            {
+                "name": "SNU_CRITICAL",
+                "type": "bool",
+                "value": "false",
+                "ui": {
+                    "icon": "font-awesome/fa-bell-o",
+                    "label": {
+                        "en-US": "Critical"
+                    },
+                    "type": "checkbox"
+                }
+            },
+            {
+                "name": "SNU_VOLUME",
+                "type": "num",
+                "value": "1",
+                "ui": {
+                    "icon": "font-awesome/fa-volume-up",
+                    "label": {
+                        "en-US": "Volume"
+                    }
+                }
+            },
+            {
+                "name": "SNU_COLLAPSE",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "label": {
+                        "en-US": "Collapse"
+                    }
+                }
+            },
+            {
+                "name": "SNU_DEBUG",
+                "type": "bool",
+                "value": "false",
+                "ui": {
+                    "icon": "font-awesome/fa-bug",
+                    "label": {
+                        "en-US": "Debug"
+                    },
+                    "type": "checkbox"
+                }
+            }
+        ],
+        "color": "#59afff",
+        "icon": "node-red-contrib-home-assistant-websocket/router-wireless.png",
+        "status": {
+            "x": 1380,
+            "y": 600,
+            "wires": [
+                {
+                    "id": "3938e4ed.3bd614",
+                    "port": 0
+                }
+            ]
+        }
+    },
+    {
+        "id": "cf88124.bcb207",
+        "type": "switch",
+        "z": "46cd6ec.68b501",
+        "name": "User1",
+        "property": "notification.user1",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 670,
+        "y": 300,
+        "wires": [
+            [
+                "ebfe2f80.771fa",
+                "31e5b8b1.bb579"
+            ]
+        ]
+    },
+    {
+        "id": "31e5b8b1.bb579",
+        "type": "subflow:e11fd602.cb1c9",
+        "z": "46cd6ec.68b501",
+        "name": "",
+        "env": [
+            {
+                "name": "Person",
+                "value": "User1",
+                "type": "env"
+            },
+            {
+                "name": "Presence",
+                "value": "Presence",
+                "type": "env"
+            },
+            {
+                "name": "Title",
+                "value": "Title",
+                "type": "env"
+            },
+            {
+                "name": "Message",
+                "value": "Message",
+                "type": "env"
+            },
+            {
+                "name": "Sound",
+                "value": "Sound",
+                "type": "env"
+            },
+            {
+                "name": "CustomSound",
+                "value": "SoundCustom",
+                "type": "env"
+            },
+            {
+                "name": "Critical",
+                "value": "Critical",
+                "type": "env"
+            },
+            {
+                "name": "Volume",
+                "value": "Volume",
+                "type": "env"
+            },
+            {
+                "name": "Collapse",
+                "value": "Collapse",
+                "type": "env"
+            },
+            {
+                "name": "Debug",
+                "value": "Debug",
+                "type": "env"
+            }
+        ],
+        "x": 1050,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3938e4ed.3bd614",
+        "type": "status",
+        "z": "46cd6ec.68b501",
+        "name": "",
+        "scope": [
+            "31e5b8b1.bb579",
+            "795686ac.981208",
+            "ba0a4cc3.1bb26"
+        ],
+        "x": 1080,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4365e060.a83de8",
+        "type": "switch",
+        "z": "46cd6ec.68b501",
+        "name": "User2",
+        "property": "notification.user2",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 670,
+        "y": 400,
+        "wires": [
+            [
+                "79e909c3.ad3a68"
+            ]
+        ]
+    },
+    {
+        "id": "f4e72ca5.870908",
+        "type": "switch",
+        "z": "46cd6ec.68b501",
+        "name": "User3",
+        "property": "notification.user3",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 670,
+        "y": 500,
+        "wires": [
+            [
+                "58690189.b7cd7"
+            ]
+        ]
+    },
+    {
+        "id": "795686ac.981208",
+        "type": "subflow:e11fd602.cb1c9",
+        "z": "46cd6ec.68b501",
+        "name": "",
+        "env": [
+            {
+                "name": "SN_PERSON",
+                "value": "user2",
+                "type": "str"
+            },
+            {
+                "name": "SN_MOBILE",
+                "value": "iphone2",
+                "type": "str"
+            },
+            {
+                "name": "SN_COMPUTER",
+                "value": "mac2",
+                "type": "str"
+            },
+            {
+                "name": "Person",
+                "value": "User1",
+                "type": "env"
+            },
+            {
+                "name": "Mobile",
+                "value": "iphone2",
+                "type": "str"
+            },
+            {
+                "name": "Computer",
+                "value": "mac2",
+                "type": "str"
+            },
+            {
+                "name": "Presence",
+                "value": "Presence",
+                "type": "env"
+            },
+            {
+                "name": "Title",
+                "value": "Title",
+                "type": "env"
+            },
+            {
+                "name": "Message",
+                "value": "Message",
+                "type": "env"
+            },
+            {
+                "name": "Sound",
+                "value": "Sound",
+                "type": "env"
+            },
+            {
+                "name": "CustomSound",
+                "value": "SoundCustom",
+                "type": "env"
+            },
+            {
+                "name": "Critical",
+                "value": "Critical",
+                "type": "env"
+            },
+            {
+                "name": "Volume",
+                "value": "Volume",
+                "type": "env"
+            },
+            {
+                "name": "Collapse",
+                "value": "Collapse",
+                "type": "env"
+            },
+            {
+                "name": "Debug",
+                "value": "Debug",
+                "type": "env"
+            }
+        ],
+        "x": 1050,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ba0a4cc3.1bb26",
+        "type": "subflow:e11fd602.cb1c9",
+        "z": "46cd6ec.68b501",
+        "name": "",
+        "env": [
+            {
+                "name": "SN_PERSON",
+                "value": "user3",
+                "type": "str"
+            },
+            {
+                "name": "SN_MOBILE",
+                "value": "iphone3",
+                "type": "str"
+            },
+            {
+                "name": "SN_COMPUTER",
+                "value": "mac3",
+                "type": "str"
+            },
+            {
+                "name": "Person",
+                "value": "User3",
+                "type": "env"
+            },
+            {
+                "name": "Mobile",
+                "value": "iphone3",
+                "type": "str"
+            },
+            {
+                "name": "Computer",
+                "value": "mac3",
+                "type": "str"
+            },
+            {
+                "name": "Presence",
+                "value": "Presence",
+                "type": "env"
+            },
+            {
+                "name": "Title",
+                "value": "Title",
+                "type": "env"
+            },
+            {
+                "name": "Message",
+                "value": "Message",
+                "type": "env"
+            },
+            {
+                "name": "Sound",
+                "value": "Sound",
+                "type": "env"
+            },
+            {
+                "name": "CustomSound",
+                "value": "SoundCustom",
+                "type": "env"
+            },
+            {
+                "name": "Critical",
+                "value": "Critical",
+                "type": "env"
+            },
+            {
+                "name": "Volume",
+                "value": "Volume",
+                "type": "env"
+            },
+            {
+                "name": "Collapse",
+                "value": "Collapse",
+                "type": "env"
+            },
+            {
+                "name": "Debug",
+                "value": "Debug",
+                "type": "env"
+            }
+        ],
+        "x": 1050,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "caecb729.ae1d98",
+        "type": "function",
+        "z": "46cd6ec.68b501",
+        "name": "set prep",
+        "func": "if (!msg.hasOwnProperty(\"notification\"))\n    msg.notification = {};\n\nif (!msg.notification.hasOwnProperty(\"user1\"))\n    msg.notification.user1 = env.get(\"SNU_USER1\");\n\nif (!msg.notification.hasOwnProperty(\"user2\"))\n    msg.notification.user2 = env.get(\"SNU_USER2\");\n\nif (!msg.notification.hasOwnProperty(\"user3\"))\n    msg.notification.user3 = env.get(\"SNU_USER3\");\n\nif (!msg.notification.hasOwnProperty(\"presence\"))\n    msg.notification.presence = env.get(\"SNU_PRESENCE\");\n\nif (!msg.notification.hasOwnProperty(\"title\"))\n    msg.notification.title = env.get(\"SNU_TITLE\");\n\nif (!msg.notification.hasOwnProperty(\"subtitle\"))\n    msg.notification.subtitle = env.get(\"SNU_SUBTITLE\");\n\nif (!msg.notification.hasOwnProperty(\"message\"))\n    msg.notification.message = env.get(\"SNU_MESSAGE\");\n\nif (!msg.notification.hasOwnProperty(\"sound\"))\n    msg.notification.sound = env.get(\"SNU_SOUND\");\n\nif (!msg.notification.hasOwnProperty(\"customsound\"))\n    msg.notification.customsound = env.get(\"SNU_CUSTOMSOUND\");\n\nif (!msg.notification.hasOwnProperty(\"critical\"))\n    msg.notification.critical = env.get(\"SNU_CRITICAL\");\n\nif (!msg.notification.hasOwnProperty(\"volume\"))\n    msg.notification.volume = env.get(\"SNU_VOLUME\");\n\nif (!msg.notification.hasOwnProperty(\"collapse\"))\n    msg.notification.collapse = env.get(\"SNU_COLLAPSE\");\n\nif (!msg.notification.hasOwnProperty(\"debug\"))\n    msg.notification.debug = env.get(\"SNU_DEBUG\");\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 380,
+        "y": 400,
+        "wires": [
+            [
+                "cf88124.bcb207",
+                "4365e060.a83de8",
+                "f4e72ca5.870908"
+            ]
+        ]
+    },
+    {
+        "id": "ebfe2f80.771fa",
+        "type": "function",
+        "z": "46cd6ec.68b501",
+        "name": "set person",
+        "func": "msg.notification.prep = {};\nmsg.notification.prep.person = \"person.user1\";\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 850,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "79e909c3.ad3a68",
+        "type": "function",
+        "z": "46cd6ec.68b501",
+        "name": "set person",
+        "func": "msg.notification.prep = {};\nmsg.notification.prep.person = \"person.user2\";\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 850,
+        "y": 400,
+        "wires": [
+            [
+                "795686ac.981208"
+            ]
+        ]
+    },
+    {
+        "id": "58690189.b7cd7",
+        "type": "function",
+        "z": "46cd6ec.68b501",
+        "name": "set person",
+        "func": "msg.notification.prep = {};\nmsg.notification.prep.person = \"person.user3\";\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 850,
+        "y": 500,
+        "wires": [
+            [
+                "ba0a4cc3.1bb26"
+            ]
+        ]
+    },
+    {
+        "id": "e11fd602.cb1c9",
+        "type": "subflow",
+        "name": "SmartNotification",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 580,
+                "y": 840,
+                "wires": [
+                    {
+                        "id": "d5f1e965.503c8"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 3340,
+                "y": 780,
+                "wires": [
+                    {
+                        "id": "f0f14ab4.4fe2e8",
+                        "port": 0
+                    },
+                    {
+                        "id": "2398de9c.ec09f2",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "SN_PERSON",
+                "type": "str",
+                "value": "user1",
+                "ui": {
+                    "icon": "font-awesome/fa-child",
+                    "label": {
+                        "en-US": "Person"
+                    }
+                }
+            },
+            {
+                "name": "SN_MOBILE",
+                "type": "str",
+                "value": "iphone1",
+                "ui": {
+                    "icon": "font-awesome/fa-mobile-phone",
+                    "label": {
+                        "en-US": "Mobile"
+                    }
+                }
+            },
+            {
+                "name": "SN_COMPUTER",
+                "type": "str",
+                "value": "mac1",
+                "ui": {
+                    "icon": "font-awesome/fa-laptop",
+                    "label": {
+                        "en-US": "Computer"
+                    }
+                }
+            },
+            {
+                "name": "SN_PRESENCE",
+                "type": "bool",
+                "value": "false",
+                "ui": {
+                    "icon": "font-awesome/fa-home",
+                    "label": {
+                        "en-US": "Presence"
+                    },
+                    "type": "checkbox"
+                }
+            },
+            {
+                "name": "SN_TITLE",
+                "type": "str",
+                "value": "Title",
+                "ui": {
+                    "icon": "font-awesome/fa-text-height",
+                    "label": {
+                        "en-US": "Title"
+                    }
+                }
+            },
+            {
+                "name": "SN_SUBTITLE",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "icon": "font-awesome/fa-text-width",
+                    "label": {
+                        "en-US": "Subtitle"
+                    }
+                }
+            },
+            {
+                "name": "SN_MESSAGE",
+                "type": "str",
+                "value": "Message",
+                "ui": {
+                    "icon": "font-awesome/fa-align-left",
+                    "label": {
+                        "en-US": "Message"
+                    }
+                }
+            },
+            {
+                "name": "SN_SOUND",
+                "type": "bool",
+                "value": "true",
+                "ui": {
+                    "icon": "font-awesome/fa-volume-down",
+                    "label": {
+                        "en-US": "Sound"
+                    },
+                    "type": "checkbox"
+                }
+            },
+            {
+                "name": "SN_CUSTOMSOUND",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "icon": "font-awesome/fa-file-sound-o",
+                    "label": {
+                        "en-US": "Custom"
+                    }
+                }
+            },
+            {
+                "name": "SN_CRITICAL",
+                "type": "bool",
+                "value": "false",
+                "ui": {
+                    "icon": "font-awesome/fa-bell-o",
+                    "label": {
+                        "en-US": "Critical"
+                    },
+                    "type": "checkbox"
+                }
+            },
+            {
+                "name": "SN_VOLUME",
+                "type": "num",
+                "value": "1",
+                "ui": {
+                    "icon": "font-awesome/fa-volume-up",
+                    "label": {
+                        "en-US": "Volume"
+                    },
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "num"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "SN_COLLAPSE",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "icon": "font-awesome/fa-window-maximize",
+                    "label": {
+                        "en-US": "Collapse"
+                    }
+                }
+            },
+            {
+                "name": "SN_DEBUG",
+                "type": "bool",
+                "value": "false",
+                "ui": {
+                    "icon": "font-awesome/fa-bug",
+                    "label": {
+                        "en-US": "Debug"
+                    },
+                    "type": "checkbox"
+                }
+            }
+        ],
+        "color": "#59afff",
+        "icon": "node-red-contrib-home-assistant-websocket/router-wireless.png",
+        "status": {
+            "x": 3340,
+            "y": 960,
+            "wires": [
+                {
+                    "id": "17e9abdc.464a3c",
+                    "port": 0
+                }
+            ]
+        }
+    },
+    {
+        "id": "875d29d1.6f423",
+        "type": "api-current-state",
+        "z": "e11fd602.cb1c9",
+        "name": "Computer Active",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "{{notification.prep.computerActive}}",
+        "state_type": "str",
+        "state_location": "",
+        "override_payload": "none",
+        "entity_location": "",
+        "override_data": "none",
+        "blockInputOverrides": false,
+        "x": 1830,
+        "y": 900,
+        "wires": [
+            [
+                "e542e73b.e33a2"
+            ],
+            [
+                "daac4000.37853"
+            ]
+        ]
+    },
+    {
+        "id": "e542e73b.e33a2",
+        "type": "api-current-state",
+        "z": "e11fd602.cb1c9",
+        "name": "Facetime Inactive ?",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "{{notification.prep.computerFacetime}}",
+        "state_type": "str",
+        "state_location": "",
+        "override_payload": "none",
+        "entity_location": "",
+        "override_data": "none",
+        "blockInputOverrides": false,
+        "x": 2050,
+        "y": 860,
+        "wires": [
+            [
+                "3175a8d4.454738"
+            ],
+            [
+                "ba4b97c4.6c7188"
+            ]
+        ]
+    },
+    {
+        "id": "17e9abdc.464a3c",
+        "type": "status",
+        "z": "e11fd602.cb1c9",
+        "name": "",
+        "scope": [
+            "fa7c5ff3.28cd2"
+        ],
+        "x": 3200,
+        "y": 960,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d5f1e965.503c8",
+        "type": "function",
+        "z": "e11fd602.cb1c9",
+        "name": "set prep",
+        "func": "if (!msg.hasOwnProperty(\"notification\"))\n    msg.notification = {};\n    \nmsg.notification.prep = {};\n\n// create messages is not present in payload\nif (!msg.notification.hasOwnProperty(\"person\"))\n    msg.notification.person = env.get(\"SN_PERSON\");\n\nif (!msg.notification.hasOwnProperty(\"presence\"))\n    msg.notification.mobile = env.get(\"SN_MOBILE\");\n\nif (!msg.notification.hasOwnProperty(\"computer\"))\n    msg.notification.computer = env.get(\"SN_COMPUTER\");\n\nif (!msg.notification.hasOwnProperty(\"presence\"))\n    msg.notification.presence = env.get(\"SN_PRESENCE\");\n\nif (!msg.notification.hasOwnProperty(\"title\"))\n    msg.notification.title = env.get(\"SN_TITLE\");\n\nif (!msg.notification.hasOwnProperty(\"subtitle\"))\n    msg.notification.subtitle = env.get(\"SN_SUBTITLE\");\n\nif (!msg.notification.hasOwnProperty(\"message\"))\n    msg.notification.message = env.get(\"SN_MESSAGE\");\n\nif (!msg.notification.hasOwnProperty(\"sound\"))\n    msg.notification.sound = env.get(\"SN_SOUND\");\n\nif (!msg.notification.hasOwnProperty(\"customsound\"))\n    msg.notification.customsound = env.get(\"SN_CUSTOMSOUND\");\n\nif (!msg.notification.hasOwnProperty(\"critical\"))\n    msg.notification.critical = env.get(\"SN_CRITICAL\");\n\nif (!msg.notification.hasOwnProperty(\"volume\"))\n    msg.notification.volume = env.get(\"SN_VOLUME\");\n\nif (!msg.notification.hasOwnProperty(\"collapse\"))\n    msg.notification.collapse = env.get(\"SN_COLLAPSE\");\n\nif (!msg.notification.hasOwnProperty(\"debug\"))\n    msg.notification.debug = env.get(\"SN_DEBUG\");\n\n// prep\nmsg.notification.prep.person = \"person.\" + msg.notification.person;\nmsg.notification.prep.computerActive = \"binary_sensor.\" + msg.notification.computer + \"_active\";\nmsg.notification.prep.computerFacetime = \"binary_sensor.\" + msg.notification.computer + \"_facetime_hd_camera_built_in\";\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 700,
+        "y": 840,
+        "wires": [
+            [
+                "3d9ab133.02e096"
+            ]
+        ]
+    },
+    {
+        "id": "66dfb1c3.5f8c08",
+        "type": "api-current-state",
+        "z": "e11fd602.cb1c9",
+        "name": "not home ?",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "home",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "override_topic": false,
+        "entity_id": "{{notification.prep.person}}",
+        "state_type": "str",
+        "state_location": "",
+        "override_payload": "none",
+        "entity_location": "",
+        "override_data": "none",
+        "blockInputOverrides": false,
+        "x": 1050,
+        "y": 820,
+        "wires": [
+            [
+                "214d1073.28f16"
+            ],
+            [
+                "7da44019.80b17"
+            ]
+        ]
+    },
+    {
+        "id": "3d9ab133.02e096",
+        "type": "switch",
+        "z": "e11fd602.cb1c9",
+        "name": "Presence",
+        "property": "notification.presence",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 860,
+        "y": 840,
+        "wires": [
+            [
+                "66dfb1c3.5f8c08"
+            ],
+            [
+                "7da44019.80b17"
+            ]
+        ]
+    },
+    {
+        "id": "1047a971.c2530f",
+        "type": "switch",
+        "z": "e11fd602.cb1c9",
+        "name": "computer",
+        "property": "notification.computer",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 1640,
+        "y": 940,
+        "wires": [
+            [
+                "875d29d1.6f423"
+            ],
+            [
+                "b9ff521d.85fcf8"
+            ]
+        ]
+    },
+    {
+        "id": "fa7c5ff3.28cd2",
+        "type": "api-call-service",
+        "z": "e11fd602.cb1c9",
+        "name": "Notification",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "notify",
+        "service": "{{notification.service}}",
+        "entityId": "",
+        "data": "{}",
+        "dataType": "json",
+        "mergecontext": "debug",
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 2810,
+        "y": 900,
+        "wires": [
+            [
+                "f0f14ab4.4fe2e8"
+            ]
+        ]
+    },
+    {
+        "id": "214d1073.28f16",
+        "type": "change",
+        "z": "e11fd602.cb1c9",
+        "name": "debug: person not at home",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Person not at home",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1340,
+        "y": 680,
+        "wires": [
+            [
+                "cee05b6a.84ae18"
+            ]
+        ]
+    },
+    {
+        "id": "7da44019.80b17",
+        "type": "function",
+        "z": "e11fd602.cb1c9",
+        "name": "set payload",
+        "func": "msg.topic = \"\";\n\nmsg.payload = {};\nmsg.payload.data = {};\n\nmsg.payload.data.title = msg.notification.title;\nmsg.payload.data.message = msg.notification.message;\n\nmsg.payload.data.data = {};\n\n// subtitle\nif (msg.notification.subtitle !== \"\")\n    msg.payload.data.data.subtitle = msg.notification.subtitle;\n\nmsg.payload.data.data.push = {};\nmsg.payload.data.data.push.sound = {};\n\nif (msg.notification.critical === true)\n{\n    // critical\n    msg.payload.data.data.push.sound.name = \"default\";\n    msg.payload.data.data.push.sound.critical = 1;\n    msg.payload.data.data.push.sound.volume = msg.notification.volume;  \n}\nelse\n{\n    // sound\n    if (msg.notification.sound === false)\n        msg.payload.data.data.push.sound = \"none\";  \n    else\n    {\n        if (msg.notification.customsound === \"\")\n            msg.payload.data.data.push.sound = \"default\";\n        else\n            msg.payload.data.data.push.sound = msg.notification.customsound;\n    }\n}\n\nif (msg.notification.collapse !== \"\" )\n{\n    msg.payload.data.data.apns_headers = {};\n    msg.payload.data.data.apns_headers[\"apns-collapse-id\"] = msg.notification.collapse;\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1290,
+        "y": 980,
+        "wires": [
+            [
+                "5b591f89.89cd88"
+            ]
+        ]
+    },
+    {
+        "id": "b2fd697d.e2098",
+        "type": "link in",
+        "z": "e11fd602.cb1c9",
+        "name": "",
+        "links": [],
+        "x": 2855,
+        "y": 680,
+        "wires": [
+            [
+                "f0f14ab4.4fe2e8"
+            ]
+        ]
+    },
+    {
+        "id": "cee05b6a.84ae18",
+        "type": "link out",
+        "z": "e11fd602.cb1c9",
+        "name": "",
+        "links": [],
+        "x": 2815,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "daac4000.37853",
+        "type": "change",
+        "z": "e11fd602.cb1c9",
+        "name": "debug: no computer active",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "No computer active",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2300,
+        "y": 980,
+        "wires": [
+            [
+                "577d3044.901858"
+            ]
+        ]
+    },
+    {
+        "id": "5b591f89.89cd88",
+        "type": "switch",
+        "z": "e11fd602.cb1c9",
+        "name": "not credical",
+        "property": "notification.critical",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "false"
+            },
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 1470,
+        "y": 980,
+        "wires": [
+            [
+                "1047a971.c2530f"
+            ],
+            [
+                "f49f084.ba85cf8"
+            ]
+        ]
+    },
+    {
+        "id": "f49f084.ba85cf8",
+        "type": "change",
+        "z": "e11fd602.cb1c9",
+        "name": "debug: no critical on computer",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "No critical on computer",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2310,
+        "y": 1140,
+        "wires": [
+            [
+                "577d3044.901858"
+            ]
+        ]
+    },
+    {
+        "id": "f0f14ab4.4fe2e8",
+        "type": "switch",
+        "z": "e11fd602.cb1c9",
+        "name": "debug",
+        "property": "notification.debug",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 3030,
+        "y": 780,
+        "wires": [
+            [],
+            [
+                "2398de9c.ec09f2"
+            ]
+        ]
+    },
+    {
+        "id": "2398de9c.ec09f2",
+        "type": "change",
+        "z": "e11fd602.cb1c9",
+        "name": "no debug",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "notification",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 3200,
+        "y": 840,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "577d3044.901858",
+        "type": "function",
+        "z": "e11fd602.cb1c9",
+        "name": "mobile",
+        "func": "msg.notification.service = \"mobile_app_\" + msg.notification.mobile;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 2590,
+        "y": 980,
+        "wires": [
+            [
+                "fa7c5ff3.28cd2"
+            ]
+        ]
+    },
+    {
+        "id": "3175a8d4.454738",
+        "type": "function",
+        "z": "e11fd602.cb1c9",
+        "name": "computer",
+        "func": "msg.notification.service = \"mobile_app_\" + msg.notification.computer;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 2580,
+        "y": 840,
+        "wires": [
+            [
+                "fa7c5ff3.28cd2"
+            ]
+        ]
+    },
+    {
+        "id": "ba4b97c4.6c7188",
+        "type": "change",
+        "z": "e11fd602.cb1c9",
+        "name": "debug: facetime",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Facetime used on the computer",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2260,
+        "y": 900,
+        "wires": [
+            [
+                "577d3044.901858"
+            ]
+        ]
+    },
+    {
+        "id": "b9ff521d.85fcf8",
+        "type": "change",
+        "z": "e11fd602.cb1c9",
+        "name": "debug: no computer",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "No computer",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2280,
+        "y": 1060,
+        "wires": [
+            [
+                "577d3044.901858"
+            ]
+        ]
+    },
+    {
+        "id": "31f480d3.0e3b28",
+        "type": "server",
+        "name": "Home Assistant",
+        "legacy": false,
+        "rejectUnauthorizedCerts": false,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true
+    },
+    {
+        "id": "b9ca363a.300e6",
+        "type": "debug",
+        "z": "b72e50de.41aca8",
+        "name": "Using parameters from the subflow",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1360,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "8e69e0d1.a8e7f",
+        "type": "subflow:e11fd602.cb1c9",
+        "z": "b72e50de.41aca8",
+        "name": "",
+        "env": [
+            {
+                "name": "SN_PRESENCE",
+                "type": "bool",
+                "value": "true"
+            },
+            {
+                "name": "Critical",
+                "value": "false",
+                "type": "bool"
+            },
+            {
+                "name": "MOBILE",
+                "value": "iphone",
+                "type": "str"
+            },
+            {
+                "name": "COMPUTER",
+                "value": "macbook",
+                "type": "str"
+            },
+            {
+                "name": "PRESENCE",
+                "value": "true",
+                "type": "bool"
+            }
+        ],
+        "x": 1010,
+        "y": 400,
+        "wires": [
+            [
+                "efb635ab.404ce"
+            ]
+        ]
+    },
+    {
+        "id": "ea768cc0.9aee6",
+        "type": "change",
+        "z": "b72e50de.41aca8",
+        "name": "notification prep",
+        "rules": [
+            {
+                "t": "set",
+                "p": "notification",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "notification.person",
+                "pt": "msg",
+                "to": "user1",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "notification.mobile",
+                "pt": "msg",
+                "to": "iphone1",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "notification.computer",
+                "pt": "msg",
+                "to": "mac1",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "notification.presence",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            },
+            {
+                "t": "set",
+                "p": "notification.title",
+                "pt": "msg",
+                "to": "Title",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "notification.subtitle",
+                "pt": "msg",
+                "to": "Subtitle",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "notification.message",
+                "pt": "msg",
+                "to": "Message",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "notification.sound",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            },
+            {
+                "t": "set",
+                "p": "notification.customsound",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "notification.critical",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            },
+            {
+                "t": "set",
+                "p": "notification.volume",
+                "pt": "msg",
+                "to": "1",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "notification.collapse",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "notification.debug",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 400,
+        "wires": [
+            [
+                "8e69e0d1.a8e7f"
+            ]
+        ]
+    },
+    {
+        "id": "efb635ab.404ce",
+        "type": "debug",
+        "z": "b72e50de.41aca8",
+        "name": "Using notification messages data",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1360,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "47b1064f.d5315",
+        "type": "subflow:e11fd602.cb1c9",
+        "z": "b72e50de.41aca8",
+        "name": "",
+        "env": [
+            {
+                "name": "SN_PRESENCE",
+                "type": "bool",
+                "value": "true"
+            },
+            {
+                "name": "SN_CRITICAL",
+                "type": "bool",
+                "value": "false"
+            },
+            {
+                "name": "SN_DEBUG",
+                "type": "bool",
+                "value": "true"
+            },
+            {
+                "name": "Critical",
+                "value": "false",
+                "type": "bool"
+            },
+            {
+                "name": "MOBILE",
+                "value": "iphone",
+                "type": "str"
+            },
+            {
+                "name": "COMPUTER",
+                "value": "macbook",
+                "type": "str"
+            },
+            {
+                "name": "PRESENCE",
+                "value": "true",
+                "type": "bool"
+            }
+        ],
+        "x": 1010,
+        "y": 520,
+        "wires": [
+            [
+                "b9ca363a.300e6"
+            ]
+        ]
+    },
+    {
+        "id": "188ecd96.61904a",
+        "type": "inject",
+        "z": "b72e50de.41aca8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 560,
+        "y": 520,
+        "wires": [
+            [
+                "47b1064f.d5315"
+            ]
+        ]
+    },
+    {
+        "id": "10e5d29.96cd9ad",
+        "type": "inject",
+        "z": "b72e50de.41aca8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 560,
+        "y": 400,
+        "wires": [
+            [
+                "ea768cc0.9aee6"
+            ]
+        ]
+    },
+    {
+        "id": "53360d8c.5a2e6c",
+        "type": "subflow:46cd6ec.68b501",
+        "z": "b72e50de.41aca8",
+        "name": "",
+        "env": [],
+        "x": 1030,
+        "y": 640,
+        "wires": [
+            [
+                "26b78449.01b83c"
+            ]
+        ]
+    },
+    {
+        "id": "53508a86.3e9424",
+        "type": "subflow:46cd6ec.68b501",
+        "z": "b72e50de.41aca8",
+        "name": "",
+        "env": [
+            {
+                "name": "SNU_USER1",
+                "type": "bool",
+                "value": "true"
+            }
+        ],
+        "x": 1030,
+        "y": 760,
+        "wires": [
+            [
+                "ba16f0dc.d1c0f"
+            ]
+        ]
+    },
+    {
+        "id": "ba16f0dc.d1c0f",
+        "type": "debug",
+        "z": "b72e50de.41aca8",
+        "name": "Using parameters from the subflow",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1360,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "26b78449.01b83c",
+        "type": "debug",
+        "z": "b72e50de.41aca8",
+        "name": "Using notification messages data",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1360,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "de1a2f9d.7daf5",
+        "type": "change",
+        "z": "b72e50de.41aca8",
+        "name": "notification prep",
+        "rules": [
+            {
+                "t": "set",
+                "p": "notification",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "notification.user1",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            },
+            {
+                "t": "set",
+                "p": "notification.user2",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            },
+            {
+                "t": "set",
+                "p": "notification.user3",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            },
+            {
+                "t": "set",
+                "p": "notification.presence",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            },
+            {
+                "t": "set",
+                "p": "notification.title",
+                "pt": "msg",
+                "to": "Title",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "notification.subtitle",
+                "pt": "msg",
+                "to": "Subtitle",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "notification.message",
+                "pt": "msg",
+                "to": "Message",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "notification.sound",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            },
+            {
+                "t": "set",
+                "p": "notification.customsound",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "notification.critical",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            },
+            {
+                "t": "set",
+                "p": "notification.volume",
+                "pt": "msg",
+                "to": "1",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "notification.collapse",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "notification.debug",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 640,
+        "wires": [
+            [
+                "53360d8c.5a2e6c"
+            ]
+        ]
+    },
+    {
+        "id": "d9a72dfa.7c1b48",
+        "type": "inject",
+        "z": "b72e50de.41aca8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 560,
+        "y": 760,
+        "wires": [
+            [
+                "53508a86.3e9424"
+            ]
+        ]
+    },
+    {
+        "id": "9b43f589.01bec",
+        "type": "inject",
+        "z": "b72e50de.41aca8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 560,
+        "y": 640,
+        "wires": [
+            [
+                "de1a2f9d.7daf5"
+            ]
+        ]
+    }
+]
