@@ -1,6 +1,708 @@
 [
     {
-        "id": "6ad069ec.ccd5c8",
+        "id": "e11fd602.cb1c9",
+        "type": "subflow",
+        "name": "SmartNotification",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 580,
+                "y": 840,
+                "wires": [
+                    {
+                        "id": "d5f1e965.503c8"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 3340,
+                "y": 780,
+                "wires": [
+                    {
+                        "id": "f0f14ab4.4fe2e8",
+                        "port": 0
+                    },
+                    {
+                        "id": "2398de9c.ec09f2",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "SN_PERSON",
+                "type": "str",
+                "value": "lucas",
+                "ui": {
+                    "icon": "font-awesome/fa-child",
+                    "label": {
+                        "en-US": "Person"
+                    }
+                }
+            },
+            {
+                "name": "SN_MOBILE",
+                "type": "str",
+                "value": "travelroom",
+                "ui": {
+                    "icon": "font-awesome/fa-mobile-phone",
+                    "label": {
+                        "en-US": "Mobile"
+                    }
+                }
+            },
+            {
+                "name": "SN_COMPUTER",
+                "type": "str",
+                "value": "darkroom",
+                "ui": {
+                    "icon": "font-awesome/fa-laptop",
+                    "label": {
+                        "en-US": "Computer"
+                    }
+                }
+            },
+            {
+                "name": "SN_PRESENCE",
+                "type": "bool",
+                "value": "false",
+                "ui": {
+                    "icon": "font-awesome/fa-home",
+                    "label": {
+                        "en-US": "Presence"
+                    },
+                    "type": "checkbox"
+                }
+            },
+            {
+                "name": "SN_TITLE",
+                "type": "str",
+                "value": "Title",
+                "ui": {
+                    "icon": "font-awesome/fa-text-height",
+                    "label": {
+                        "en-US": "Title"
+                    }
+                }
+            },
+            {
+                "name": "SN_SUBTITLE",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "icon": "font-awesome/fa-text-width",
+                    "label": {
+                        "en-US": "Subtitle"
+                    }
+                }
+            },
+            {
+                "name": "SN_MESSAGE",
+                "type": "str",
+                "value": "Message",
+                "ui": {
+                    "icon": "font-awesome/fa-align-left",
+                    "label": {
+                        "en-US": "Message"
+                    }
+                }
+            },
+            {
+                "name": "SN_SOUND",
+                "type": "bool",
+                "value": "true",
+                "ui": {
+                    "icon": "font-awesome/fa-volume-down",
+                    "label": {
+                        "en-US": "Sound"
+                    },
+                    "type": "checkbox"
+                }
+            },
+            {
+                "name": "SN_CUSTOMSOUND",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "icon": "font-awesome/fa-file-sound-o",
+                    "label": {
+                        "en-US": "Custom"
+                    }
+                }
+            },
+            {
+                "name": "SN_CRITICAL",
+                "type": "bool",
+                "value": "false",
+                "ui": {
+                    "icon": "font-awesome/fa-bell-o",
+                    "label": {
+                        "en-US": "Critical"
+                    },
+                    "type": "checkbox"
+                }
+            },
+            {
+                "name": "SN_VOLUME",
+                "type": "num",
+                "value": "1",
+                "ui": {
+                    "icon": "font-awesome/fa-volume-up",
+                    "label": {
+                        "en-US": "Volume"
+                    },
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "num"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "SN_COLLAPSE",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "icon": "font-awesome/fa-window-maximize",
+                    "label": {
+                        "en-US": "Collapse"
+                    }
+                }
+            },
+            {
+                "name": "SN_DEBUG",
+                "type": "bool",
+                "value": "false",
+                "ui": {
+                    "icon": "font-awesome/fa-bug",
+                    "label": {
+                        "en-US": "Debug"
+                    },
+                    "type": "checkbox"
+                }
+            }
+        ],
+        "color": "#59afff",
+        "icon": "node-red-contrib-home-assistant-websocket/router-wireless.png",
+        "status": {
+            "x": 3340,
+            "y": 960,
+            "wires": [
+                {
+                    "id": "17e9abdc.464a3c",
+                    "port": 0
+                }
+            ]
+        }
+    },
+    {
+        "id": "875d29d1.6f423",
+        "type": "api-current-state",
+        "z": "e11fd602.cb1c9",
+        "name": "Computer Active",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "{{notification.prep.computerActive}}",
+        "state_type": "str",
+        "state_location": "",
+        "override_payload": "none",
+        "entity_location": "",
+        "override_data": "none",
+        "blockInputOverrides": false,
+        "x": 1830,
+        "y": 900,
+        "wires": [
+            [
+                "e542e73b.e33a2"
+            ],
+            [
+                "daac4000.37853"
+            ]
+        ]
+    },
+    {
+        "id": "e542e73b.e33a2",
+        "type": "api-current-state",
+        "z": "e11fd602.cb1c9",
+        "name": "Facetime Inactive ?",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "{{notification.prep.computerFacetime}}",
+        "state_type": "str",
+        "state_location": "",
+        "override_payload": "none",
+        "entity_location": "",
+        "override_data": "none",
+        "blockInputOverrides": false,
+        "x": 2050,
+        "y": 860,
+        "wires": [
+            [
+                "3175a8d4.454738"
+            ],
+            [
+                "ba4b97c4.6c7188"
+            ]
+        ]
+    },
+    {
+        "id": "17e9abdc.464a3c",
+        "type": "status",
+        "z": "e11fd602.cb1c9",
+        "name": "",
+        "scope": [
+            "fa7c5ff3.28cd2"
+        ],
+        "x": 3200,
+        "y": 960,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d5f1e965.503c8",
+        "type": "function",
+        "z": "e11fd602.cb1c9",
+        "name": "set prep",
+        "func": "if (!msg.hasOwnProperty(\"notification\"))\n    msg.notification = {};\n    \nmsg.notification.prep = {};\n\n// create messages is not present in payload\nif (!msg.notification.hasOwnProperty(\"person\"))\n    msg.notification.person = env.get(\"SN_PERSON\");\n\nif (!msg.notification.hasOwnProperty(\"presence\"))\n    msg.notification.mobile = env.get(\"SN_MOBILE\");\n\nif (!msg.notification.hasOwnProperty(\"computer\"))\n    msg.notification.computer = env.get(\"SN_COMPUTER\");\n\nif (!msg.notification.hasOwnProperty(\"presence\"))\n    msg.notification.presence = env.get(\"SN_PRESENCE\");\n\nif (!msg.notification.hasOwnProperty(\"title\"))\n    msg.notification.title = env.get(\"SN_TITLE\");\n\nif (!msg.notification.hasOwnProperty(\"subtitle\"))\n    msg.notification.subtitle = env.get(\"SN_SUBTITLE\");\n\nif (!msg.notification.hasOwnProperty(\"message\"))\n    msg.notification.message = env.get(\"SN_MESSAGE\");\n\nif (!msg.notification.hasOwnProperty(\"sound\"))\n    msg.notification.sound = env.get(\"SN_SOUND\");\n\nif (!msg.notification.hasOwnProperty(\"customsound\"))\n    msg.notification.customsound = env.get(\"SN_CUSTOMSOUND\");\n\nif (!msg.notification.hasOwnProperty(\"critical\"))\n    msg.notification.critical = env.get(\"SN_CRITICAL\");\n\nif (!msg.notification.hasOwnProperty(\"volume\"))\n    msg.notification.volume = env.get(\"SN_VOLUME\");\n\nif (!msg.notification.hasOwnProperty(\"collapse\"))\n    msg.notification.collapse = env.get(\"SN_COLLAPSE\");\n\nif (!msg.notification.hasOwnProperty(\"debug\"))\n    msg.notification.debug = env.get(\"SN_DEBUG\");\n\n// prep\nmsg.notification.prep.person = \"person.\" + msg.notification.person;\nmsg.notification.prep.computerActive = \"binary_sensor.\" + msg.notification.computer + \"_active\";\nmsg.notification.prep.computerFacetime = \"binary_sensor.\" + msg.notification.computer + \"_facetime_hd_camera_built_in\";\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 700,
+        "y": 840,
+        "wires": [
+            [
+                "3d9ab133.02e096"
+            ]
+        ]
+    },
+    {
+        "id": "66dfb1c3.5f8c08",
+        "type": "api-current-state",
+        "z": "e11fd602.cb1c9",
+        "name": "not home ?",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "home",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "override_topic": false,
+        "entity_id": "{{notification.prep.person}}",
+        "state_type": "str",
+        "state_location": "",
+        "override_payload": "none",
+        "entity_location": "",
+        "override_data": "none",
+        "blockInputOverrides": false,
+        "x": 1050,
+        "y": 820,
+        "wires": [
+            [
+                "214d1073.28f16"
+            ],
+            [
+                "7da44019.80b17"
+            ]
+        ]
+    },
+    {
+        "id": "3d9ab133.02e096",
+        "type": "switch",
+        "z": "e11fd602.cb1c9",
+        "name": "Presence",
+        "property": "notification.presence",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 860,
+        "y": 840,
+        "wires": [
+            [
+                "66dfb1c3.5f8c08"
+            ],
+            [
+                "7da44019.80b17"
+            ]
+        ]
+    },
+    {
+        "id": "1047a971.c2530f",
+        "type": "switch",
+        "z": "e11fd602.cb1c9",
+        "name": "computer",
+        "property": "notification.computer",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 1640,
+        "y": 940,
+        "wires": [
+            [
+                "875d29d1.6f423"
+            ],
+            [
+                "b9ff521d.85fcf8"
+            ]
+        ]
+    },
+    {
+        "id": "fa7c5ff3.28cd2",
+        "type": "api-call-service",
+        "z": "e11fd602.cb1c9",
+        "name": "Notification",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "notify",
+        "service": "{{notification.service}}",
+        "entityId": "",
+        "data": "{}",
+        "dataType": "json",
+        "mergecontext": "debug",
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 2810,
+        "y": 900,
+        "wires": [
+            [
+                "f0f14ab4.4fe2e8"
+            ]
+        ]
+    },
+    {
+        "id": "214d1073.28f16",
+        "type": "change",
+        "z": "e11fd602.cb1c9",
+        "name": "debug: person not at home",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Person not at home",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1340,
+        "y": 680,
+        "wires": [
+            [
+                "cee05b6a.84ae18"
+            ]
+        ]
+    },
+    {
+        "id": "7da44019.80b17",
+        "type": "function",
+        "z": "e11fd602.cb1c9",
+        "name": "set payload",
+        "func": "msg.topic = \"\";\n\nmsg.payload = {};\nmsg.payload.data = {};\n\nmsg.payload.data.title = msg.notification.title;\nmsg.payload.data.message = msg.notification.message;\n\nmsg.payload.data.data = {};\n\n// subtitle\nif (msg.notification.subtitle !== \"\")\n    msg.payload.data.data.subtitle = msg.notification.subtitle;\n\nmsg.payload.data.data.push = {};\nmsg.payload.data.data.push.sound = {};\n\nif (msg.notification.critical === true)\n{\n    // critical\n    msg.payload.data.data.push.sound.name = \"default\";\n    msg.payload.data.data.push.sound.critical = 1;\n    msg.payload.data.data.push.sound.volume = msg.notification.volume;  \n}\nelse\n{\n    // sound\n    if (msg.notification.sound === false)\n        msg.payload.data.data.push.sound = \"none\";  \n    else\n    {\n        if (msg.notification.customsound === \"\")\n            msg.payload.data.data.push.sound = \"default\";\n        else\n            msg.payload.data.data.push.sound = msg.notification.customsound;\n    }\n}\n\nif (msg.notification.collapse !== \"\" )\n{\n    msg.payload.data.data.apns_headers = {};\n    msg.payload.data.data.apns_headers[\"apns-collapse-id\"] = msg.notification.collapse;\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1290,
+        "y": 980,
+        "wires": [
+            [
+                "5b591f89.89cd88"
+            ]
+        ]
+    },
+    {
+        "id": "b2fd697d.e2098",
+        "type": "link in",
+        "z": "e11fd602.cb1c9",
+        "name": "",
+        "links": [],
+        "x": 2855,
+        "y": 680,
+        "wires": [
+            [
+                "f0f14ab4.4fe2e8"
+            ]
+        ]
+    },
+    {
+        "id": "cee05b6a.84ae18",
+        "type": "link out",
+        "z": "e11fd602.cb1c9",
+        "name": "",
+        "links": [],
+        "x": 2815,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "daac4000.37853",
+        "type": "change",
+        "z": "e11fd602.cb1c9",
+        "name": "debug: no computer active",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "No computer active",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2300,
+        "y": 980,
+        "wires": [
+            [
+                "577d3044.901858"
+            ]
+        ]
+    },
+    {
+        "id": "5b591f89.89cd88",
+        "type": "switch",
+        "z": "e11fd602.cb1c9",
+        "name": "not credical",
+        "property": "notification.critical",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "false"
+            },
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 1470,
+        "y": 980,
+        "wires": [
+            [
+                "1047a971.c2530f"
+            ],
+            [
+                "f49f084.ba85cf8"
+            ]
+        ]
+    },
+    {
+        "id": "f49f084.ba85cf8",
+        "type": "change",
+        "z": "e11fd602.cb1c9",
+        "name": "debug: no critical on computer",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "No critical on computer",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2310,
+        "y": 1140,
+        "wires": [
+            [
+                "577d3044.901858"
+            ]
+        ]
+    },
+    {
+        "id": "f0f14ab4.4fe2e8",
+        "type": "switch",
+        "z": "e11fd602.cb1c9",
+        "name": "debug",
+        "property": "notification.debug",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 3030,
+        "y": 780,
+        "wires": [
+            [],
+            [
+                "2398de9c.ec09f2"
+            ]
+        ]
+    },
+    {
+        "id": "2398de9c.ec09f2",
+        "type": "change",
+        "z": "e11fd602.cb1c9",
+        "name": "no debug",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "notification",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 3200,
+        "y": 840,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "577d3044.901858",
+        "type": "function",
+        "z": "e11fd602.cb1c9",
+        "name": "mobile",
+        "func": "msg.notification.service = \"mobile_app_\" + msg.notification.mobile;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 2590,
+        "y": 980,
+        "wires": [
+            [
+                "fa7c5ff3.28cd2"
+            ]
+        ]
+    },
+    {
+        "id": "3175a8d4.454738",
+        "type": "function",
+        "z": "e11fd602.cb1c9",
+        "name": "computer",
+        "func": "msg.notification.service = \"mobile_app_\" + msg.notification.computer;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 2580,
+        "y": 840,
+        "wires": [
+            [
+                "fa7c5ff3.28cd2"
+            ]
+        ]
+    },
+    {
+        "id": "ba4b97c4.6c7188",
+        "type": "change",
+        "z": "e11fd602.cb1c9",
+        "name": "debug: facetime",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Facetime used on the computer",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2260,
+        "y": 900,
+        "wires": [
+            [
+                "577d3044.901858"
+            ]
+        ]
+    },
+    {
+        "id": "b9ff521d.85fcf8",
+        "type": "change",
+        "z": "e11fd602.cb1c9",
+        "name": "debug: no computer",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "No computer",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2280,
+        "y": 1060,
+        "wires": [
+            [
+                "577d3044.901858"
+            ]
+        ]
+    },
+    {
+        "id": "bab07cb1.9fe64",
         "type": "server-state-changed",
         "z": "a9c3b74b.7a3168",
         "name": "Entrance Door",
@@ -19,24 +721,35 @@
         ],
         "entityidfilter": "binary_sensor.entrance_door_contact",
         "entityidfiltertype": "exact",
-        "outputinitially": true,
+        "outputinitially": false,
         "state_type": "str",
-        "haltifstate": "",
+        "haltifstate": "on",
         "halt_if_type": "str",
         "halt_if_compare": "is",
-        "outputs": 1,
+        "outputs": 2,
         "output_only_on_state_change": true,
-        "x": 150,
-        "y": 2040,
+        "for": "",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": true,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "x": 190,
+        "y": 1780,
         "wires": [
             [
-                "68b5408a.ea8a3",
-                "9928ef49.2340a"
+                "d0a5e473.ecfca",
+                "4dc788c6.c4f7f8"
+            ],
+            [
+                "8484c594.700b1"
             ]
         ]
     },
     {
-        "id": "8e31c43e.783238",
+        "id": "e6883c13.37d0d",
         "type": "server-state-changed",
         "z": "a9c3b74b.7a3168",
         "name": "Front Door",
@@ -55,48 +768,35 @@
         ],
         "entityidfilter": "binary_sensor.front_door_contact",
         "entityidfiltertype": "exact",
-        "outputinitially": true,
+        "outputinitially": false,
         "state_type": "str",
-        "haltifstate": "",
+        "haltifstate": "on",
         "halt_if_type": "str",
         "halt_if_compare": "is",
-        "outputs": 1,
+        "outputs": 2,
         "output_only_on_state_change": true,
-        "x": 160,
-        "y": 1640,
+        "for": "",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": true,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "x": 200,
+        "y": 1540,
         "wires": [
             [
-                "68b5408a.ea8a3",
-                "6e5bab5.62c3c54"
+                "d0a5e473.ecfca",
+                "4dc788c6.c4f7f8"
+            ],
+            [
+                "a2ca7598.c84ed8"
             ]
         ]
     },
     {
-        "id": "a0f7c979.6e637",
-        "type": "trigger",
-        "z": "a9c3b74b.7a3168",
-        "name": "",
-        "op1": "",
-        "op2": "",
-        "op1type": "nul",
-        "op2type": "pay",
-        "duration": "3",
-        "extend": false,
-        "units": "min",
-        "reset": "off",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 790,
-        "y": 1660,
-        "wires": [
-            [
-                "85f43d70.c48578"
-            ]
-        ]
-    },
-    {
-        "id": "d2a7c369.420c2",
+        "id": "b32ed66d.4ec9c",
         "type": "server-state-changed",
         "z": "a9c3b74b.7a3168",
         "name": "Kitchen Door",
@@ -115,124 +815,54 @@
         ],
         "entityidfilter": "binary_sensor.kitchen_door_contact",
         "entityidfiltertype": "exact",
-        "outputinitially": true,
+        "outputinitially": false,
         "state_type": "str",
-        "haltifstate": "",
+        "haltifstate": "on",
         "halt_if_type": "str",
         "halt_if_compare": "is",
-        "outputs": 1,
+        "outputs": 2,
         "output_only_on_state_change": true,
-        "x": 150,
-        "y": 1840,
+        "for": "",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": true,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "x": 190,
+        "y": 1660,
         "wires": [
             [
-                "68b5408a.ea8a3",
-                "62817143.2e9818"
+                "d0a5e473.ecfca",
+                "4dc788c6.c4f7f8"
+            ],
+            [
+                "7396885f.05bf98"
             ]
         ]
     },
     {
-        "id": "a38da4a1.a2eec8",
-        "type": "api-call-service",
-        "z": "a9c3b74b.7a3168",
-        "name": "Notification: Door Open!",
-        "server": "31f480d3.0e3b28",
-        "version": 1,
-        "debugenabled": false,
-        "service_domain": "notify",
-        "service": "mobile_app_iphone",
-        "entityId": "",
-        "data": "{}",
-        "dataType": "json",
-        "mergecontext": "",
-        "output_location": "payload",
-        "output_location_type": "msg",
-        "mustacheAltTags": false,
-        "x": 1470,
-        "y": 1840,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "85f43d70.c48578",
+        "id": "dcf87a13.17a82",
         "type": "function",
         "z": "a9c3b74b.7a3168",
         "name": "Prep Notification",
-        "func": "door = msg.door.replace(\" Contact\",\"\");\n\nmsg.payload = \n{\n  \"data\": \n  {\n    \"title\": door + \" Open\",  \n    \"message\": \"The \" + door + \" is open more than \" + msg.delay + \" minutes\",\n  }\n}\nreturn msg;",
+        "func": "var door = msg.topic.replace(\" Contact\",\"\");\n\nmsg.notification = {};\nmsg.notification.title = door + \" Open\";\nmsg.notification.subtitle = \"More than \" + Math.round(msg.delay/60000) + \" minutes\";\nmsg.notification.message  = \"Temperature diference inside/outside is \" + Math.round(msg.diference) + \" degres\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 1170,
-        "y": 1840,
+        "x": 1830,
+        "y": 1660,
         "wires": [
             [
-                "a38da4a1.a2eec8",
-                "b2c87d1f.b1554"
+                "1a705d08.f2ce1b",
+                "81017a28.76a028"
             ]
         ]
     },
     {
-        "id": "593099fd.35cf68",
-        "type": "inject",
-        "z": "a9c3b74b.7a3168",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 200,
-        "y": 1400,
-        "wires": [
-            [
-                "68b5408a.ea8a3"
-            ]
-        ]
-    },
-    {
-        "id": "7edab485.427994",
-        "type": "link in",
-        "z": "a9c3b74b.7a3168",
-        "name": "",
-        "links": [
-            "68b5408a.ea8a3"
-        ],
-        "x": 395,
-        "y": 1400,
-        "wires": [
-            [
-                "60bf6a58.d8d184",
-                "b462736d.5012c"
-            ]
-        ]
-    },
-    {
-        "id": "68b5408a.ea8a3",
-        "type": "link out",
-        "z": "a9c3b74b.7a3168",
-        "name": "",
-        "links": [
-            "7edab485.427994"
-        ],
-        "x": 355,
-        "y": 1400,
-        "wires": []
-    },
-    {
-        "id": "b462736d.5012c",
+        "id": "4dc788c6.c4f7f8",
         "type": "api-current-state",
         "z": "a9c3b74b.7a3168",
         "name": "Outside Temp",
@@ -247,19 +877,19 @@
         "state_type": "num",
         "state_location": "payload",
         "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
+        "entity_location": "",
+        "override_data": "none",
         "blockInputOverrides": false,
-        "x": 560,
-        "y": 1440,
+        "x": 460,
+        "y": 1380,
         "wires": [
             [
-                "896e46f2.e7ad"
+                "5897bdb8.717434"
             ]
         ]
     },
     {
-        "id": "60bf6a58.d8d184",
+        "id": "d0a5e473.ecfca",
         "type": "ha-get-entities",
         "z": "a9c3b74b.7a3168",
         "server": "31f480d3.0e3b28",
@@ -268,7 +898,7 @@
             {
                 "property": "entity_id",
                 "logic": "is",
-                "value": "sensor.[a-zA-Z_]+_temperature",
+                "value": "sensor.[a-zA-Z_]+_temperature$",
                 "valueType": "re"
             },
             {
@@ -295,36 +925,19 @@
         "output_location_type": "msg",
         "output_location": "payload",
         "output_results_count": 1,
-        "x": 550,
-        "y": 1360,
+        "x": 450,
+        "y": 1300,
         "wires": [
             [
-                "54c36ec5.6c488"
+                "2069b3c1.c54ac4"
             ]
         ]
     },
     {
-        "id": "233a0a7c.7682ee",
-        "type": "debug",
-        "z": "a9c3b74b.7a3168",
-        "name": "debug set delay",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1980,
-        "y": 1440,
-        "wires": []
-    },
-    {
-        "id": "54c36ec5.6c488",
+        "id": "2069b3c1.c54ac4",
         "type": "change",
         "z": "a9c3b74b.7a3168",
-        "name": "",
+        "name": "set inside",
         "rules": [
             {
                 "t": "move",
@@ -332,13 +945,6 @@
                 "pt": "msg",
                 "to": "inside",
                 "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "temperature",
-                "tot": "str"
             },
             {
                 "t": "delete",
@@ -351,16 +957,16 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 760,
-        "y": 1360,
+        "x": 640,
+        "y": 1300,
         "wires": [
             [
-                "a5813c9d.336ea"
+                "870032db.101fa8"
             ]
         ]
     },
     {
-        "id": "5d15ec4a.fc7e6c",
+        "id": "158d32cc.a33b0d",
         "type": "calculator",
         "z": "a9c3b74b.7a3168",
         "name": "",
@@ -368,16 +974,16 @@
         "outputMsgField": "payload.inside",
         "operation": "avg",
         "constant": "",
-        "x": 1080,
-        "y": 1360,
+        "x": 940,
+        "y": 1300,
         "wires": [
             [
-                "760b93b3.f01a14"
+                "1c9ccaa5.ae73ad"
             ]
         ]
     },
     {
-        "id": "a5813c9d.336ea",
+        "id": "870032db.101fa8",
         "type": "join",
         "z": "a9c3b74b.7a3168",
         "name": "",
@@ -396,19 +1002,19 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 930,
-        "y": 1360,
+        "x": 790,
+        "y": 1300,
         "wires": [
             [
-                "5d15ec4a.fc7e6c"
+                "158d32cc.a33b0d"
             ]
         ]
     },
     {
-        "id": "896e46f2.e7ad",
+        "id": "5897bdb8.717434",
         "type": "change",
         "z": "a9c3b74b.7a3168",
-        "name": "",
+        "name": "set outside",
         "rules": [
             {
                 "t": "move",
@@ -416,13 +1022,6 @@
                 "pt": "msg",
                 "to": "payload.outside",
                 "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "temperature",
-                "tot": "str"
             },
             {
                 "t": "delete",
@@ -435,16 +1034,16 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 760,
-        "y": 1440,
+        "x": 650,
+        "y": 1380,
         "wires": [
             [
-                "beb46901.60b34"
+                "d20acda5.dc96a8"
             ]
         ]
     },
     {
-        "id": "beb46901.60b34",
+        "id": "d20acda5.dc96a8",
         "type": "join",
         "z": "a9c3b74b.7a3168",
         "name": "",
@@ -463,16 +1062,16 @@
         "reduceInit": "",
         "reduceInitType": "num",
         "reduceFixup": "",
-        "x": 1430,
-        "y": 1440,
+        "x": 1290,
+        "y": 1380,
         "wires": [
             [
-                "3754d88a.ed9c58"
+                "17d664f6.bb8ed3"
             ]
         ]
     },
     {
-        "id": "760b93b3.f01a14",
+        "id": "1c9ccaa5.ae73ad",
         "type": "change",
         "z": "a9c3b74b.7a3168",
         "name": "Cleanup",
@@ -495,515 +1094,40 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1240,
-        "y": 1360,
+        "x": 1100,
+        "y": 1300,
         "wires": [
             [
-                "beb46901.60b34"
+                "d20acda5.dc96a8"
             ]
         ]
     },
     {
-        "id": "3754d88a.ed9c58",
-        "type": "function",
-        "z": "a9c3b74b.7a3168",
-        "name": "set delay",
-        "func": "// Calculate diference\ndiference = msg.payload.outside - msg.payload.inside;\n\n// set delays base on diference\nif (diference > 15) \n{\n    // over than 15 diference\n    frontDelay = 1;\n    kitcheenDelay = 2;\n    entranceDelay = 2;\n}\nelse if (diference > 10) \n{\n    // in-between 15 and 10 over diference\n    frontDelay = 2;\n    kitcheenDelay = 3;\n    entranceDelay = 5;\n}\nelse if (diference > -6)\n{\n    // in-between 10 and -6 diference\n    frontDelay = 1;\n    kitcheenDelay = 0;\n    entranceDelay = 5;\n}\nelse if (diference > -20)\n{\n    // in-between -6 and -20 diference\n    frontDelay = 1;\n    kitcheenDelay = 3;\n    entranceDelay = 5;\n}\nelse if (diference > -30)\n{\n    // in-between -20 and -30 diference\n    frontDelay = 1;\n    kitcheenDelay = 1;\n    entranceDelay = 3;\n}\nelse if (diference > -40)\n{\n    // in-between -30 and -40 diference\n    frontDelay = 1;\n    kitcheenDelay = 1;\n    entranceDelay = 2;\n}\nelse\n{\n    // over than -40 diference\n    frontDelay = 1;\n    kitcheenDelay = 1;\n    entranceDelay = 1;\n}\n\nmsg.payload.frontDelay = frontDelay;\nmsg.payload.kitcheenDelay = kitcheenDelay;\nmsg.payload.entranceDelay = entranceDelay;\n\nmsg.payload.diference = diference;\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 1600,
-        "y": 1440,
-        "wires": [
-            [
-                "35a15fec.703e78"
-            ]
-        ]
-    },
-    {
-        "id": "35a15fec.703e78",
+        "id": "554dd7ac.ccbec8",
         "type": "change",
         "z": "a9c3b74b.7a3168",
-        "name": "",
+        "name": "set variables",
         "rules": [
             {
                 "t": "set",
-                "p": "frontDelay",
-                "pt": "flow",
-                "to": "payload.frontDelay",
+                "p": "topic",
+                "pt": "msg",
+                "to": "data.new_state.attributes.friendly_name",
                 "tot": "msg"
             },
             {
                 "t": "set",
-                "p": "kitcheenDelay",
-                "pt": "flow",
-                "to": "payload.kitcheenDelay",
-                "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "entranceDelay",
-                "pt": "flow",
+                "p": "delay",
+                "pt": "msg",
                 "to": "payload.entranceDelay",
                 "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1780,
-        "y": 1440,
-        "wires": [
-            [
-                "233a0a7c.7682ee"
-            ]
-        ]
-    },
-    {
-        "id": "e59b4fc7.9f05b8",
-        "type": "switch",
-        "z": "a9c3b74b.7a3168",
-        "name": "",
-        "property": "delay",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "1",
-                "vt": "num"
-            },
-            {
-                "t": "eq",
-                "v": "2",
-                "vt": "num"
-            },
-            {
-                "t": "eq",
-                "v": "3",
-                "vt": "num"
-            },
-            {
-                "t": "eq",
-                "v": "5",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 4,
-        "x": 550,
-        "y": 1640,
-        "wires": [
-            [
-                "bb4043fc.3112a"
-            ],
-            [
-                "f096d9de.c87fb8"
-            ],
-            [
-                "a0f7c979.6e637"
-            ],
-            [
-                "4ebbf64a.899fd8"
-            ]
-        ]
-    },
-    {
-        "id": "bb4043fc.3112a",
-        "type": "trigger",
-        "z": "a9c3b74b.7a3168",
-        "name": "",
-        "op1": "",
-        "op2": "",
-        "op1type": "nul",
-        "op2type": "pay",
-        "duration": "1",
-        "extend": false,
-        "units": "min",
-        "reset": "off",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 790,
-        "y": 1580,
-        "wires": [
-            [
-                "85f43d70.c48578"
-            ]
-        ]
-    },
-    {
-        "id": "f096d9de.c87fb8",
-        "type": "trigger",
-        "z": "a9c3b74b.7a3168",
-        "name": "",
-        "op1": "",
-        "op2": "",
-        "op1type": "nul",
-        "op2type": "pay",
-        "duration": "2",
-        "extend": false,
-        "units": "min",
-        "reset": "off",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 790,
-        "y": 1620,
-        "wires": [
-            [
-                "85f43d70.c48578"
-            ]
-        ]
-    },
-    {
-        "id": "4ebbf64a.899fd8",
-        "type": "trigger",
-        "z": "a9c3b74b.7a3168",
-        "name": "",
-        "op1": "",
-        "op2": "",
-        "op1type": "nul",
-        "op2type": "pay",
-        "duration": "5",
-        "extend": false,
-        "units": "min",
-        "reset": "off",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 790,
-        "y": 1700,
-        "wires": [
-            [
-                "85f43d70.c48578"
-            ]
-        ]
-    },
-    {
-        "id": "5cef4792.203b98",
-        "type": "trigger",
-        "z": "a9c3b74b.7a3168",
-        "name": "",
-        "op1": "",
-        "op2": "",
-        "op1type": "nul",
-        "op2type": "pay",
-        "duration": "3",
-        "extend": false,
-        "units": "min",
-        "reset": "off",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 790,
-        "y": 1860,
-        "wires": [
-            [
-                "85f43d70.c48578"
-            ]
-        ]
-    },
-    {
-        "id": "dc6ec5c3.c25ac8",
-        "type": "switch",
-        "z": "a9c3b74b.7a3168",
-        "name": "",
-        "property": "delay",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "1",
-                "vt": "num"
-            },
-            {
-                "t": "eq",
-                "v": "2",
-                "vt": "num"
-            },
-            {
-                "t": "eq",
-                "v": "3",
-                "vt": "num"
-            },
-            {
-                "t": "eq",
-                "v": "5",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 4,
-        "x": 550,
-        "y": 1840,
-        "wires": [
-            [
-                "16a350aa.38ed2f"
-            ],
-            [
-                "f3c26478.15b8d"
-            ],
-            [
-                "5cef4792.203b98"
-            ],
-            [
-                "2668e5bf.d0312a"
-            ]
-        ]
-    },
-    {
-        "id": "16a350aa.38ed2f",
-        "type": "trigger",
-        "z": "a9c3b74b.7a3168",
-        "name": "",
-        "op1": "",
-        "op2": "",
-        "op1type": "nul",
-        "op2type": "pay",
-        "duration": "1",
-        "extend": false,
-        "units": "min",
-        "reset": "off",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 790,
-        "y": 1780,
-        "wires": [
-            [
-                "85f43d70.c48578"
-            ]
-        ]
-    },
-    {
-        "id": "f3c26478.15b8d",
-        "type": "trigger",
-        "z": "a9c3b74b.7a3168",
-        "name": "",
-        "op1": "",
-        "op2": "",
-        "op1type": "nul",
-        "op2type": "pay",
-        "duration": "2",
-        "extend": false,
-        "units": "min",
-        "reset": "off",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 790,
-        "y": 1820,
-        "wires": [
-            [
-                "85f43d70.c48578"
-            ]
-        ]
-    },
-    {
-        "id": "2668e5bf.d0312a",
-        "type": "trigger",
-        "z": "a9c3b74b.7a3168",
-        "name": "",
-        "op1": "",
-        "op2": "",
-        "op1type": "nul",
-        "op2type": "pay",
-        "duration": "5",
-        "extend": false,
-        "units": "min",
-        "reset": "off",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 790,
-        "y": 1900,
-        "wires": [
-            [
-                "85f43d70.c48578"
-            ]
-        ]
-    },
-    {
-        "id": "9b7e2bee.d86ef8",
-        "type": "trigger",
-        "z": "a9c3b74b.7a3168",
-        "name": "",
-        "op1": "",
-        "op2": "",
-        "op1type": "nul",
-        "op2type": "pay",
-        "duration": "3",
-        "extend": false,
-        "units": "min",
-        "reset": "off",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 790,
-        "y": 2060,
-        "wires": [
-            [
-                "85f43d70.c48578"
-            ]
-        ]
-    },
-    {
-        "id": "c8a3e58.5f76e18",
-        "type": "switch",
-        "z": "a9c3b74b.7a3168",
-        "name": "",
-        "property": "delay",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "1",
-                "vt": "num"
-            },
-            {
-                "t": "eq",
-                "v": "2",
-                "vt": "num"
-            },
-            {
-                "t": "eq",
-                "v": "3",
-                "vt": "num"
-            },
-            {
-                "t": "eq",
-                "v": "5",
-                "vt": "num"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 4,
-        "x": 550,
-        "y": 2040,
-        "wires": [
-            [
-                "810879bc.2dc69"
-            ],
-            [
-                "4811848d.1144ac"
-            ],
-            [
-                "9b7e2bee.d86ef8"
-            ],
-            [
-                "aa251f1b.866ed8"
-            ]
-        ]
-    },
-    {
-        "id": "810879bc.2dc69",
-        "type": "trigger",
-        "z": "a9c3b74b.7a3168",
-        "name": "",
-        "op1": "",
-        "op2": "",
-        "op1type": "nul",
-        "op2type": "pay",
-        "duration": "1",
-        "extend": false,
-        "units": "min",
-        "reset": "off",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 790,
-        "y": 1980,
-        "wires": [
-            [
-                "85f43d70.c48578"
-            ]
-        ]
-    },
-    {
-        "id": "4811848d.1144ac",
-        "type": "trigger",
-        "z": "a9c3b74b.7a3168",
-        "name": "",
-        "op1": "",
-        "op2": "",
-        "op1type": "nul",
-        "op2type": "pay",
-        "duration": "2",
-        "extend": false,
-        "units": "min",
-        "reset": "off",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 790,
-        "y": 2020,
-        "wires": [
-            [
-                "85f43d70.c48578"
-            ]
-        ]
-    },
-    {
-        "id": "aa251f1b.866ed8",
-        "type": "trigger",
-        "z": "a9c3b74b.7a3168",
-        "name": "",
-        "op1": "",
-        "op2": "",
-        "op1type": "nul",
-        "op2type": "pay",
-        "duration": "5",
-        "extend": false,
-        "units": "min",
-        "reset": "off",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 790,
-        "y": 2100,
-        "wires": [
-            [
-                "85f43d70.c48578"
-            ]
-        ]
-    },
-    {
-        "id": "9928ef49.2340a",
-        "type": "change",
-        "z": "a9c3b74b.7a3168",
-        "name": "set variables",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "doorNotification",
-                "tot": "str"
             },
             {
                 "t": "set",
-                "p": "delay",
+                "p": "diference",
                 "pt": "msg",
-                "to": "entranceDelay",
-                "tot": "flow"
-            },
-            {
-                "t": "set",
-                "p": "door",
-                "pt": "msg",
-                "to": "data.new_state.attributes.friendly_name",
+                "to": "payload.diference",
                 "tot": "msg"
-            },
-            {
-                "t": "delete",
-                "p": "data",
-                "pt": "msg"
             }
         ],
         "action": "",
@@ -1011,112 +1135,20 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 370,
-        "y": 2040,
+        "x": 1130,
+        "y": 1740,
         "wires": [
             [
-                "c8a3e58.5f76e18"
+                "efe36df.f9fbf1"
             ]
         ]
     },
     {
-        "id": "62817143.2e9818",
-        "type": "change",
-        "z": "a9c3b74b.7a3168",
-        "name": "set variables",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "doorNotification",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "delay",
-                "pt": "msg",
-                "to": "kitcheenDelay",
-                "tot": "flow"
-            },
-            {
-                "t": "set",
-                "p": "door",
-                "pt": "msg",
-                "to": "data.new_state.attributes.friendly_name",
-                "tot": "msg"
-            },
-            {
-                "t": "delete",
-                "p": "data",
-                "pt": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 370,
-        "y": 1840,
-        "wires": [
-            [
-                "dc6ec5c3.c25ac8"
-            ]
-        ]
-    },
-    {
-        "id": "6e5bab5.62c3c54",
-        "type": "change",
-        "z": "a9c3b74b.7a3168",
-        "name": "set variables",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "doorNotification",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "delay",
-                "pt": "msg",
-                "to": "frontDelay",
-                "tot": "flow"
-            },
-            {
-                "t": "set",
-                "p": "door",
-                "pt": "msg",
-                "to": "data.new_state.attributes.friendly_name",
-                "tot": "msg"
-            },
-            {
-                "t": "delete",
-                "p": "data",
-                "pt": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 370,
-        "y": 1640,
-        "wires": [
-            [
-                "e59b4fc7.9f05b8"
-            ]
-        ]
-    },
-    {
-        "id": "b2c87d1f.b1554",
+        "id": "1a705d08.f2ce1b",
         "type": "debug",
         "z": "a9c3b74b.7a3168",
         "name": "debug",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -1124,17 +1156,395 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1410,
-        "y": 1740,
+        "x": 2070,
+        "y": 1580,
         "wires": []
+    },
+    {
+        "id": "81017a28.76a028",
+        "type": "subflow:e11fd602.cb1c9",
+        "z": "a9c3b74b.7a3168",
+        "name": "",
+        "env": [],
+        "x": 2110,
+        "y": 1720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a2ca7598.c84ed8",
+        "type": "trigger",
+        "z": "a9c3b74b.7a3168",
+        "name": "trigger delay",
+        "op1": "",
+        "op2": "",
+        "op1type": "nul",
+        "op2type": "pay",
+        "duration": "250",
+        "extend": false,
+        "overrideDelay": true,
+        "units": "ms",
+        "reset": "off",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 1530,
+        "y": 1540,
+        "wires": [
+            [
+                "dcf87a13.17a82"
+            ]
+        ]
+    },
+    {
+        "id": "7396885f.05bf98",
+        "type": "trigger",
+        "z": "a9c3b74b.7a3168",
+        "name": "trigger delay",
+        "op1": "",
+        "op2": "",
+        "op1type": "nul",
+        "op2type": "pay",
+        "duration": "250",
+        "extend": false,
+        "overrideDelay": true,
+        "units": "ms",
+        "reset": "off",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 1530,
+        "y": 1660,
+        "wires": [
+            [
+                "dcf87a13.17a82"
+            ]
+        ]
+    },
+    {
+        "id": "8484c594.700b1",
+        "type": "trigger",
+        "z": "a9c3b74b.7a3168",
+        "name": "trigger delay",
+        "op1": "",
+        "op2": "",
+        "op1type": "nul",
+        "op2type": "pay",
+        "duration": "250",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "off",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 1530,
+        "y": 1780,
+        "wires": [
+            [
+                "dcf87a13.17a82"
+            ]
+        ]
+    },
+    {
+        "id": "f6bad8d8.7b46d",
+        "type": "switch",
+        "z": "a9c3b74b.7a3168",
+        "name": "not 0",
+        "property": "delay",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1310,
+        "y": 1500,
+        "wires": [
+            [
+                "a2ca7598.c84ed8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "efe36df.f9fbf1",
+        "type": "switch",
+        "z": "a9c3b74b.7a3168",
+        "name": "not 0",
+        "property": "delay",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1310,
+        "y": 1740,
+        "wires": [
+            [
+                "8484c594.700b1"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "891409fd.485548",
+        "type": "switch",
+        "z": "a9c3b74b.7a3168",
+        "name": "not 0",
+        "property": "delay",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1310,
+        "y": 1620,
+        "wires": [
+            [
+                "7396885f.05bf98"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "9a9c4b39.44cb78",
+        "type": "spline-curve",
+        "z": "a9c3b74b.7a3168",
+        "name": "curve remap",
+        "output_key": "payload.delayNormalized",
+        "input_key": "payload.diferenceNormalized",
+        "points": [
+            {
+                "x": 0,
+                "y": 1
+            },
+            {
+                "x": 0.066,
+                "y": 0.944
+            },
+            {
+                "x": 0.16,
+                "y": 0.674
+            },
+            {
+                "x": 0.226,
+                "y": 0.46
+            },
+            {
+                "x": 0.6,
+                "y": 0.057
+            },
+            {
+                "x": 1,
+                "y": 0
+            }
+        ],
+        "x": 630,
+        "y": 1500,
+        "wires": [
+            [
+                "6728df33.5a41d8"
+            ]
+        ]
+    },
+    {
+        "id": "17d664f6.bb8ed3",
+        "type": "function",
+        "z": "a9c3b74b.7a3168",
+        "name": "diference",
+        "func": "// Calculate diference\nmsg.payload.inside = Math.round(msg.payload.inside * 10) / 10;\nmsg.payload.diference = Math.round((msg.payload.outside - msg.payload.inside) * 10) / 10;\nmsg.payload.diferenceNormalized =  Math.abs(msg.payload.diference / 40);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 460,
+        "y": 1500,
+        "wires": [
+            [
+                "9a9c4b39.44cb78"
+            ]
+        ]
+    },
+    {
+        "id": "6728df33.5a41d8",
+        "type": "function",
+        "z": "a9c3b74b.7a3168",
+        "name": "set delay",
+        "func": "\nmsg.payload.frontDelayMinute    = Math.round((0.5 + msg.payload.delayNormalized * 2) * 10)/ 10;\nmsg.payload.kitcheenDelayMinute = Math.round((0.5 + msg.payload.delayNormalized * 5) * 10)/ 10;\nmsg.payload.entranceDelayMinute = Math.round((1.0 + msg.payload.delayNormalized * 9) * 10)/ 10;\n\nif (msg.payload.kitcheenDelayMinute > 5) msg.payload.kitcheenDelayMinute = 0;\nif (msg.payload.entranceDelayMinute > 5) msg.payload.entranceDelayMinute = 0;\n\nmsg.payload.frontDelay    = Math.round(60000 * msg.payload.frontDelayMinute);\nmsg.payload.kitcheenDelay = Math.round(60000 * msg.payload.kitcheenDelayMinute);\nmsg.payload.entranceDelay = Math.round(60000 * msg.payload.entranceDelayMinute);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 800,
+        "y": 1500,
+        "wires": [
+            [
+                "f0a64a83.7e5208"
+            ]
+        ]
+    },
+    {
+        "id": "f0a64a83.7e5208",
+        "type": "switch",
+        "z": "a9c3b74b.7a3168",
+        "name": "",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "binary_sensor.front_door_contact",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "binary_sensor.kitchen_door_contact",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "binary_sensor.entrance_door_contact",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 930,
+        "y": 1620,
+        "wires": [
+            [
+                "db052c8.b55c85"
+            ],
+            [
+                "37202da8.f7fc82"
+            ],
+            [
+                "554dd7ac.ccbec8"
+            ]
+        ]
+    },
+    {
+        "id": "db052c8.b55c85",
+        "type": "change",
+        "z": "a9c3b74b.7a3168",
+        "name": "set variables",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "data.new_state.attributes.friendly_name",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "delay",
+                "pt": "msg",
+                "to": "payload.frontDelay",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "diference",
+                "pt": "msg",
+                "to": "payload.diference",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1130,
+        "y": 1500,
+        "wires": [
+            [
+                "f6bad8d8.7b46d"
+            ]
+        ]
+    },
+    {
+        "id": "37202da8.f7fc82",
+        "type": "change",
+        "z": "a9c3b74b.7a3168",
+        "name": "set variables",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "data.new_state.attributes.friendly_name",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "delay",
+                "pt": "msg",
+                "to": "payload.kitcheenDelay",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "diference",
+                "pt": "msg",
+                "to": "payload.diference",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1130,
+        "y": 1620,
+        "wires": [
+            [
+                "891409fd.485548"
+            ]
+        ]
     },
     {
         "id": "31f480d3.0e3b28",
         "type": "server",
-        "z": "",
         "name": "Home Assistant",
         "legacy": false,
-        "hassio": false,
         "rejectUnauthorizedCerts": false,
         "ha_boolean": "y|yes|true|on|home|open",
         "connectionDelay": true,
