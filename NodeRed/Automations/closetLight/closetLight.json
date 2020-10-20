@@ -54,7 +54,7 @@
         "output_location": "payload",
         "output_location_type": "msg",
         "mustacheAltTags": false,
-        "x": 1470,
+        "x": 1630,
         "y": 760,
         "wires": [
             []
@@ -72,11 +72,11 @@
         "topic": "",
         "payload": "off",
         "payloadType": "str",
-        "x": 890,
-        "y": 820,
+        "x": 910,
+        "y": 840,
         "wires": [
             [
-                "6f94b7df.948158"
+                "a91fcaf5.e4497"
             ]
         ]
     },
@@ -155,11 +155,11 @@
         "reset": "",
         "bytopic": "all",
         "outputs": 1,
-        "x": 890,
-        "y": 680,
+        "x": 910,
+        "y": 700,
         "wires": [
             [
-                "6f94b7df.948158"
+                "a91fcaf5.e4497"
             ]
         ]
     },
@@ -170,17 +170,17 @@
         "name": "Closet Lights On",
         "server": "31f480d3.0e3b28",
         "version": 1,
-        "debugenabled": true,
+        "debugenabled": false,
         "service_domain": "light",
         "service": "turn_on",
         "entityId": "light.closet_light",
-        "data": "{\"entity_id\":\"light.closet_light\",\"kelvin\":\"{{kelvin}}\",\"brightness_pct\":\"{{brightness}}\"}",
+        "data": "{\"entity_id\":\"light.closet_light\",\"kelvin\":\"{{kelvin}}\",\"brightness_pct\":\"{{brightness}}\",\"transition\":\"{{transition}}\"}",
         "dataType": "json",
         "mergecontext": "",
         "output_location": "payload",
         "output_location_type": "msg",
         "mustacheAltTags": false,
-        "x": 1470,
+        "x": 1630,
         "y": 460,
         "wires": [
             []
@@ -197,14 +197,21 @@
                 "p": "brightness",
                 "pt": "msg",
                 "to": "100",
-                "tot": "str"
+                "tot": "num"
             },
             {
                 "t": "set",
                 "p": "kelvin",
                 "pt": "msg",
                 "to": "4000",
-                "tot": "str"
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "transition",
+                "pt": "msg",
+                "to": "2",
+                "tot": "num"
             }
         ],
         "action": "",
@@ -216,7 +223,7 @@
         "y": 340,
         "wires": [
             [
-                "9a1e0eb5.ded188"
+                "5e92a53b.54fb34"
             ]
         ]
     },
@@ -231,14 +238,21 @@
                 "p": "brightness",
                 "pt": "msg",
                 "to": "40",
-                "tot": "str"
+                "tot": "num"
             },
             {
                 "t": "set",
                 "p": "kelvin",
                 "pt": "msg",
                 "to": "3500",
-                "tot": "str"
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "transition",
+                "pt": "msg",
+                "to": "",
+                "tot": "num"
             }
         ],
         "action": "",
@@ -250,7 +264,7 @@
         "y": 460,
         "wires": [
             [
-                "9a1e0eb5.ded188"
+                "5e92a53b.54fb34"
             ]
         ]
     },
@@ -285,14 +299,21 @@
                 "p": "brightness",
                 "pt": "msg",
                 "to": "5",
-                "tot": "str"
+                "tot": "num"
             },
             {
                 "t": "set",
                 "p": "kelvin",
                 "pt": "msg",
                 "to": "2000",
-                "tot": "str"
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "transition",
+                "pt": "msg",
+                "to": "2",
+                "tot": "num"
             }
         ],
         "action": "",
@@ -304,7 +325,7 @@
         "y": 580,
         "wires": [
             [
-                "9a1e0eb5.ded188"
+                "5e92a53b.54fb34"
             ]
         ]
     },
@@ -391,7 +412,7 @@
         "y": 760,
         "wires": [
             [
-                "6f94b7df.948158"
+                "a91fcaf5.e4497"
             ],
             []
         ]
@@ -429,12 +450,76 @@
         ]
     },
     {
+        "id": "5e92a53b.54fb34",
+        "type": "api-current-state",
+        "z": "89f58b06.2d98f",
+        "name": "Closet Light Off",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "light.closet_light",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 1400,
+        "y": 460,
+        "wires": [
+            [
+                "9a1e0eb5.ded188"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "a91fcaf5.e4497",
+        "type": "api-current-state",
+        "z": "89f58b06.2d98f",
+        "name": "Closet Light On",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "light.closet_light",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 1400,
+        "y": 760,
+        "wires": [
+            [
+                "6f94b7df.948158"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "902810a7.5bdb3",
+        "type": "comment",
+        "z": "89f58b06.2d98f",
+        "name": "Lights: Closet",
+        "info": "",
+        "x": 190,
+        "y": 340,
+        "wires": []
+    },
+    {
         "id": "31f480d3.0e3b28",
         "type": "server",
-        "z": "",
         "name": "Home Assistant",
         "legacy": false,
-        "hassio": false,
         "rejectUnauthorizedCerts": false,
         "ha_boolean": "y|yes|true|on|home|open",
         "connectionDelay": true,
