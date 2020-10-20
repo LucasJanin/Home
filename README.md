@@ -11,7 +11,7 @@ After months of working on different components of my home lab (software and har
 
 ## Future Projects ##
 
-- [Bed Occupancy Sensor ![](https://www.iconninja.com/ico/16/external-link-24402.ico)](https://everythingsmarthome.co.uk/howto/building-a-bed-occupancy-sensor-for-home-assistant/) : Great tutorial by Everything Smart Home
+- [Bed Occupancy Sensor](https://everythingsmarthome.co.uk/howto/building-a-bed-occupancy-sensor-for-home-assistant/) : Great tutorial by Everything Smart Home
 - Bed LED : Using WS2812B and Wemos D1 mini
 - Bathroom's fan : Control by humidity
 - Security Alarm : Using all the sensors available
