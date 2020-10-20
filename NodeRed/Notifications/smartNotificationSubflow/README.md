@@ -46,7 +46,7 @@ This subflow permits to send notifications to multiple users. It similar to beha
 
 ![Smart Notification Subflow Users Graph](smartNotificationSubflowUsers.png)
 
-## Smart Notification Graph##
+## Smart Notification Graph ##
 
 ![Smart Notification Subflow All Graph](smartNotificationSubflowAll.png)
 
