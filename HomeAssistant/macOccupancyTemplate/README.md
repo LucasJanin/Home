@@ -8,8 +8,8 @@ For example, turn on the light office if mac is active and connected on ethernet
 So I decided to play with the template and the unifi sensor of the mac to achieve this target.
 
 The template sensor has 4 states:
-- Office: Mac active and connected over ethernet
-- Home: Mac active and connected to home wifi
+- Ethernet: Mac active and connected over ethernet
+- Wifi: Mac active and connected to home wifi
 - Offsite: Mac active and connected outside of the home
 - Off: Mac not active
 
@@ -26,13 +26,13 @@ configuration.yaml
 - platform: template
   sensors:
     mac_occupancy:
-      friendly_name: "Mac"
+      friendly_name: "Darkroom"
       value_template: >-
-        {% if is_state('binary_sensor.mac_active', 'on') %}
-          {% if is_state('device_tracker.mac', 'home') %}
-            Office
-          {% elif is_state('sensor.mac_ssid', 'WifiName') %}
-            Home
+        {% if is_state('binary_sensor.darkroom_active', 'on') %}
+          {% if is_state('device_tracker.darkroom', 'home') %}
+            Ethernet
+          {% elif is_state('sensor.darkroom_ssid', 'WifiName') %}
+            wifi
           {% else %}
             Offsite
           {% endif %}
@@ -40,10 +40,10 @@ configuration.yaml
           Offline
         {% endif %}
       icon_template: >-
-        {% if is_state('binary_sensor.mac_active', 'on') %}
-          {% if is_state('device_tracker.mac', 'home') %}
+        {% if is_state('binary_sensor.darkroom_active', 'on') %}
+          {% if is_state('device_tracker.darkroom', 'home') %}
             mdi:monitor-share
-          {% elif is_state('sensor.mac_ssid', 'WifiName') %}
+          {% elif is_state('sensor.darkroom_ssid', 'WifiName') %}
             mdi:monitor
           {% else %}
             mdi:monitor-off
@@ -53,7 +53,31 @@ configuration.yaml
         {% endif %}
 
 ```
-if you are using [custom-ui](https://github.com/Mariusthvdb/custom-ui), you can insert this code:
+
+There is a similar template for the Apple TV usage using the [Apple TV integration](https://www.home-assistant.io/integrations/apple_tv/).
+
+```yml
+# apple_tv_occupancy
+- platform: template
+  sensors:
+    apple_tv_occupancy:
+      friendly_name: "Apple TV"
+      value_template: >-
+        {% if is_state('media_player.apple_tv', 'playing') %}
+          Playing
+        {% else %}
+          Off
+        {% endif %}
+      icon_template: >-
+        {% if is_state('media_player.apple_tv', 'playing') %}
+          mdi:cast-connected
+        {% else %}
+          mdi:cast
+        {% endif %}
+```
+
+
+If you are using [custom-ui](https://github.com/Mariusthvdb/custom-ui), you can change the colour of the icon base on the status.
 
 customize_glob.yaml
 ``` yml
@@ -61,7 +85,8 @@ customize_glob.yaml
 sensor.*_occupancy:
   templates:
     icon_color: >
-      if (state === 'Office') return 'rgb(251, 210, 41)';
-      if (state === 'Home') return 'rgb(251, 210, 41)';
+      if (state === 'Ethernet') return 'rgb(251, 210, 41)';
+      if (state === 'Wifi') return 'rgb(251, 210, 41)';
+      if (state === 'Playing') return 'rgb(251, 210, 41)';      
       return 'rgb(54, 95, 140)';
 ```
