@@ -47,7 +47,7 @@
             {
                 "name": "SN_MOBILE",
                 "type": "str",
-                "value": "travelroom",
+                "value": "iphone",
                 "ui": {
                     "icon": "font-awesome/fa-mobile-phone",
                     "label": {
@@ -58,7 +58,7 @@
             {
                 "name": "SN_COMPUTER",
                 "type": "str",
-                "value": "darkroom",
+                "value": "mac",
                 "ui": {
                     "icon": "font-awesome/fa-laptop",
                     "label": {
