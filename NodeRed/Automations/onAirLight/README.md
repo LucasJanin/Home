@@ -1,10 +1,11 @@
 # On Air Light #
 
-Because work from home isn't any more a short-term solution, I'm starting to thinking about what can be done to improve my work/family balance. During the day, I have many Zoom meetings, but not all the time. My family never know when they can enter my office without disturbing me. As a result, I hadn't seen them during the day, sad when we are all at home.
+Working from home is here to stay for a long while, like countless on-line meetings. As a result my office door is almost always closed and I barely see my family, even if we are all present at the same time in the same house, because they never know if it’s ok to step inside.
 
-So I decided to create an "On Air" Light for notifying outside of my office the current status with RGB light. The hardware part was very cheap and easy to do. I learned electrical installation during my last home renovation with my handy-man. I'm living in Canada, so your electrical code may be different in your country.
+So I have  created an "On Air" Light to notify outside of my office the current status with RGB light. The hardware part was very cheap and easy to do. I learned electrical installation during my last home renovation with my handy-man. I'm living in Canada, so your electrical code may be different in your country.
 
-WARNING! You aren't comfortable to do electricity, use a professional electrician.
+WARNING! If you are not comfortable with electricity, use a professional electrician.
+
 
 - [X] [An Ikea TRÅDFRI LED bulb E26 600 lumen](https://www.ikea.com/ca/en/p/tradfri-led-bulb-e26-600-lumen-wireless-dimmable-color-and-white-spectrum-color-and-white-spectrum-globe-opal-white-90408617/): Color Zigbee LED bulb with 600 lumen
 - [X] [Outdoor Wall Lantern - Nautical](https://www.rona.ca/en/outdoor-wall-lantern-nautical-0511193): Light not my best choice but cheap :-)
@@ -15,13 +16,13 @@ WARNING! You aren't comfortable to do electricity, use a professional electricia
 
 By chance, I have a light switch on the other side of the wall. Only a short cable and no hole was needed, except for the Outlet Box.
 
-For the software side, the [Home Assistant Mac Companion](https://www.home-assistant.io/blog/2020/09/18/mac-companion/) gives me very useful sensors like FaceTime camera and micro. For the Mac presence in the room, I'm using my [Mac Occupancy Template](../../../HomeAssistant/macOccupancyTemplate) to know if my Mac is connected to the ethernet. Aqara sensors are connected to [Home Assistant](https://registry.hub.docker.com/r/homeassistant/home-assistant) via [Zigbee2mqtt](https://registry.hub.docker.com/r/koenkk/zigbee2mqtt) and [Mosquito](https://registry.hub.docker.com/_/eclipse-mosquitto/).
+For the software side, the[Home Assistant Mac Companion](https://www.home-assistant.io/blog/2020/09/18/mac-companion/) gives me very useful sensors like FaceTime camera and micro. For the Mac presence in the room, I'm using my [Mac Occupancy Template](../../../HomeAssistant/macOccupancyTemplate) to know if my Mac is connected to the ethernet. Aqara sensors are connected to [Home Assistant](https://registry.hub.docker.com/r/homeassistant/home-assistant) via [Zigbee2mqtt](https://registry.hub.docker.com/r/koenkk/zigbee2mqtt) and [Mosquito](https://registry.hub.docker.com/_/eclipse-mosquitto/).
 
 For more detail of my configuration, I invite you to check my [Software](software.md) and [Hardware](hardware.md) pages.
 
-The "On Air" light is only turn on when someone is opening or closing the basement door or the motion sensor in the basement got triggered. The office is considered empty if the computer isn't connected to ethernet and the office's motion sensor is clear.
+The "On Air" light is only turned on when someone is opening or closing the basement door or the motion sensor in the basement got triggered. The office is considered empty if the computer isn't connected to ethernet and the office's motion sensor is clear.
 
-The light change color base on the status of the different sensors:
+The light changes color based on the status of the different sensors:
 
 - [x] Green: the computer is connected to ethernet and not using this camera and micro
 - [x] Red: the computer is connected to ethernet and the camera is used
