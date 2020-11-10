@@ -1,0 +1,1292 @@
+[
+    {
+        "id": "81a43b69.862098",
+        "type": "api-call-service",
+        "z": "89f58b06.2d98f",
+        "name": "On air On",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "light",
+        "service": "turn_on",
+        "entityId": "light.on_air",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 1860,
+        "y": 1660,
+        "wires": [
+            [
+                "2c69e6b7.daa65a"
+            ]
+        ]
+    },
+    {
+        "id": "d0dd89f.1904978",
+        "type": "api-call-service",
+        "z": "89f58b06.2d98f",
+        "name": "On Air Off",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "light",
+        "service": "turn_off",
+        "entityId": "light.on_air",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 1860,
+        "y": 2320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4afee267.9a7194",
+        "type": "comment",
+        "z": "89f58b06.2d98f",
+        "name": "Lights: On Air",
+        "info": "",
+        "x": 230,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "3aac85b8.9fac9a",
+        "type": "server-state-changed",
+        "z": "89f58b06.2d98f",
+        "name": "Baswement Occuancy",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "binary_sensor.basement_occupancy",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "for": "",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": true,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "x": 240,
+        "y": 2260,
+        "wires": [
+            [
+                "7fe4c339.37e86c"
+            ],
+            [
+                "6c6c3a1e.2c3b7c"
+            ]
+        ]
+    },
+    {
+        "id": "5634ffc4.b6739",
+        "type": "trigger",
+        "z": "89f58b06.2d98f",
+        "name": "",
+        "op1": "",
+        "op2": "true",
+        "op1type": "nul",
+        "op2type": "bool",
+        "duration": "2",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "min",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 1610,
+        "y": 2320,
+        "wires": [
+            [
+                "d0dd89f.1904978"
+            ]
+        ]
+    },
+    {
+        "id": "44a9f458.2e25ec",
+        "type": "change",
+        "z": "89f58b06.2d98f",
+        "name": "Reset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "reset",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1390,
+        "y": 2220,
+        "wires": [
+            [
+                "5634ffc4.b6739"
+            ]
+        ]
+    },
+    {
+        "id": "fd1361ed.c870a8",
+        "type": "server-state-changed",
+        "z": "89f58b06.2d98f",
+        "name": "Ethernet",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "sensor.darkroom_occupancy",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "Ethernet",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "for": "",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "x": 280,
+        "y": 1800,
+        "wires": [
+            [
+                "b5ad2408.af3f48"
+            ],
+            [
+                "b265e2f2.4c4e3"
+            ]
+        ]
+    },
+    {
+        "id": "6c6c3a1e.2c3b7c",
+        "type": "api-current-state",
+        "z": "89f58b06.2d98f",
+        "name": "Basement Automation On",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "input_boolean.basement_automation",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 570,
+        "y": 2320,
+        "wires": [
+            [
+                "1829fd2f.112d23"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "7fe4c339.37e86c",
+        "type": "api-current-state",
+        "z": "89f58b06.2d98f",
+        "name": "Basement Automation On",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "input_boolean.basement_automation",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 570,
+        "y": 2220,
+        "wires": [
+            [
+                "86cc3173.6ed3d8",
+                "44a9f458.2e25ec"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "b265e2f2.4c4e3",
+        "type": "api-current-state",
+        "z": "89f58b06.2d98f",
+        "name": "Basement Automation On",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "input_boolean.basement_automation",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 570,
+        "y": 1860,
+        "wires": [
+            [
+                "5d066e42.a9c12"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "52a94bad.d07fbc",
+        "type": "api-current-state",
+        "z": "89f58b06.2d98f",
+        "name": "On Air On",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "light.on_air",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 860,
+        "y": 1360,
+        "wires": [
+            [
+                "36991a24.da9b7e"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "23727a48.e0c996",
+        "type": "server-state-changed",
+        "z": "89f58b06.2d98f",
+        "name": "Facetime Active",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "binary_sensor.darkroom_facetime_hd_camera_built_in",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "for": "",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "x": 260,
+        "y": 1400,
+        "wires": [
+            [
+                "b94c812.f7458"
+            ],
+            [
+                "c8ce2517.92c698"
+            ]
+        ]
+    },
+    {
+        "id": "b94c812.f7458",
+        "type": "api-current-state",
+        "z": "89f58b06.2d98f",
+        "name": "Basement Automation On",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "input_boolean.basement_automation",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 570,
+        "y": 1360,
+        "wires": [
+            [
+                "52a94bad.d07fbc"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c8ce2517.92c698",
+        "type": "api-current-state",
+        "z": "89f58b06.2d98f",
+        "name": "Basement Automation On",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "input_boolean.basement_automation",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 570,
+        "y": 1460,
+        "wires": [
+            [
+                "57406722.6a7fe"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "57406722.6a7fe",
+        "type": "api-current-state",
+        "z": "89f58b06.2d98f",
+        "name": "On Air On",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "light.on_air",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 860,
+        "y": 1460,
+        "wires": [
+            [
+                "7f962b0c.7389f4"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "4bd733c5.546cc4",
+        "type": "server-state-changed",
+        "z": "89f58b06.2d98f",
+        "name": "Mic Active",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "binary_sensor.darkroom_built_in_microphone",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "for": "",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "x": 280,
+        "y": 1600,
+        "wires": [
+            [
+                "d8340350.4451f8"
+            ],
+            [
+                "ac1a0928.1a06e"
+            ]
+        ]
+    },
+    {
+        "id": "d8340350.4451f8",
+        "type": "api-current-state",
+        "z": "89f58b06.2d98f",
+        "name": "Basement Automation On",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "input_boolean.basement_automation",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 570,
+        "y": 1560,
+        "wires": [
+            [
+                "b58bce81.41e0b"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "ac1a0928.1a06e",
+        "type": "api-current-state",
+        "z": "89f58b06.2d98f",
+        "name": "Basement Automation On",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "input_boolean.basement_automation",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 570,
+        "y": 1660,
+        "wires": [
+            [
+                "22e792bf.16ea76"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "b58bce81.41e0b",
+        "type": "api-current-state",
+        "z": "89f58b06.2d98f",
+        "name": "On Air On",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "light.on_air",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 860,
+        "y": 1560,
+        "wires": [
+            [
+                "94baa57b.a5d7e8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "22e792bf.16ea76",
+        "type": "api-current-state",
+        "z": "89f58b06.2d98f",
+        "name": "On Air On",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "light.on_air",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 860,
+        "y": 1660,
+        "wires": [
+            [
+                "eabd39cc.27e2e8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "1ffabdf8.eb783a",
+        "type": "api-current-state",
+        "z": "89f58b06.2d98f",
+        "name": "Mic On",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "binary_sensor.darkroom_built_in_microphone",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 1420,
+        "y": 1660,
+        "wires": [
+            [
+                "93ec1a6a.fd90b"
+            ],
+            [
+                "13d08a55.a8071e"
+            ]
+        ]
+    },
+    {
+        "id": "1c8b921c.16f3e6",
+        "type": "api-current-state",
+        "z": "89f58b06.2d98f",
+        "name": "Facetime On",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "binary_sensor.darkroom_facetime_hd_camera_built_in",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 1110,
+        "y": 2040,
+        "wires": [
+            [
+                "36991a24.da9b7e"
+            ],
+            [
+                "1ffabdf8.eb783a"
+            ]
+        ]
+    },
+    {
+        "id": "86cc3173.6ed3d8",
+        "type": "api-current-state",
+        "z": "89f58b06.2d98f",
+        "name": "Ethernet",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "Ethernet",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "sensor.darkroom_occupancy",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 860,
+        "y": 2100,
+        "wires": [
+            [
+                "1c8b921c.16f3e6"
+            ],
+            [
+                "400a96e9.543a4"
+            ]
+        ]
+    },
+    {
+        "id": "5d066e42.a9c12",
+        "type": "trigger",
+        "z": "89f58b06.2d98f",
+        "name": "",
+        "op1": "",
+        "op2": "true",
+        "op1type": "nul",
+        "op2type": "bool",
+        "duration": "5",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 1120,
+        "y": 1860,
+        "wires": [
+            [
+                "e7902e0c.c6d03"
+            ]
+        ]
+    },
+    {
+        "id": "325ba25a.f228c6",
+        "type": "change",
+        "z": "89f58b06.2d98f",
+        "name": "Reset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "reset",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 870,
+        "y": 1760,
+        "wires": [
+            [
+                "5d066e42.a9c12"
+            ]
+        ]
+    },
+    {
+        "id": "b5ad2408.af3f48",
+        "type": "api-current-state",
+        "z": "89f58b06.2d98f",
+        "name": "Basement Automation On",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "input_boolean.basement_automation",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 570,
+        "y": 1760,
+        "wires": [
+            [
+                "325ba25a.f228c6"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "94baa57b.a5d7e8",
+        "type": "api-current-state",
+        "z": "89f58b06.2d98f",
+        "name": "Facetime On",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "binary_sensor.darkroom_facetime_hd_camera_built_in",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 1110,
+        "y": 1560,
+        "wires": [
+            [
+                "36991a24.da9b7e"
+            ],
+            [
+                "93ec1a6a.fd90b"
+            ]
+        ]
+    },
+    {
+        "id": "7f962b0c.7389f4",
+        "type": "api-current-state",
+        "z": "89f58b06.2d98f",
+        "name": "Mic On",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "binary_sensor.darkroom_built_in_microphone",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 1120,
+        "y": 1460,
+        "wires": [
+            [
+                "93ec1a6a.fd90b"
+            ],
+            [
+                "13d08a55.a8071e"
+            ]
+        ]
+    },
+    {
+        "id": "eabd39cc.27e2e8",
+        "type": "api-current-state",
+        "z": "89f58b06.2d98f",
+        "name": "Facetime On",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "binary_sensor.darkroom_facetime_hd_camera_built_in",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 1110,
+        "y": 1660,
+        "wires": [
+            [
+                "36991a24.da9b7e"
+            ],
+            [
+                "13d08a55.a8071e"
+            ]
+        ]
+    },
+    {
+        "id": "81dada5e.8f66",
+        "type": "server-state-changed",
+        "z": "89f58b06.2d98f",
+        "name": "Door Basement",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "binary_sensor.basement_door_contact",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "for": "",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": true,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "x": 260,
+        "y": 1980,
+        "wires": [
+            [
+                "81ec470e.e52658"
+            ]
+        ]
+    },
+    {
+        "id": "81ec470e.e52658",
+        "type": "api-current-state",
+        "z": "89f58b06.2d98f",
+        "name": "Basement Automation On",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "input_boolean.basement_automation",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 570,
+        "y": 1980,
+        "wires": [
+            [
+                "adf6856.5c456f8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "adf6856.5c456f8",
+        "type": "api-current-state",
+        "z": "89f58b06.2d98f",
+        "name": "Basement Occupancy",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "binary_sensor.basement_occupancy",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 820,
+        "y": 1980,
+        "wires": [
+            [],
+            [
+                "86cc3173.6ed3d8"
+            ]
+        ]
+    },
+    {
+        "id": "36991a24.da9b7e",
+        "type": "change",
+        "z": "89f58b06.2d98f",
+        "name": "Red",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "data",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.data.brightness",
+                "pt": "msg",
+                "to": "255",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "payload.data.rgb_color",
+                "pt": "msg",
+                "to": "[255,0,0]",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload.data.transition",
+                "pt": "msg",
+                "to": "1",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1630,
+        "y": 1360,
+        "wires": [
+            [
+                "81a43b69.862098"
+            ]
+        ]
+    },
+    {
+        "id": "93ec1a6a.fd90b",
+        "type": "change",
+        "z": "89f58b06.2d98f",
+        "name": "Pink",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "data",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.data.brightness",
+                "pt": "msg",
+                "to": "255",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "payload.data.rgb_color",
+                "pt": "msg",
+                "to": "[255,0,255]",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload.data.transition",
+                "pt": "msg",
+                "to": "1",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1630,
+        "y": 1560,
+        "wires": [
+            [
+                "81a43b69.862098"
+            ]
+        ]
+    },
+    {
+        "id": "13d08a55.a8071e",
+        "type": "change",
+        "z": "89f58b06.2d98f",
+        "name": "Green",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "data",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.data.brightness",
+                "pt": "msg",
+                "to": "255",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "payload.data.rgb_color",
+                "pt": "msg",
+                "to": "[0,255,0]",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload.data.transition",
+                "pt": "msg",
+                "to": "1",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1630,
+        "y": 1780,
+        "wires": [
+            [
+                "81a43b69.862098"
+            ]
+        ]
+    },
+    {
+        "id": "9703ed97.09cdb",
+        "type": "change",
+        "z": "89f58b06.2d98f",
+        "name": "White",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "data",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.data.brightness",
+                "pt": "msg",
+                "to": "255",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "payload.data.rgb_color",
+                "pt": "msg",
+                "to": "[255,255,255]",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload.data.transition",
+                "pt": "msg",
+                "to": "1",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1650,
+        "y": 1960,
+        "wires": [
+            [
+                "81a43b69.862098"
+            ]
+        ]
+    },
+    {
+        "id": "1829fd2f.112d23",
+        "type": "api-current-state",
+        "z": "89f58b06.2d98f",
+        "name": "Illuminance < 150",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "150",
+        "halt_if_type": "num",
+        "halt_if_compare": "lt",
+        "override_topic": false,
+        "entity_id": "sensor.office_illuminance",
+        "state_type": "num",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 830,
+        "y": 2320,
+        "wires": [
+            [
+                "5634ffc4.b6739"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "498b8506.a4e63c",
+        "type": "link in",
+        "z": "89f58b06.2d98f",
+        "name": "",
+        "links": [
+            "2c69e6b7.daa65a"
+        ],
+        "x": 1415,
+        "y": 2420,
+        "wires": [
+            [
+                "5634ffc4.b6739"
+            ]
+        ]
+    },
+    {
+        "id": "2c69e6b7.daa65a",
+        "type": "link out",
+        "z": "89f58b06.2d98f",
+        "name": "",
+        "links": [
+            "498b8506.a4e63c"
+        ],
+        "x": 2015,
+        "y": 1660,
+        "wires": []
+    },
+    {
+        "id": "e7902e0c.c6d03",
+        "type": "api-current-state",
+        "z": "89f58b06.2d98f",
+        "name": "Illuminance < 150",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "150",
+        "halt_if_type": "num",
+        "halt_if_compare": "lt",
+        "override_topic": false,
+        "entity_id": "sensor.office_illuminance",
+        "state_type": "num",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 1410,
+        "y": 1960,
+        "wires": [
+            [
+                "9703ed97.09cdb"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "400a96e9.543a4",
+        "type": "api-current-state",
+        "z": "89f58b06.2d98f",
+        "name": "Office Occupancy",
+        "server": "31f480d3.0e3b28",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "binary_sensor.office_occupancy",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 1090,
+        "y": 2160,
+        "wires": [
+            [
+                "13d08a55.a8071e"
+            ],
+            [
+                "e7902e0c.c6d03"
+            ]
+        ]
+    },
+    {
+        "id": "31f480d3.0e3b28",
+        "type": "server",
+        "name": "Home Assistant",
+        "legacy": false,
+        "rejectUnauthorizedCerts": false,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true
+    }
+]

@@ -11,6 +11,7 @@ Thanks
 
 ## Automations ##
 
+- [On Air Light](Automations/onAirLight)
 - [Office Light](Automations/officeLight)
 - [Closet Light](Automations/closetLight)
 - [Garden Winter & Spring Prep](Automations/gardenWinterSpringPrep)
