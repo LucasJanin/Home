@@ -224,7 +224,7 @@
         "y": 2320,
         "wires": [
             [
-                "1829fd2f.112d23"
+                "5634ffc4.b6739"
             ],
             []
         ]
@@ -701,7 +701,7 @@
         "op2": "true",
         "op1type": "nul",
         "op2type": "bool",
-        "duration": "5",
+        "duration": "3",
         "extend": true,
         "overrideDelay": false,
         "units": "s",
@@ -1163,34 +1163,6 @@
             [
                 "81a43b69.862098"
             ]
-        ]
-    },
-    {
-        "id": "1829fd2f.112d23",
-        "type": "api-current-state",
-        "z": "89f58b06.2d98f",
-        "name": "Illuminance < 150",
-        "server": "31f480d3.0e3b28",
-        "version": 1,
-        "outputs": 2,
-        "halt_if": "150",
-        "halt_if_type": "num",
-        "halt_if_compare": "lt",
-        "override_topic": false,
-        "entity_id": "sensor.office_illuminance",
-        "state_type": "num",
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "blockInputOverrides": false,
-        "x": 830,
-        "y": 2320,
-        "wires": [
-            [
-                "5634ffc4.b6739"
-            ],
-            []
         ]
     },
     {
