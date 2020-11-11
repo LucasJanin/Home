@@ -22,7 +22,9 @@ For more detail of my configuration, I invite you to check my [Software](softwar
 
 The "On Air" light is only turned on when someone is opening or closing the basement door or the motion sensor in the basement got triggered. The office is considered empty if the computer isn't connected to ethernet and the office's motion sensor is clear.
 
-The light changes color based on the status of the different sensors:
+The light changes color based on the status of the different sensors.
+
+![On Air Light Photo](onAirLight_photo.jpg)
 
 - [x] Green: the computer is connected to ethernet and not using this camera and micro
 - [x] Red: the computer is connected to ethernet and the camera is used
@@ -39,8 +41,6 @@ input_boolean:
       icon: mdi:home-automation
       initial: true
 ```
-
-![On Air Light Photo](onAirLight_photo.jpg)
 
 The code: ![On Air Light Json](onAirLight.json)
 
