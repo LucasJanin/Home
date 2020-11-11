@@ -18,9 +18,9 @@ By chance, I have a light switch on the other side of the wall. Only a short cab
 
 For the software side, the [Home Assistant Mac Companion](https://www.home-assistant.io/blog/2020/09/18/mac-companion/) gives me very useful sensors like FaceTime camera and micro. For the Mac presence in the room, I'm using my [Mac Occupancy Template](../../../HomeAssistant/macOccupancyTemplate) to know if my Mac is connected to the ethernet. Aqara sensors are connected to [Home Assistant](https://registry.hub.docker.com/r/homeassistant/home-assistant) via [Zigbee2mqtt](https://registry.hub.docker.com/r/koenkk/zigbee2mqtt) and [Mosquito](https://registry.hub.docker.com/_/eclipse-mosquitto/).
 
-For more detail of my configuration, I invite you to check my [Software](software.md) and [Hardware](hardware.md) pages.
+For more detail of my configuration, I invite you to check my [Software](../../../software.md) and [Hardware](../../../hardware.md) pages.
 
-The "On Air" light is only turned on when someone is opening or closing the basement door or the motion sensor in the basement got triggered. The office is considered empty if the computer isn't connected to ethernet and the office's motion sensor is clear. Look forward to having a chair occupancy sensor :-).
+The "On Air" light is only turned on when someone is opening or closing the basement door or the motion sensor in the basement got triggered. The office is considered empty if the computer isn't connected to ethernet and the office's motion sensor is clear. Look forward to having a chair occupancy sensor :-). The light is turn off after 2 minutes if one of the sensors is trigger again.
 
 The light changes color based on the status of the different sensors.
 
