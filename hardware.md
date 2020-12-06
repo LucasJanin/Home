@@ -20,10 +20,17 @@ There is the list for hardware I'm currently using
 - 4 Aqara water Leak sensors
 - 4 Aqara vibration sensors (not all used yet)
 - 1 Ikea TRADFRI control outlet
-- 1 Ikea TRADFRI ON/OFF switch
+- 2 Ikea TRADFRI ON/OFF switch
 - 1 Ikea TRADFRI LED bulb E27
 - 5 Ikea TRADFRI LED bulb E26
 - 2 LivingWire outlets
+
+## ESP8266 Wifi ## (deployment currently in progress)
+- 20 LOLIN D1 mini V3.1.0 - WEMOS WIFI Internet of Things development board based ESP8266
+- 10 Temperature / Humidity / Barometric / Pressure Sensor Module BME280
+- 10 Mini IR Pyroelectric Infrared PIR Motion Human Sensor Automatic Detector Module AM312 Sensors
+- 10 Wemos D1 Mini Relay Shield One Channel Wemos D1 Mini Relay Module For Arduino ESP8266
+- 20 ProtoBoard Shield for WEMOS D1 mini double sided perf board
 
 ## IoT Wifi ##
 - 1 Ecobee 4
@@ -34,6 +41,6 @@ There is the list for hardware I'm currently using
 ## Medias ##
 - 1 AppleTV 4k
 - 1 Vizio TV (not connected to Internet, of cause :-)
-- 1 Homepod
+- 1 Homepod (not yet in Home Assistant)
 - 1 Sonos play:5
 - 3 Sonos SL  
