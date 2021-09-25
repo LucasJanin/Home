@@ -4,8 +4,9 @@ There is the list for hardware I'm currently using
 
 ## Homelab ##
 - ⁠Rack 15U
-- Internet via cable Videotron 400Mb / 50Mb
+- Internet via Bell Fiber 940Mb / 750Mb
 - DS918+ with 16 Gb and 4 x 8 Tb Seagate Ironwolf with 2x1Gb Ethernet with ⁠⁠Link Aggregation
+- Raspberry Pi-4 4Gb
 - UPS CyberPower 1500va AVR
 - UniFi USG
 - UniFi USW-PRO-24
@@ -40,7 +41,7 @@ There is the list for hardware I'm currently using
 
 ## Medias ##
 - 1 AppleTV 4k
+- 1 Denon H7300X
 - 1 Vizio TV (not connected to Internet, of cause :-)
-- 1 Homepod (not yet in Home Assistant)
 - 1 Sonos play:5
 - 3 Sonos SL  
