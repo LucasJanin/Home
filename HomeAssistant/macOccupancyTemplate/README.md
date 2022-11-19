@@ -8,13 +8,10 @@ For example, turn on the light office if mac is active and connected on ethernet
 So I decided to play with the template and the unifi sensor of the mac to achieve this target.
 
 The template sensor has 4 states:
-- Ethernet: Mac active and connected over ethernet
+- Desk: Mac active and connected to my monitor
 - Wifi: Mac active and connected to home wifi
 - Offsite: Mac active and connected outside of the home
 - Off: Mac not active
-
-It's not perfect due to a delay of the unifi sensor to find the Mac isn't connected by ethernet. Ideally, the Mac app companion will have a [ethernet sensor](https://github.com/home-assistant/iOS/issues/1184).
-
 
 ![Mac Occupancy TemplateLovelace](macOccupancyTemplateLovelace.png)
 
@@ -25,25 +22,25 @@ configuration.yaml
 # computer mac_occupancy
 - platform: template
   sensors:
-    mac_occupancy:
-      friendly_name: "Darkroom"
+    fastroom_occupancy:
+      friendly_name: "Fastroom Occupency"
       value_template: >-
-        {% if is_state('binary_sensor.darkroom_active', 'on') %}
-          {% if is_state('device_tracker.darkroom', 'home') %}
-            Ethernet
-          {% elif is_state('sensor.darkroom_ssid', 'WifiName') %}
-            wifi
+        {% if is_state('binary_sensor.fastroom_active', 'on') or is_state('binary_sensor.fastroom_camera_in_use', 'on')  %}
+          {% if is_state('sensor.fastroom_primary_display_name', 'MY_MONITOR') %}
+            Desk
+          {% elif is_state('sensor.fastroom_ssid', 'MY_WIFI') %}
+            Wifi
           {% else %}
             Offsite
           {% endif %}
         {% else %}
-          Offline
+          Off
         {% endif %}
       icon_template: >-
-        {% if is_state('binary_sensor.darkroom_active', 'on') %}
-          {% if is_state('device_tracker.darkroom', 'home') %}
+        {% if is_state('binary_sensor.fastroom_active', 'on') or is_state('binary_sensor.fastroom_camera_in_use', 'on')  %}
+          {% if is_state('sensor.fastroom_primary_display_name', 'MY_MONITOR') %}
             mdi:monitor-share
-          {% elif is_state('sensor.darkroom_ssid', 'WifiName') %}
+          {% elif is_state('sensor.fastroom_ssid', 'MY_WIFI') %}
             mdi:monitor
           {% else %}
             mdi:monitor-off
