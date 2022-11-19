@@ -82,7 +82,7 @@ customize_glob.yaml
 sensor.*_occupancy:
   templates:
     icon_color: >
-      if (state === 'Ethernet') return 'rgb(251, 210, 41)';
+      if (state === 'Desk') return 'rgb(251, 210, 41)';
       if (state === 'Wifi') return 'rgb(251, 210, 41)';
       if (state === 'Playing') return 'rgb(251, 210, 41)';      
       return 'rgb(54, 95, 140)';
