@@ -7,13 +7,25 @@ Thanks, Pi-Hole to flag me the requests (domains used registry-1.docker.io and a
 The 5 minutes was definitely overkilling for my usage. 
 I decided to do the process only every 6 hours (argument --interval 21600).
 
+Recenlty, I added the notofication using ntfy.sh. 
+It's very nice to be aware about all the update.
+There is my slack for launch the docke in Portainer:
+
 ```
-docker run -d \
-	--name watchtower \
-	--cleanup \
-	--interval 21600 \
-	-e TZ="America/Montreal" \
-	-v /var/run/docker.sock:/var/run/docker.sock \
-	containrrr/watchtower
+version: '2.1'
+services:
+    watchtower:
+        image: containrrr/watchtower
+        container_name: watchtower
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+        environment:
+            - TZ=America/Montreal
+            - WATCHTOWER_CLEANUP=true
+            - WATCHTOWER_SCHEDULE= 0 0 19 * * *
+            - WATCHTOWER_NOTIFICATIONS=shoutrrr
+            - WATCHTOWER_NOTIFICATION_URL=generic+https://ntfy.sh/YOURTOPIC?title=WatchtowerUpdates
+        restart: unless-stopped
+
 ```
 
