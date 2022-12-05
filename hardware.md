@@ -3,7 +3,6 @@
 There is the list for hardware I'm currently using
 
 ## Homelab ##
-- ⁠Rack 15U
 - Internet via Bell Fiber 940Mb / 750Mb
 - DS918+ with 16 Gb and 4 x 8 Tb Seagate Ironwolf with 2x1Gb Ethernet with ⁠⁠Link Aggregation
 - Raspberry Pi-4 4Gb
@@ -22,8 +21,7 @@ There is the list for hardware I'm currently using
 - 4 Aqara vibration sensors (not all used yet)
 - 1 Ikea TRADFRI control outlet
 - 2 Ikea TRADFRI ON/OFF switch
-- 1 Ikea TRADFRI LED bulb E27
-- 5 Ikea TRADFRI LED bulb E26
+- 2 Ikea TRADFRI LED bulb E26
 - 2 LivingWire outlets
 
 ## ESP8266 Wifi ## (deployment currently in progress)
@@ -34,14 +32,10 @@ There is the list for hardware I'm currently using
 - 20 ProtoBoard Shield for WEMOS D1 mini double sided perf board
 
 ## IoT Wifi ##
-- 1 Ecobee 4
-- 5 Nanoleaf Aurora
-- 3 Vocolink Smart Plug (via HomeKit Controller)
-- 1 HP ENVY 4520 Printer
+- 2 Nanoleaf Aurora
+- 1 Vocolink Smart Plug (via HomeKit Controller)
 
 ## Medias ##
 - 1 AppleTV 4k
 - 1 Denon H7300X
-- 1 Vizio TV (not connected to Internet, of cause :-)
-- 1 Sonos play:5
-- 3 Sonos SL  
+- 1 LG OLEDC165
