@@ -1,4 +1,4 @@
-# Merge pi-Hole Template #
+# Merge Pi-Hole Template #
 
 This template permet to merge mutiple pihole sensors in one.
 
