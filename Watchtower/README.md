@@ -5,7 +5,7 @@ By default is done every 5 minutes. This created more than 10000 DNS requests pe
 Thanks, Pi-Hole to flag me the requests (domains used registry-1.docker.io and auth.docker.io).
 
 The 5 minutes was definitely overkilling for my usage. 
-I decided to do the process only every 6 hours (argument --interval 21600).
+I decided to do the process only every day at 7 PM.
 
 Recenlty, I added the notofication using ntfy.sh. 
 It's very nice to be aware about all the update.
