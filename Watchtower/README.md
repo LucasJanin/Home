@@ -10,7 +10,7 @@ I decided to do the process only every day at 7 PM.
 Recenlty, I added the notofication using ntfy.sh. 
 It's very nice to be aware about all the update.
 
-There is my slack for launch the docke in Portainer:
+There is my slack for launch the docker in Portainer:
 
 ```
 version: '2.1'
