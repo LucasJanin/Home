@@ -1,12 +1,16 @@
 # Ikea Standing Desk Automation #
 
-I'm using the Ikea Idasen ESPHome Component (https://github.com/j5lien/esphome-idasen-desk-controller). The ESP32 control via Bluetooth the desk, it  was relatively easy to control.
+I'm using the Ikea Idasen ESPHome Component (https://github.com/j5lien/esphome-idasen-desk-controller). The desk control ny ESP32 via Bluetooth. The component is easy to use. Just install ESPHome on HASSIO or Docker. I'm using Google Chrome for flashing the ESP, my only usage of Chrome :-).
 
-My target was to change position in between sitting and standing every x minutes. But this motion shuld be paeninng when I'm note front of my computer (water, bathroom,..). This sould be only apenning during the day. I'm using Node Red to control this device, more easy than the HA automation.
+My target was to change position between sitting and standing during the day. For now, the trigger append after be sitting duging 70 minutes and 40 minutes of standing. This trigger will wait for specific conditions:
 
-I create a timer using a flow variable by runnig every minute an inject and increment this flow variable if my compter is used at my desk (check the Mac Occupancy Template : https://github.com/LucasJanin/Home/tree/main/HomeAssistant/macOccupancyTemplate).
+- I'm away from my computer (motion in my appatement for now, until I have more accurate desk presence).
+- Motion only append inbetween 9 AM and 8 PM, except the last move to sitting position.
+- Motion will not appending if I'm in a call (microphone used)
 
+Of cause, I'm using Node Red to control this device, easyer than the HA automation (for my point of view).
 
+I create a timer using a flow variable by running every minute via an inject node and increment this flow variable if my computer is used at my desk (check the Mac Occupancy Template : https://github.com/LucasJanin/Home/tree/main/HomeAssistant/macOccupancyTemplate).
 
 My configuration for ESPhome :
 
@@ -166,3 +170,5 @@ The template for determine if the desk is in sitting or standing position:
           mdi:arrow-expand-vertical
         {% endif %}
 ```
+
+And my NodeRed Automation
