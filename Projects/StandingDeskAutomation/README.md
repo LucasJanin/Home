@@ -2,7 +2,7 @@
 
 I'm using the [Ikea Idasen ESPHome Component](https://github.com/j5lien/esphome-idasen-desk-controller). The desk control ny ESP32 via Bluetooth. The component is easy to use. Just install ESPHome on HASSIO or Docker. I'm using Google Chrome for flashing the ESP, my only usage of Chrome :-).
 
-![Standing Desk Automation in Home Assistant](standingDeskAutomationHA.png)
+
 
 My target was to change position between sitting and standing during the day. For now, the trigger append after be sitting duging 70 minutes and 40 minutes of standing. This trigger will wait for specific conditions:
 
