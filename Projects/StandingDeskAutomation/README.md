@@ -4,7 +4,7 @@ I'm using the [Ikea Idasen ESPHome Component](https://github.com/j5lien/esphome-
 
 My target was to change position between sitting and standing during the day. For now, the trigger append after be sitting duging 70 minutes and 40 minutes of standing. This trigger will wait for specific conditions:
 
-- I'm away from my computer (motion in my appatement for now, until I have more accurate desk presence).
+- I'm away from my computer (motion in my appatement for now, until I recieved my [HC-SR04 Ultrasonic Distance Sensor](https://esphome.io/components/sensor/ultrasonic.html) ).
 - Motion only append inbetween 9 AM and 8 PM, except the last move to sitting position.
 - Motion will not appending if I'm in a call (microphone used)
 
