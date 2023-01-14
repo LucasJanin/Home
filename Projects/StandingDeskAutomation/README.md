@@ -1,4 +1,4 @@
-# Ikea Standing Desk #
+# Ikea Standing Desk Automation #
 
 I'm using the Ikea Idasen ESPHome Component (https://github.com/j5lien/esphome-idasen-desk-controller). The ESP32 control via Bluetooth the desk, it  was relatively easy to control.
 
