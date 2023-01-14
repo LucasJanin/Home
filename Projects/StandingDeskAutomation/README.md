@@ -18,7 +18,9 @@ The code: ![Standing Desk Automation Json](standingDeskAutomation.json)
 
 ![Standing Desk Automation NodeRed](standingDeskAutomation.png)
 
+THe history on my desk position sensor:
 
+![Standing Desk Automation History in Home Assistant](standingDeskAutomationHomeAssistantHistory.png)
 
 My configuration for ESPhome :
 
