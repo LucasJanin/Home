@@ -1,6 +1,6 @@
+# My list fo projects done and in progress #
 
-
-- Standing Desk Automation
+- [Standing Desk Automation](StandingDeskAutomation)
 - Bed Presence
 - Bed LED
 
