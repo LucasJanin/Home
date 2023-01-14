@@ -172,3 +172,5 @@ The template for determine if the desk is in sitting or standing position:
 ```
 
 And my NodeRed Automation
+
+StandingDeskAutomation_NodeRed.png
