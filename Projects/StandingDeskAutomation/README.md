@@ -1,6 +1,7 @@
 # Ikea Standing Desk #
 
-I'm using the Ikea Idasen ESPHome Component :https://github.com/j5lien/esphome-idasen-desk-controller
+I'm using the Ikea Idasen ESPHome Component (https://github.com/j5lien/esphome-idasen-desk-controller)
+My target was to change position in between sitting and standing every x minutes. But this motion shuld be paeninng when I'm note front of my computer (water, bathroom,..). This sould be only apenning during the day.
 
 My configuration is :
 
@@ -135,7 +136,7 @@ binary_sensor:
     lambda: 'return id(desk_speed).state > 0;'    
 ```
 
-The template for determi is the desk is in sitting or standing position:
+The template for determine if the desk is in sitting or standing position:
 
 ```yml
 # desk_position
