@@ -1,6 +1,6 @@
 
 
-Standing Desk Automation
-Bed Presence
-Bed LED
+- Standing Desk Automation
+- Bed Presence
+- Bed LED
 
