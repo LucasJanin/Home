@@ -1,22 +1,23 @@
 # Ikea Standing Desk Automation #
 
-I'm using the [Ikea Idasen ESPHome Component](https://github.com/j5lien/esphome-idasen-desk-controller). The desk control ny ESP32 via Bluetooth. The component is easy to use. Just install ESPHome on HASSIO or Docker. I'm using Google Chrome for flashing the ESP, my only usage of Chrome :-).
+I'm using the [Ikea Idasen ESPHome Component](https://github.com/j5lien/esphome-idasen-desk-controller). The desk controls my ESP32 via Bluetooth. The component is easy to use. Just install ESPHome on HASSIO or Docker. I'm using Google Chrome for flashing the ESP, my only usage of Chrome :-). If you have controlled your desk with another device (like my Mac on my side), you need to forget this device in the Bluetooth setting.
 
 ![Standing Desk Automation in Home Assistant](standingDeskAutomationHomeAssistant.png)
 
-My target was to change position between sitting and standing during the day. For now, the trigger append after be sitting duging 70 minutes and 40 minutes of standing. This trigger will wait for specific conditions:
+My target was to change position between sitting and standing during the day. For now, the trigger appends after sitting during 70 minutes and 40 minutes of standing. This trigger will wait for specific conditions:
 
-- I'm away from my computer (motion in my appatement for now, until I recieved my [HC-SR04 Ultrasonic Distance Sensor](https://esphome.io/components/sensor/ultrasonic.html) ).
-- Motion only append inbetween 9 AM and 8 PM, except the last move to sitting position.
-- Motion will not appending if I'm in a call (microphone used)
+- I'm away from my computer (motion in my apartment for now, until I receive my [HC-SR04 Ultrasonic Distance Sensor](https://esphome.io/components/sensor/ultrasonic.html) ).
+- Motion only append in between 9 AM and 8 PM, except the last move to the sitting position.
+- Motion will not append if I'm on a call (microphone used)
 
-Of cause, I'm using Node Red to control this device, easyer than the HA automation (for my point of view).
+Of cause, I'm using Node-Red to control this device, easier than the HA automation (from my point of view).
 
 I create a timer using a flow variable by running every minute via an inject node and increment this flow variable if my computer is used at my desk, check the [Mac Occupancy Template](https://github.com/LucasJanin/Home/tree/main/HomeAssistant/macOccupancyTemplate).
 
 The code: ![Standing Desk Automation Json](standingDeskAutomation.json)
 
 ![Standing Desk Automation NodeRed](standingDeskAutomation.png)
+
 
 
 My configuration for ESPhome :
