@@ -12,9 +12,9 @@ Of cause, I'm using Node Red to control this device, easyer than the HA automati
 
 I create a timer using a flow variable by running every minute via an inject node and increment this flow variable if my computer is used at my desk, check the [Mac Occupancy Template](https://github.com/LucasJanin/Home/tree/main/HomeAssistant/macOccupancyTemplate).
 
-The code: ![Standing Desk Automation Json](standing Desk Automation.json)
+The code: ![Standing Desk Automation Json](standingDeskAutomation.json)
 
-![Standing Desk Automation NodeRed](StandingDeskAutomation_NodeRed.png)
+![Standing Desk Automation NodeRed](standingDeskAutomation.png)
 
 
 My configuration for ESPhome :
@@ -177,3 +177,4 @@ The template for determine if the desk is in sitting or standing position:
 ```
 
 
+Back to [Projects](../../README.md)
