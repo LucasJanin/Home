@@ -6,6 +6,8 @@ My target was to change position in between sitting and standing every x minutes
 
 I create a timer using a flow variable by runnig every minute an inject and increment this flow variable if my compter is used at my desk (check the Mac Occupancy Template : https://github.com/LucasJanin/Home/tree/main/HomeAssistant/macOccupancyTemplate).
 
+
+
 My configuration for ESPhome :
 
 ```yml
