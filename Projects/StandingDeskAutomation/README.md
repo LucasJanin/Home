@@ -1,6 +1,6 @@
 # Ikea Standing Desk Automation #
 
-I'm using the Ikea Idasen ESPHome Component (https://github.com/j5lien/esphome-idasen-desk-controller). The desk control ny ESP32 via Bluetooth. The component is easy to use. Just install ESPHome on HASSIO or Docker. I'm using Google Chrome for flashing the ESP, my only usage of Chrome :-).
+I'm using the [Ikea Idasen ESPHome Component](https://github.com/j5lien/esphome-idasen-desk-controller). The desk control ny ESP32 via Bluetooth. The component is easy to use. Just install ESPHome on HASSIO or Docker. I'm using Google Chrome for flashing the ESP, my only usage of Chrome :-).
 
 My target was to change position between sitting and standing during the day. For now, the trigger append after be sitting duging 70 minutes and 40 minutes of standing. This trigger will wait for specific conditions:
 
@@ -10,7 +10,7 @@ My target was to change position between sitting and standing during the day. Fo
 
 Of cause, I'm using Node Red to control this device, easyer than the HA automation (for my point of view).
 
-I create a timer using a flow variable by running every minute via an inject node and increment this flow variable if my computer is used at my desk (check the Mac Occupancy Template : https://github.com/LucasJanin/Home/tree/main/HomeAssistant/macOccupancyTemplate).
+I create a timer using a flow variable by running every minute via an inject node and increment this flow variable if my computer is used at my desk, check the [Mac Occupancy Template](https://github.com/LucasJanin/Home/tree/main/HomeAssistant/macOccupancyTemplate).
 
 My configuration for ESPhome :
 
@@ -173,4 +173,5 @@ The template for determine if the desk is in sitting or standing position:
 
 And my NodeRed Automation
 
-StandingDeskAutomation_NodeRed.png
+![Standing Desk Automation NodeRed](StandingDeskAutomation_NodeRed.png)
+
