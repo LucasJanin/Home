@@ -1,6 +1,7 @@
 # Ikea Standing Desk #
 
 I'm using the Ikea Idasen ESPHome Component :https://github.com/j5lien/esphome-idasen-desk-controller
+
 My configuration is :
 
 ```yml
@@ -132,4 +133,30 @@ binary_sensor:
     name: 'Desk Moving'
     id: desk_moving
     lambda: 'return id(desk_speed).state > 0;'    
+```
+
+The template for determi is the desk is in sitting or standing position:
+
+```yml
+# desk_position
+- platform: template
+  sensors:
+    desk_position:
+      friendly_name: "Desk Position"
+      value_template: >-
+        {% if is_state_attr('cover.desk', 'current_position', 9) %}
+          Sitting
+        {% elif is_state_attr('cover.desk', 'current_position', 70) %}
+          Standing  
+        {% else %}
+          Moving
+        {% endif %}
+      icon_template: >-
+        {% if is_state_attr('cover.desk', 'current_position', 9) %}
+          mdi:chair-rolling
+        {% elif is_state_attr('cover.desk', 'current_position', 70) %}
+          mdi:desk  
+        {% else %}
+          mdi:arrow-expand-vertical
+        {% endif %}
 ```
