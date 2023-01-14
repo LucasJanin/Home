@@ -1,9 +1,12 @@
 # Ikea Standing Desk #
 
-I'm using the Ikea Idasen ESPHome Component (https://github.com/j5lien/esphome-idasen-desk-controller)
-My target was to change position in between sitting and standing every x minutes. But this motion shuld be paeninng when I'm note front of my computer (water, bathroom,..). This sould be only apenning during the day.
+I'm using the Ikea Idasen ESPHome Component (https://github.com/j5lien/esphome-idasen-desk-controller). The ESP32 control via Bluetooth the desk, it  was relatively easy to control.
 
-My configuration is :
+My target was to change position in between sitting and standing every x minutes. But this motion shuld be paeninng when I'm note front of my computer (water, bathroom,..). This sould be only apenning during the day. I'm using Node Red to control this device, more easy than the HA automation.
+
+I create a timer using a flow variable by runnig every minute an inject and increment this flow variable if my compter is used at my desk (check the Mac Occupancy Template : https://github.com/LucasJanin/Home/tree/main/HomeAssistant/macOccupancyTemplate).
+
+My configuration for ESPhome :
 
 ```yml
 substitutions:
