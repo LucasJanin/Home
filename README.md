@@ -4,6 +4,7 @@ After months of working on different components of my home lab (software and har
 
 ## Some of my configurations and automations ##
 
+- [Projets](Projects) : Some of my projects
 - [Node Red](NodeRed) : Some of my automations
 - [Home Assistant](HomeAssistant) : Some tips
 - [Watchtower](Watchtower) : My configuration
