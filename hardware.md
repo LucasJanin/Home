@@ -1,15 +1,20 @@
 # Hardware
 
-There is the list for hardware I'm currently using
+Here is the list of hardware I'm currently using
 
 ## Homelab ##
 - Internet via Bell Fiber 940Mb / 750Mb
-- DS918+ with 16 Gb and 4 x 8 Tb Seagate Ironwolf with 2x1Gb Ethernet with ⁠⁠Link Aggregation
+- DS918+
+    - Memory: 16Gb
+    - Hard Drive: 4 x 8Tb Seagate Ironwolf
+    - SSD Cache: 2 x 1Tb WD Red SN700 NVM
+    - Ethernet: 2x1Gb  with ⁠⁠Link Aggregation
 - Raspberry Pi-4 4Gb
 - UPS CyberPower 1500va AVR
 - UniFi USG
 - UniFi USW-PRO-24
 - ⁠UniFi UAP AC LR
+- UniFi Flex Mini
 - Remote Synology DS219j for offsite backup over VPN (Thanks Max)
 
 ## IoT Zigbee ##
@@ -32,7 +37,8 @@ There is the list for hardware I'm currently using
 - 20 ProtoBoard Shield for WEMOS D1 mini double sided perf board
 
 ## IoT Wifi ##
-- 2 Nanoleaf Aurora
+- 2 Aqara Presence Sensor FP2 (via HomeKit Controller)
+- 3 Nanoleaf Aurora
 - 1 Vocolink Smart Plug (via HomeKit Controller)
 
 ## Medias ##
